@@ -120,6 +120,7 @@ public class SimpleID3Handler {
 	}
 	public void stampaslot (Token T)
 	{
+		if(T.getText().charAt(0)==' ') {System.out.println("genere: 0"); return;}
 		char a=T.getText().charAt(0);
 		int i=(int)a;
 		System.out.println("genere: "+i);

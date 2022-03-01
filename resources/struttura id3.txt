@@ -1,0 +1,51 @@
+id3 v1
+head(TAG): 3byte
+titolo : 30byte
+artista: 30byte
+album: 30byte
+anno: 4byte
+commento: 30byte
+genere: 1byte
+	tot:128byte
+
+id3 v1.1
+head(TAG): 3byte
+titolo : 30byte
+artista: 30byte
+album: 30byte
+anno: 4byte
+commento: 28byte
+	1 byte a 0
+track: 1byte
+genere: 1byte
+	tot:128byte
+
+NULL=20 in exadecimale (il byte del carattere vuoto)
+
+
+id3v1_001_basic -> -non funziona nel simpleHEX perchè rileva le prime 4 cifre come se fossero uniche completamente a caso
+-se copio direttamente dal file mp3 inoltre non viene riconosciuto il carattere speciale per genere, mentre se faccio
+un passaggio in più (come in questo file) senza cambiare nulla funziona
+TAGTitle                         Artist                        Album                         2003Comment                       
+5441475469746C6520202020202020202020202020202020202020202020202020417274697374202020202020202020202020202020202020202020202020416C62756D2020202020202020202020202020202020202020202020202032303033436F6D6D656E74202020202020202020202020202020202020202020202007
+
+id3v1_005_basic -> funge perfettamente in entrambi
+TAGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaAbbbbbbbbbbbbbbbbbbbbbbbbbbbbbBcccccccccccccccccccccccccccccC2003dddddddddddddddddddddddddddddD 
+5441476161616161616161616161616161616161616161616161616161616161416262626262626262626262626262626262626262626262626262626262426363636363636363636363636363636363636363636363636363636363433230303364646464646464646464646464646464646464646464646464646464644420
+
+se ci sparo dentro gli mp3 completi riesce a fare il parsing ma nella HEAD vengono inclusi caratteri strani insieme a TAG
+
+differenziazione degli slot x gli errori
+la v1.1
+
+TAG
+tit:
+art:
+album:
+a:
+com:
+gen:
+
+
+
+
