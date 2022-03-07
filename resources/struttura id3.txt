@@ -25,7 +25,7 @@ TAGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaAbbbbbbbbbbbbbbbbbbbbbbbbbbbbbBccccccccccccccccc
 	-funge perfettamente in entrambi
 	-se ci sparo dentro gli mp3 completi riesce a fare il parsing ma nella HEAD vengono inclusi caratteri strani insieme a TAG
 
-differenziazione degli slot x gli errori
+differenziazione degli slot x gli errori OK
 	TAG
 	tit:
 	art:
@@ -33,8 +33,27 @@ differenziazione degli slot x gli errori
 	a:
 	com:
 	gen:
+errori:
+	-se tolgo 1 char a titolo da nullpointer
+	- se tolgo 30char a titolo, prende artista nel titolo e artista è vuoto, ma da errore di sintassi quasi correttamente
+	- se tolto 1 char ad anno da nullpointer
+	- se tolgo 1 char a commento da nullpointer perche T = NULL
+	- se tolgo 1 char a genere da nullpointer perchè T = NULL
+riconoscimento dei generi OK
 
 la v1.1
 
+TAGtit:Country                       art:                              album:                              a:2003com:                              gen:
+TAGtit:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaAart:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbBalbum:cccccccccccccccccccccccccccccCa:2003com:dddddddddddddddddddddddddddddDgen: 
 
+casi di test:
+	-se tolgo una lettera alla HEAD da errore correttamente, in particolare se tolgo l'ultima indica anche quale e sbagliata
+
+standard ID3
+	problemi che abbiamo affrontanto nella conversione
+		
+	versione della grammatica compatibile con lo standard vero
+	la grammatica nostra
+		per la gestione degli errori
+vari test in casi limite e con l'archivio del sito
 

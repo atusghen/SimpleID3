@@ -1,14 +1,11 @@
 package myID3Compiler;
 import java.util.ArrayList;
-import java.util.Hashtable;
 import java.util.List;
 
 import org.antlr.runtime.MissingTokenException;
 import org.antlr.runtime.RecognitionException;
 import org.antlr.runtime.Token;
 import org.antlr.runtime.TokenStream;
-
-//import myID3Compiler.util.*;
 
 public class SimpleID3Handler {
 	public static final int UNDEFINED = -1;	
@@ -42,8 +39,7 @@ public class SimpleID3Handler {
 	}
 	
 	// h contiene le coordinate, m il messaggio d'errore standard
-	void handleError(String[] tokenNames,
-      RecognitionException e, String h, String m) {
+	void handleError(String[] tokenNames, RecognitionException e, String h, String m) {
 		String type = "";
 		String st;
 		if (e.token.getType() >=0)
@@ -55,11 +51,12 @@ public class SimpleID3Handler {
 		st +=	"[" + e.token.getLine() + ", " + (e.token.getCharPositionInLine()+1) + "]: " + 
 				"Found ";
 		st += type;
-		st += " ('" + e.token.getText() + "')" + m;
+		
 
 		if (e instanceof MissingTokenException)
 		   st = st + m;		
-		
+		else
+			st += " ('" + e.token.getText() + "')" + m;
 		errorList.add(st); 
 	}
 
@@ -120,12 +117,25 @@ public class SimpleID3Handler {
 	}
 	public void stampaslot (Token T)
 	{
-		if(T.getText().charAt(0)==' ') {System.out.println("genere: 0"); return;}
+		//if(T.getText().charAt(0)==' ') {System.out.println("genere: "+(int)T.getText().charAt(0)); return;}
 		char a=T.getText().charAt(0);
 		int i=(int)a;
-		System.out.println("genere: "+i);
+		System.out.println("genere: "+riconosciGenere(i));
+	}
+	
+	public String riconosciGenere (int i)
+	{
+		switch (i) {
+		case 32: return "Blues";
+		case 1: return "Classic Rock";
+		case 2: return "Country";
+		case 3: return "Dance";
+		case 4: return "Disco";
+			default: return "not recognised";
+		}
 	}
 	/*
+	
 	
 	public VarDescriptor createNewParameter (Token type, Token name) {
 		if (type != null && name != null)

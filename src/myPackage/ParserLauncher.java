@@ -13,7 +13,7 @@ public class ParserLauncher {
 	//	int a = 1342;
 	  	String fileName = ".\\resources\\input.file";
 	  	
-		System.out.println ("Parsing con ANTLR- assurdo");
+		System.out.println ("Parsing con ANTLR");
 		
 		FileReader fileIn = new FileReader (fileName);
 
