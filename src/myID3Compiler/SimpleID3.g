@@ -49,24 +49,18 @@ options {
 
 }
 
-struttura:
- //(musica
- ( HEAD corpo)
- ;
+//HEAD: 'TAG'; se uso questa testa da subito errore all'inizio
+struttura: ('TAG' corpo);
 
 //musica: .*;//se aggiungo il ? funziona ma da errore in console
  
-HEAD: 'TAG';
-
 corpo :
- ( tit=title art=artist alb=album a=anno com=commento gen=genere)//|(tit=title art=artist alb=album a=anno com=slot WS tr=track gen=genere)}
+ ( tit=titolo art=artista alb=album a=anno com=commento gen=genere)
  {h.stampaslot(tit); h.stampaslot(art); h.stampaslot(alb); h.stampaslot(a); h.stampaslot(com); h.stampaslot(gen);}|
- //{h.stampaslot(tit); h.stampaslot(art); h.stampaslot(alb); h.stampaslot(a): h.stampaslot(com); h.stampaslot(tr); h.stampaslot(gen);}
 	;
 	
 TITLE_HEAD: '#tit:';
-ART_HEAD: '#art:';
-title returns [List<Token> p]
+titolo returns [List<Token> p]
 @init { p = new ArrayList<Token>();}
 	:  TITLE_HEAD
 	c1=CHAR c2=CHAR c3=CHAR c4=CHAR c5=CHAR c6=CHAR c7=CHAR c8=CHAR c9=CHAR c10=CHAR 
@@ -76,8 +70,9 @@ title returns [List<Token> p]
 	p.add(c11);p.add(c12);p.add(c13);p.add(c14);p.add(c15);p.add(c16);p.add(c17);p.add(c18);p.add(c19);p.add(c20);
 	p.add(c21);p.add(c22);p.add(c23);p.add(c24);p.add(c25);p.add(c26);p.add(c27);p.add(c28);p.add(c29);p.add(c30);}
 	;
-
-artist returns [List<Token> p]
+	
+ART_HEAD: '#art:';
+artista returns [List<Token> p]
 @init { p = new ArrayList<Token>();}
 	: ART_HEAD
 	c1=CHAR c2=CHAR c3=CHAR c4=CHAR c5=CHAR c6=CHAR c7=CHAR c8=CHAR c9=CHAR c10=CHAR 
@@ -88,9 +83,11 @@ artist returns [List<Token> p]
 	p.add(c21);p.add(c22);p.add(c23);p.add(c24);p.add(c25);p.add(c26);p.add(c27);p.add(c28);p.add(c29);p.add(c30);}
 	;
 
+ALBUM_HEAD:'#llb:'; //ho dovuto togliere la a iniziale altrimenti si aspetta la r di art (no sense assoluto perchè
+											// si aspetta ALMBU_HEAD secondo l'errore
 album returns [List<Token> p]
 @init { p = new ArrayList<Token>();}
-	: 'album:'
+	: ALBUM_HEAD
 	c1=CHAR c2=CHAR c3=CHAR c4=CHAR c5=CHAR c6=CHAR c7=CHAR c8=CHAR c9=CHAR c10=CHAR 
 	c11=CHAR c12=CHAR c13=CHAR c14=CHAR c15=CHAR c16=CHAR c17=CHAR c18=CHAR c19=CHAR c20=CHAR
 	c21=CHAR c22=CHAR c23=CHAR c24=CHAR c25=CHAR c26=CHAR c27=CHAR c28=CHAR c29=CHAR c30=CHAR
@@ -99,35 +96,36 @@ album returns [List<Token> p]
 	p.add(c21);p.add(c22);p.add(c23);p.add(c24);p.add(c25);p.add(c26);p.add(c27);p.add(c28);p.add(c29);p.add(c30);}
 	;
 
+ANNO_HEAD:'#nnn:'; //problema con la a come sopra
 anno returns [List<Token> p]
 @init { p = new ArrayList<Token>();}
-	: 'a:'
+	: ANNO_HEAD
 	c1=CHAR c2=CHAR c3=CHAR c4=CHAR
 	{p.add(c1); p.add(c2); p.add(c3); p.add(c4);}
 	;
 
+COMMENTO_HEAD:'#com:';
 commento returns [List<Token> p]
 @init { p = new ArrayList<Token>();}
-	: 'com:'
+	: COMMENTO_HEAD
   c1=CHAR c2=CHAR c3=CHAR c4=CHAR c5=CHAR c6=CHAR c7=CHAR c8=CHAR c9=CHAR c10=CHAR 
 	c11=CHAR c12=CHAR c13=CHAR c14=CHAR c15=CHAR c16=CHAR c17=CHAR c18=CHAR c19=CHAR c20=CHAR
 	c21=CHAR c22=CHAR c23=CHAR c24=CHAR c25=CHAR c26=CHAR c27=CHAR c28=CHAR c29=CHAR c30=CHAR
 	{p.add(c1);p.add(c2);p.add(c3);p.add(c4);p.add(c5);p.add(c6);p.add(c7);p.add(c8);p.add(c9);p.add(c10);
 	p.add(c11);p.add(c12);p.add(c13);p.add(c14);p.add(c15);p.add(c16);p.add(c17);p.add(c18);p.add(c19);p.add(c20);
 	p.add(c21);p.add(c22);p.add(c23);p.add(c24);p.add(c25);p.add(c26);p.add(c27);p.add(c28);p.add(c29);p.add(c30);}
-	;/*
+	;
+	
+/*
 track returns [Token t]: 'track:'
  p=.*
  {t=p;};
  */
-
-genere returns [Token t]: 'gen:'
- p=.*
+GENERE_HEAD:'#gen:';
+genere returns [Token t]: GENERE_HEAD p=.
  {t=p;};
- 
- 
 
- 
+
  CHAR  :	('a'..'z'|'A'..'Z'|'0'..'9'|'-'|'.'|'?')//|' ')
     ;
 
