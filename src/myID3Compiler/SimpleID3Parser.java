@@ -1,4 +1,4 @@
-// $ANTLR 3.5.1 C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g 2022-03-14 22:12:23
+// $ANTLR 3.5.1 C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g 2022-03-14 23:41:45
 
 	package myID3Compiler;
 	import myID3Compiler.SimpleID3Handler;
@@ -383,7 +383,7 @@ public class SimpleID3Parser extends Parser {
 
 
 	// $ANTLR start "album"
-	// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:87:1: album returns [List<Token> p] : ALBUM_HEAD c1= CHAR c2= CHAR c3= CHAR c4= CHAR c5= CHAR c6= CHAR c7= CHAR c8= CHAR c9= CHAR c10= CHAR c11= CHAR c12= CHAR c13= CHAR c14= CHAR c15= CHAR c16= CHAR c17= CHAR c18= CHAR c19= CHAR c20= CHAR c21= CHAR c22= CHAR c23= CHAR c24= CHAR c25= CHAR c26= CHAR c27= CHAR c28= CHAR c29= CHAR c30= CHAR ;
+	// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:88:1: album returns [List<Token> p] : ALBUM_HEAD c1= CHAR c2= CHAR c3= CHAR c4= CHAR c5= CHAR c6= CHAR c7= CHAR c8= CHAR c9= CHAR c10= CHAR c11= CHAR c12= CHAR c13= CHAR c14= CHAR c15= CHAR c16= CHAR c17= CHAR c18= CHAR c19= CHAR c20= CHAR c21= CHAR c22= CHAR c23= CHAR c24= CHAR c25= CHAR c26= CHAR c27= CHAR c28= CHAR c29= CHAR c30= CHAR ;
 	public final List<Token> album() throws RecognitionException {
 		List<Token> p = null;
 
@@ -421,40 +421,40 @@ public class SimpleID3Parser extends Parser {
 
 		 p = new ArrayList<Token>();
 		try {
-			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:89:2: ( ALBUM_HEAD c1= CHAR c2= CHAR c3= CHAR c4= CHAR c5= CHAR c6= CHAR c7= CHAR c8= CHAR c9= CHAR c10= CHAR c11= CHAR c12= CHAR c13= CHAR c14= CHAR c15= CHAR c16= CHAR c17= CHAR c18= CHAR c19= CHAR c20= CHAR c21= CHAR c22= CHAR c23= CHAR c24= CHAR c25= CHAR c26= CHAR c27= CHAR c28= CHAR c29= CHAR c30= CHAR )
-			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:89:4: ALBUM_HEAD c1= CHAR c2= CHAR c3= CHAR c4= CHAR c5= CHAR c6= CHAR c7= CHAR c8= CHAR c9= CHAR c10= CHAR c11= CHAR c12= CHAR c13= CHAR c14= CHAR c15= CHAR c16= CHAR c17= CHAR c18= CHAR c19= CHAR c20= CHAR c21= CHAR c22= CHAR c23= CHAR c24= CHAR c25= CHAR c26= CHAR c27= CHAR c28= CHAR c29= CHAR c30= CHAR
+			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:90:2: ( ALBUM_HEAD c1= CHAR c2= CHAR c3= CHAR c4= CHAR c5= CHAR c6= CHAR c7= CHAR c8= CHAR c9= CHAR c10= CHAR c11= CHAR c12= CHAR c13= CHAR c14= CHAR c15= CHAR c16= CHAR c17= CHAR c18= CHAR c19= CHAR c20= CHAR c21= CHAR c22= CHAR c23= CHAR c24= CHAR c25= CHAR c26= CHAR c27= CHAR c28= CHAR c29= CHAR c30= CHAR )
+			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:90:4: ALBUM_HEAD c1= CHAR c2= CHAR c3= CHAR c4= CHAR c5= CHAR c6= CHAR c7= CHAR c8= CHAR c9= CHAR c10= CHAR c11= CHAR c12= CHAR c13= CHAR c14= CHAR c15= CHAR c16= CHAR c17= CHAR c18= CHAR c19= CHAR c20= CHAR c21= CHAR c22= CHAR c23= CHAR c24= CHAR c25= CHAR c26= CHAR c27= CHAR c28= CHAR c29= CHAR c30= CHAR
 			{
-			match(input,ALBUM_HEAD,FOLLOW_ALBUM_HEAD_in_album428); 
-			c1=(Token)match(input,CHAR,FOLLOW_CHAR_in_album433); 
-			c2=(Token)match(input,CHAR,FOLLOW_CHAR_in_album437); 
-			c3=(Token)match(input,CHAR,FOLLOW_CHAR_in_album441); 
-			c4=(Token)match(input,CHAR,FOLLOW_CHAR_in_album445); 
-			c5=(Token)match(input,CHAR,FOLLOW_CHAR_in_album449); 
-			c6=(Token)match(input,CHAR,FOLLOW_CHAR_in_album453); 
-			c7=(Token)match(input,CHAR,FOLLOW_CHAR_in_album457); 
-			c8=(Token)match(input,CHAR,FOLLOW_CHAR_in_album461); 
-			c9=(Token)match(input,CHAR,FOLLOW_CHAR_in_album465); 
-			c10=(Token)match(input,CHAR,FOLLOW_CHAR_in_album469); 
-			c11=(Token)match(input,CHAR,FOLLOW_CHAR_in_album475); 
-			c12=(Token)match(input,CHAR,FOLLOW_CHAR_in_album479); 
-			c13=(Token)match(input,CHAR,FOLLOW_CHAR_in_album483); 
-			c14=(Token)match(input,CHAR,FOLLOW_CHAR_in_album487); 
-			c15=(Token)match(input,CHAR,FOLLOW_CHAR_in_album491); 
-			c16=(Token)match(input,CHAR,FOLLOW_CHAR_in_album495); 
-			c17=(Token)match(input,CHAR,FOLLOW_CHAR_in_album499); 
-			c18=(Token)match(input,CHAR,FOLLOW_CHAR_in_album503); 
-			c19=(Token)match(input,CHAR,FOLLOW_CHAR_in_album507); 
-			c20=(Token)match(input,CHAR,FOLLOW_CHAR_in_album511); 
-			c21=(Token)match(input,CHAR,FOLLOW_CHAR_in_album516); 
-			c22=(Token)match(input,CHAR,FOLLOW_CHAR_in_album520); 
-			c23=(Token)match(input,CHAR,FOLLOW_CHAR_in_album524); 
-			c24=(Token)match(input,CHAR,FOLLOW_CHAR_in_album528); 
-			c25=(Token)match(input,CHAR,FOLLOW_CHAR_in_album532); 
-			c26=(Token)match(input,CHAR,FOLLOW_CHAR_in_album536); 
-			c27=(Token)match(input,CHAR,FOLLOW_CHAR_in_album540); 
-			c28=(Token)match(input,CHAR,FOLLOW_CHAR_in_album544); 
-			c29=(Token)match(input,CHAR,FOLLOW_CHAR_in_album548); 
-			c30=(Token)match(input,CHAR,FOLLOW_CHAR_in_album552); 
+			match(input,ALBUM_HEAD,FOLLOW_ALBUM_HEAD_in_album441); 
+			c1=(Token)match(input,CHAR,FOLLOW_CHAR_in_album446); 
+			c2=(Token)match(input,CHAR,FOLLOW_CHAR_in_album450); 
+			c3=(Token)match(input,CHAR,FOLLOW_CHAR_in_album454); 
+			c4=(Token)match(input,CHAR,FOLLOW_CHAR_in_album458); 
+			c5=(Token)match(input,CHAR,FOLLOW_CHAR_in_album462); 
+			c6=(Token)match(input,CHAR,FOLLOW_CHAR_in_album466); 
+			c7=(Token)match(input,CHAR,FOLLOW_CHAR_in_album470); 
+			c8=(Token)match(input,CHAR,FOLLOW_CHAR_in_album474); 
+			c9=(Token)match(input,CHAR,FOLLOW_CHAR_in_album478); 
+			c10=(Token)match(input,CHAR,FOLLOW_CHAR_in_album482); 
+			c11=(Token)match(input,CHAR,FOLLOW_CHAR_in_album488); 
+			c12=(Token)match(input,CHAR,FOLLOW_CHAR_in_album492); 
+			c13=(Token)match(input,CHAR,FOLLOW_CHAR_in_album496); 
+			c14=(Token)match(input,CHAR,FOLLOW_CHAR_in_album500); 
+			c15=(Token)match(input,CHAR,FOLLOW_CHAR_in_album504); 
+			c16=(Token)match(input,CHAR,FOLLOW_CHAR_in_album508); 
+			c17=(Token)match(input,CHAR,FOLLOW_CHAR_in_album512); 
+			c18=(Token)match(input,CHAR,FOLLOW_CHAR_in_album516); 
+			c19=(Token)match(input,CHAR,FOLLOW_CHAR_in_album520); 
+			c20=(Token)match(input,CHAR,FOLLOW_CHAR_in_album524); 
+			c21=(Token)match(input,CHAR,FOLLOW_CHAR_in_album529); 
+			c22=(Token)match(input,CHAR,FOLLOW_CHAR_in_album533); 
+			c23=(Token)match(input,CHAR,FOLLOW_CHAR_in_album537); 
+			c24=(Token)match(input,CHAR,FOLLOW_CHAR_in_album541); 
+			c25=(Token)match(input,CHAR,FOLLOW_CHAR_in_album545); 
+			c26=(Token)match(input,CHAR,FOLLOW_CHAR_in_album549); 
+			c27=(Token)match(input,CHAR,FOLLOW_CHAR_in_album553); 
+			c28=(Token)match(input,CHAR,FOLLOW_CHAR_in_album557); 
+			c29=(Token)match(input,CHAR,FOLLOW_CHAR_in_album561); 
+			c30=(Token)match(input,CHAR,FOLLOW_CHAR_in_album565); 
 			p.add(c1);p.add(c2);p.add(c3);p.add(c4);p.add(c5);p.add(c6);p.add(c7);p.add(c8);p.add(c9);p.add(c10);
 				p.add(c11);p.add(c12);p.add(c13);p.add(c14);p.add(c15);p.add(c16);p.add(c17);p.add(c18);p.add(c19);p.add(c20);
 				p.add(c21);p.add(c22);p.add(c23);p.add(c24);p.add(c25);p.add(c26);p.add(c27);p.add(c28);p.add(c29);p.add(c30);
@@ -475,7 +475,7 @@ public class SimpleID3Parser extends Parser {
 
 
 	// $ANTLR start "anno"
-	// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:99:1: anno returns [List<Token> p] : ANNO_HEAD c1= CHAR c2= CHAR c3= CHAR c4= CHAR ;
+	// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:100:1: anno returns [List<Token> p] : ANNO_HEAD c1= CHAR c2= CHAR c3= CHAR c4= CHAR ;
 	public final List<Token> anno() throws RecognitionException {
 		List<Token> p = null;
 
@@ -487,14 +487,14 @@ public class SimpleID3Parser extends Parser {
 
 		 p = new ArrayList<Token>();
 		try {
-			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:101:2: ( ANNO_HEAD c1= CHAR c2= CHAR c3= CHAR c4= CHAR )
-			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:101:4: ANNO_HEAD c1= CHAR c2= CHAR c3= CHAR c4= CHAR
+			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:102:2: ( ANNO_HEAD c1= CHAR c2= CHAR c3= CHAR c4= CHAR )
+			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:102:4: ANNO_HEAD c1= CHAR c2= CHAR c3= CHAR c4= CHAR
 			{
-			match(input,ANNO_HEAD,FOLLOW_ANNO_HEAD_in_anno580); 
-			c1=(Token)match(input,CHAR,FOLLOW_CHAR_in_anno585); 
-			c2=(Token)match(input,CHAR,FOLLOW_CHAR_in_anno589); 
-			c3=(Token)match(input,CHAR,FOLLOW_CHAR_in_anno593); 
-			c4=(Token)match(input,CHAR,FOLLOW_CHAR_in_anno597); 
+			match(input,ANNO_HEAD,FOLLOW_ANNO_HEAD_in_anno594); 
+			c1=(Token)match(input,CHAR,FOLLOW_CHAR_in_anno599); 
+			c2=(Token)match(input,CHAR,FOLLOW_CHAR_in_anno603); 
+			c3=(Token)match(input,CHAR,FOLLOW_CHAR_in_anno607); 
+			c4=(Token)match(input,CHAR,FOLLOW_CHAR_in_anno611); 
 			p.add(c1); p.add(c2); p.add(c3); p.add(c4);
 			}
 
@@ -513,7 +513,7 @@ public class SimpleID3Parser extends Parser {
 
 
 	// $ANTLR start "commento"
-	// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:107:1: commento returns [List<Token> p] : COMMENTO_HEAD c1= CHAR c2= CHAR c3= CHAR c4= CHAR c5= CHAR c6= CHAR c7= CHAR c8= CHAR c9= CHAR c10= CHAR c11= CHAR c12= CHAR c13= CHAR c14= CHAR c15= CHAR c16= CHAR c17= CHAR c18= CHAR c19= CHAR c20= CHAR c21= CHAR c22= CHAR c23= CHAR c24= CHAR c25= CHAR c26= CHAR c27= CHAR c28= CHAR c29= CHAR c30= CHAR ;
+	// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:108:1: commento returns [List<Token> p] : COMMENTO_HEAD c1= CHAR c2= CHAR c3= CHAR c4= CHAR c5= CHAR c6= CHAR c7= CHAR c8= CHAR c9= CHAR c10= CHAR c11= CHAR c12= CHAR c13= CHAR c14= CHAR c15= CHAR c16= CHAR c17= CHAR c18= CHAR c19= CHAR c20= CHAR c21= CHAR c22= CHAR c23= CHAR c24= CHAR c25= CHAR c26= CHAR c27= CHAR c28= CHAR c29= CHAR c30= CHAR ;
 	public final List<Token> commento() throws RecognitionException {
 		List<Token> p = null;
 
@@ -551,40 +551,40 @@ public class SimpleID3Parser extends Parser {
 
 		 p = new ArrayList<Token>();
 		try {
-			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:109:2: ( COMMENTO_HEAD c1= CHAR c2= CHAR c3= CHAR c4= CHAR c5= CHAR c6= CHAR c7= CHAR c8= CHAR c9= CHAR c10= CHAR c11= CHAR c12= CHAR c13= CHAR c14= CHAR c15= CHAR c16= CHAR c17= CHAR c18= CHAR c19= CHAR c20= CHAR c21= CHAR c22= CHAR c23= CHAR c24= CHAR c25= CHAR c26= CHAR c27= CHAR c28= CHAR c29= CHAR c30= CHAR )
-			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:109:4: COMMENTO_HEAD c1= CHAR c2= CHAR c3= CHAR c4= CHAR c5= CHAR c6= CHAR c7= CHAR c8= CHAR c9= CHAR c10= CHAR c11= CHAR c12= CHAR c13= CHAR c14= CHAR c15= CHAR c16= CHAR c17= CHAR c18= CHAR c19= CHAR c20= CHAR c21= CHAR c22= CHAR c23= CHAR c24= CHAR c25= CHAR c26= CHAR c27= CHAR c28= CHAR c29= CHAR c30= CHAR
+			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:110:2: ( COMMENTO_HEAD c1= CHAR c2= CHAR c3= CHAR c4= CHAR c5= CHAR c6= CHAR c7= CHAR c8= CHAR c9= CHAR c10= CHAR c11= CHAR c12= CHAR c13= CHAR c14= CHAR c15= CHAR c16= CHAR c17= CHAR c18= CHAR c19= CHAR c20= CHAR c21= CHAR c22= CHAR c23= CHAR c24= CHAR c25= CHAR c26= CHAR c27= CHAR c28= CHAR c29= CHAR c30= CHAR )
+			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:110:4: COMMENTO_HEAD c1= CHAR c2= CHAR c3= CHAR c4= CHAR c5= CHAR c6= CHAR c7= CHAR c8= CHAR c9= CHAR c10= CHAR c11= CHAR c12= CHAR c13= CHAR c14= CHAR c15= CHAR c16= CHAR c17= CHAR c18= CHAR c19= CHAR c20= CHAR c21= CHAR c22= CHAR c23= CHAR c24= CHAR c25= CHAR c26= CHAR c27= CHAR c28= CHAR c29= CHAR c30= CHAR
 			{
-			match(input,COMMENTO_HEAD,FOLLOW_COMMENTO_HEAD_in_commento625); 
-			c1=(Token)match(input,CHAR,FOLLOW_CHAR_in_commento631); 
-			c2=(Token)match(input,CHAR,FOLLOW_CHAR_in_commento635); 
-			c3=(Token)match(input,CHAR,FOLLOW_CHAR_in_commento639); 
-			c4=(Token)match(input,CHAR,FOLLOW_CHAR_in_commento643); 
-			c5=(Token)match(input,CHAR,FOLLOW_CHAR_in_commento647); 
-			c6=(Token)match(input,CHAR,FOLLOW_CHAR_in_commento651); 
-			c7=(Token)match(input,CHAR,FOLLOW_CHAR_in_commento655); 
-			c8=(Token)match(input,CHAR,FOLLOW_CHAR_in_commento659); 
-			c9=(Token)match(input,CHAR,FOLLOW_CHAR_in_commento663); 
-			c10=(Token)match(input,CHAR,FOLLOW_CHAR_in_commento667); 
-			c11=(Token)match(input,CHAR,FOLLOW_CHAR_in_commento673); 
-			c12=(Token)match(input,CHAR,FOLLOW_CHAR_in_commento677); 
-			c13=(Token)match(input,CHAR,FOLLOW_CHAR_in_commento681); 
-			c14=(Token)match(input,CHAR,FOLLOW_CHAR_in_commento685); 
-			c15=(Token)match(input,CHAR,FOLLOW_CHAR_in_commento689); 
-			c16=(Token)match(input,CHAR,FOLLOW_CHAR_in_commento693); 
-			c17=(Token)match(input,CHAR,FOLLOW_CHAR_in_commento697); 
-			c18=(Token)match(input,CHAR,FOLLOW_CHAR_in_commento701); 
-			c19=(Token)match(input,CHAR,FOLLOW_CHAR_in_commento705); 
-			c20=(Token)match(input,CHAR,FOLLOW_CHAR_in_commento709); 
-			c21=(Token)match(input,CHAR,FOLLOW_CHAR_in_commento714); 
-			c22=(Token)match(input,CHAR,FOLLOW_CHAR_in_commento718); 
-			c23=(Token)match(input,CHAR,FOLLOW_CHAR_in_commento722); 
-			c24=(Token)match(input,CHAR,FOLLOW_CHAR_in_commento726); 
-			c25=(Token)match(input,CHAR,FOLLOW_CHAR_in_commento730); 
-			c26=(Token)match(input,CHAR,FOLLOW_CHAR_in_commento734); 
-			c27=(Token)match(input,CHAR,FOLLOW_CHAR_in_commento738); 
-			c28=(Token)match(input,CHAR,FOLLOW_CHAR_in_commento742); 
-			c29=(Token)match(input,CHAR,FOLLOW_CHAR_in_commento746); 
-			c30=(Token)match(input,CHAR,FOLLOW_CHAR_in_commento750); 
+			match(input,COMMENTO_HEAD,FOLLOW_COMMENTO_HEAD_in_commento639); 
+			c1=(Token)match(input,CHAR,FOLLOW_CHAR_in_commento645); 
+			c2=(Token)match(input,CHAR,FOLLOW_CHAR_in_commento649); 
+			c3=(Token)match(input,CHAR,FOLLOW_CHAR_in_commento653); 
+			c4=(Token)match(input,CHAR,FOLLOW_CHAR_in_commento657); 
+			c5=(Token)match(input,CHAR,FOLLOW_CHAR_in_commento661); 
+			c6=(Token)match(input,CHAR,FOLLOW_CHAR_in_commento665); 
+			c7=(Token)match(input,CHAR,FOLLOW_CHAR_in_commento669); 
+			c8=(Token)match(input,CHAR,FOLLOW_CHAR_in_commento673); 
+			c9=(Token)match(input,CHAR,FOLLOW_CHAR_in_commento677); 
+			c10=(Token)match(input,CHAR,FOLLOW_CHAR_in_commento681); 
+			c11=(Token)match(input,CHAR,FOLLOW_CHAR_in_commento687); 
+			c12=(Token)match(input,CHAR,FOLLOW_CHAR_in_commento691); 
+			c13=(Token)match(input,CHAR,FOLLOW_CHAR_in_commento695); 
+			c14=(Token)match(input,CHAR,FOLLOW_CHAR_in_commento699); 
+			c15=(Token)match(input,CHAR,FOLLOW_CHAR_in_commento703); 
+			c16=(Token)match(input,CHAR,FOLLOW_CHAR_in_commento707); 
+			c17=(Token)match(input,CHAR,FOLLOW_CHAR_in_commento711); 
+			c18=(Token)match(input,CHAR,FOLLOW_CHAR_in_commento715); 
+			c19=(Token)match(input,CHAR,FOLLOW_CHAR_in_commento719); 
+			c20=(Token)match(input,CHAR,FOLLOW_CHAR_in_commento723); 
+			c21=(Token)match(input,CHAR,FOLLOW_CHAR_in_commento728); 
+			c22=(Token)match(input,CHAR,FOLLOW_CHAR_in_commento732); 
+			c23=(Token)match(input,CHAR,FOLLOW_CHAR_in_commento736); 
+			c24=(Token)match(input,CHAR,FOLLOW_CHAR_in_commento740); 
+			c25=(Token)match(input,CHAR,FOLLOW_CHAR_in_commento744); 
+			c26=(Token)match(input,CHAR,FOLLOW_CHAR_in_commento748); 
+			c27=(Token)match(input,CHAR,FOLLOW_CHAR_in_commento752); 
+			c28=(Token)match(input,CHAR,FOLLOW_CHAR_in_commento756); 
+			c29=(Token)match(input,CHAR,FOLLOW_CHAR_in_commento760); 
+			c30=(Token)match(input,CHAR,FOLLOW_CHAR_in_commento764); 
 			p.add(c1);p.add(c2);p.add(c3);p.add(c4);p.add(c5);p.add(c6);p.add(c7);p.add(c8);p.add(c9);p.add(c10);
 				p.add(c11);p.add(c12);p.add(c13);p.add(c14);p.add(c15);p.add(c16);p.add(c17);p.add(c18);p.add(c19);p.add(c20);
 				p.add(c21);p.add(c22);p.add(c23);p.add(c24);p.add(c25);p.add(c26);p.add(c27);p.add(c28);p.add(c29);p.add(c30);
@@ -605,7 +605,7 @@ public class SimpleID3Parser extends Parser {
 
 
 	// $ANTLR start "genere"
-	// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:124:1: genere returns [Token t] : GENERE_HEAD p= . ;
+	// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:125:1: genere returns [Token t] : GENERE_HEAD p= . ;
 	public final Token genere() throws RecognitionException {
 		Token t = null;
 
@@ -613,10 +613,10 @@ public class SimpleID3Parser extends Parser {
 		Token p=null;
 
 		try {
-			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:124:25: ( GENERE_HEAD p= . )
-			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:124:27: GENERE_HEAD p= .
+			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:125:25: ( GENERE_HEAD p= . )
+			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:125:27: GENERE_HEAD p= .
 			{
-			match(input,GENERE_HEAD,FOLLOW_GENERE_HEAD_in_genere774); 
+			match(input,GENERE_HEAD,FOLLOW_GENERE_HEAD_in_genere788); 
 			p=input.LT(1);
 			matchAny(input); 
 			t=p;
@@ -708,72 +708,72 @@ public class SimpleID3Parser extends Parser {
 	public static final BitSet FOLLOW_CHAR_in_artista392 = new BitSet(new long[]{0x0000000000000080L});
 	public static final BitSet FOLLOW_CHAR_in_artista396 = new BitSet(new long[]{0x0000000000000080L});
 	public static final BitSet FOLLOW_CHAR_in_artista400 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_ALBUM_HEAD_in_album428 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_CHAR_in_album433 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_CHAR_in_album437 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_CHAR_in_album441 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_CHAR_in_album445 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_CHAR_in_album449 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_CHAR_in_album453 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_CHAR_in_album457 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_CHAR_in_album461 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_CHAR_in_album465 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_CHAR_in_album469 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_CHAR_in_album475 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_CHAR_in_album479 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_CHAR_in_album483 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_CHAR_in_album487 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_CHAR_in_album491 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_CHAR_in_album495 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_CHAR_in_album499 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_CHAR_in_album503 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_CHAR_in_album507 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_CHAR_in_album511 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_ALBUM_HEAD_in_album441 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_CHAR_in_album446 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_CHAR_in_album450 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_CHAR_in_album454 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_CHAR_in_album458 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_CHAR_in_album462 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_CHAR_in_album466 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_CHAR_in_album470 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_CHAR_in_album474 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_CHAR_in_album478 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_CHAR_in_album482 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_CHAR_in_album488 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_CHAR_in_album492 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_CHAR_in_album496 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_CHAR_in_album500 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_CHAR_in_album504 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_CHAR_in_album508 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_CHAR_in_album512 = new BitSet(new long[]{0x0000000000000080L});
 	public static final BitSet FOLLOW_CHAR_in_album516 = new BitSet(new long[]{0x0000000000000080L});
 	public static final BitSet FOLLOW_CHAR_in_album520 = new BitSet(new long[]{0x0000000000000080L});
 	public static final BitSet FOLLOW_CHAR_in_album524 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_CHAR_in_album528 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_CHAR_in_album532 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_CHAR_in_album536 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_CHAR_in_album540 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_CHAR_in_album544 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_CHAR_in_album548 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_CHAR_in_album552 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_ANNO_HEAD_in_anno580 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_CHAR_in_anno585 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_CHAR_in_anno589 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_CHAR_in_anno593 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_CHAR_in_anno597 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_COMMENTO_HEAD_in_commento625 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_CHAR_in_commento631 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_CHAR_in_commento635 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_CHAR_in_commento639 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_CHAR_in_commento643 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_CHAR_in_commento647 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_CHAR_in_commento651 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_CHAR_in_commento655 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_CHAR_in_commento659 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_CHAR_in_commento663 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_CHAR_in_commento667 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_CHAR_in_album529 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_CHAR_in_album533 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_CHAR_in_album537 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_CHAR_in_album541 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_CHAR_in_album545 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_CHAR_in_album549 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_CHAR_in_album553 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_CHAR_in_album557 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_CHAR_in_album561 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_CHAR_in_album565 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_ANNO_HEAD_in_anno594 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_CHAR_in_anno599 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_CHAR_in_anno603 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_CHAR_in_anno607 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_CHAR_in_anno611 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_COMMENTO_HEAD_in_commento639 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_CHAR_in_commento645 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_CHAR_in_commento649 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_CHAR_in_commento653 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_CHAR_in_commento657 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_CHAR_in_commento661 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_CHAR_in_commento665 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_CHAR_in_commento669 = new BitSet(new long[]{0x0000000000000080L});
 	public static final BitSet FOLLOW_CHAR_in_commento673 = new BitSet(new long[]{0x0000000000000080L});
 	public static final BitSet FOLLOW_CHAR_in_commento677 = new BitSet(new long[]{0x0000000000000080L});
 	public static final BitSet FOLLOW_CHAR_in_commento681 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_CHAR_in_commento685 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_CHAR_in_commento689 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_CHAR_in_commento693 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_CHAR_in_commento697 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_CHAR_in_commento701 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_CHAR_in_commento705 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_CHAR_in_commento709 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_CHAR_in_commento714 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_CHAR_in_commento718 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_CHAR_in_commento722 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_CHAR_in_commento726 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_CHAR_in_commento730 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_CHAR_in_commento734 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_CHAR_in_commento738 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_CHAR_in_commento742 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_CHAR_in_commento746 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_CHAR_in_commento750 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_GENERE_HEAD_in_genere774 = new BitSet(new long[]{0x0000000000003FF0L});
+	public static final BitSet FOLLOW_CHAR_in_commento687 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_CHAR_in_commento691 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_CHAR_in_commento695 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_CHAR_in_commento699 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_CHAR_in_commento703 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_CHAR_in_commento707 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_CHAR_in_commento711 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_CHAR_in_commento715 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_CHAR_in_commento719 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_CHAR_in_commento723 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_CHAR_in_commento728 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_CHAR_in_commento732 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_CHAR_in_commento736 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_CHAR_in_commento740 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_CHAR_in_commento744 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_CHAR_in_commento748 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_CHAR_in_commento752 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_CHAR_in_commento756 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_CHAR_in_commento760 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_CHAR_in_commento764 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_GENERE_HEAD_in_genere788 = new BitSet(new long[]{0x0000000000003FF0L});
 }
