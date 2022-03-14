@@ -27,12 +27,12 @@ TAGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaAbbbbbbbbbbbbbbbbbbbbbbbbbbbbbBccccccccccccccccc
 
 differenziazione degli slot x gli errori OK
 	TAG
-	tit:
-	art:
-	album:
-	a:
-	com:
-	gen:
+	#tit:
+	#art:
+	#llb:
+	#nnn:
+	#com:
+	#gen:
 errori:
 	-se tolgo 1 char a titolo da nullpointer
 	- se tolgo 30char a titolo, prende artista nel titolo e artista è vuoto, ma da errore di sintassi quasi correttamente
@@ -43,8 +43,8 @@ riconoscimento dei generi OK
 
 la v1.1
 
-TAGtit:Country                       art:                              album:                              a:2003com:                              gen:
-TAGtit:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaAart:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbBalbum:cccccccccccccccccccccccccccccCa:2003com:dddddddddddddddddddddddddddddDgen: 
+TAG#tit:Country                       #art:                              #album:                              #ann:2003#com:                              #gen:
+TAG#tit:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaA#art:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbB#album:cccccccccccccccccccccccccccccC#ann:2003#com:dddddddddddddddddddddddddddddD#gen: 
 
 casi di test:
 	-se tolgo una lettera alla HEAD da errore correttamente, in particolare se tolgo l'ultima indica anche quale e sbagliata
