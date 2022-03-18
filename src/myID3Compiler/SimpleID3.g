@@ -49,20 +49,17 @@ options {
 
 }
 
-//HEAD: 'TAG'; se uso questa testa da subito errore all'inizio
 struttura: ('TAG' corpo);
-
-//musica: .*;//se aggiungo il ? funziona ma da errore in console
  
 corpo :
  ( CANC tit=titolo CANC art=artista CANC alb=album CANC a=anno CANC com=commento CANC gen=genere)
  {h.stampaslot(tit); h.stampaslot(art); h.stampaslot(alb); h.stampaslot(a); h.stampaslot(com); h.stampaslot(gen);}|
 	;
 	
-TITLE_HEAD: 'tit:';
+TITOLO_HEAD: 'tit:';
 titolo returns [List<Token> p]
 @init { p = new ArrayList<Token>();}
-	:  TITLE_HEAD
+	:  TITOLO_HEAD
 	c1=CHAR c2=CHAR c3=CHAR c4=CHAR c5=CHAR c6=CHAR c7=CHAR c8=CHAR c9=CHAR c10=CHAR 
 	c11=CHAR c12=CHAR c13=CHAR c14=CHAR c15=CHAR c16=CHAR c17=CHAR c18=CHAR c19=CHAR c20=CHAR
 	c21=CHAR c22=CHAR c23=CHAR c24=CHAR c25=CHAR c26=CHAR c27=CHAR c28=CHAR c29=CHAR c30=CHAR
@@ -116,22 +113,13 @@ commento returns [List<Token> p]
 	p.add(c21);p.add(c22);p.add(c23);p.add(c24);p.add(c25);p.add(c26);p.add(c27);p.add(c28);p.add(c29);p.add(c30);}
 	;
 	
-/*
-track returns [Token t]: 'track:'
- p=.*
- {t=p;};
- */
 GENERE_HEAD:'gen:';
 genere returns [Token t]: GENERE_HEAD p=.
  {t=p;};
 
 CANC:	 '#';
-//INT :	'0'..'9';
 
- CHAR  :	('a'..'z'|'A'..'Z'|'0'..'9'|'-'|'.'|'?')//|' ')
-    ;
-
-
+CHAR  :	('a'..'z'|'A'..'Z'|'0'..'9'|'-'|'.'|'?') ;
 
 
 WS  :   ( ' '
@@ -141,36 +129,5 @@ WS  :   ( ' '
         ) //{$channel=HIDDEN;}
     ;
 
-/*
-STRING
-    :  '"' ( ESC_SEQ | ~('\\'|'"') )* '"'
-    ;
-
-ID:  '\'' ( ESC_SEQ | ~('\''|'\\') ) '\''
-    ;
- 
-
-fragment
-HEX_DIGIT : ('0'..'9'|'a'..'f'|'A'..'F') ;
-/*
-fragment
-ESC_SEQ
-    :   '\\' ('b'|'t'|'n'|'f'|'r'|'\"'|'\''|'\\')
-    |   UNICODE_ESC
-    |   OCTAL_ESC
-    ;
-
-fragment
-OCTAL_ESC
-    :   '\\' ('0'..'3') ('0'..'7') ('0'..'7')
-    |   '\\' ('0'..'7') ('0'..'7')
-    |   '\\' ('0'..'7')
-    ;
-
-fragment
-UNICODE_ESC
-    :   '\\' 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT
-    ;
-*/
 SCAN_ERROR	: . ;
 

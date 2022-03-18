@@ -15,21 +15,13 @@ public class SimpleID3Handler {
 	public static final int MISSING_CHAR = 7;
 	
 	public int conta = 0;
-	
-	
-	//Hashtable<String, VarDescriptor> globalVarTable;
-//	Hashtable<String, VarDescriptor> localVarTable;
-	//Hashtable<String, MethodDescriptor> methodTable;
-	//**
+
 	List<String> errorList;
 	TokenStream lexerStream;
 
 	public SimpleID3Handler (TokenStream ls) {
 		System.out.println ("Handler Inizializzato");
-		//globalVarTable = new Hashtable<String, VarDescriptor> ();
-	//	localVarTable = new Hashtable<String, VarDescriptor> ();
-		//methodTable = new Hashtable<String, MethodDescriptor> ();
-		//**
+		
 		errorList = new ArrayList<String>();
 		lexerStream = ls;
 	}
@@ -100,7 +92,6 @@ public class SimpleID3Handler {
 			conta++;
 		} else if(conta == 3) {
 			System.out.print("Anno: ");
-			//for(int i=0;i<T.size();i++)	T.get(i).setText("2");
 			for(int i=0;i<T.size();i++)
 				System.out.print(T.get(i).getText());
 			conta++;
@@ -113,12 +104,12 @@ public class SimpleID3Handler {
 		}
 		System.out.println();
 	}
+	
 	public void stampaslot (Token T)
 	{
-		//if(T.getText().charAt(0)==' ') {System.out.println("genere: "+(int)T.getText().charAt(0)); return;}
 		char a=T.getText().charAt(0);
 		int i=(int)a;
-		System.out.println("genere: "+riconosciGenere(i));
+		System.out.println("Genere: "+riconosciGenere(i));
 	}
 	
 	public String riconosciGenere (int i)
@@ -132,56 +123,7 @@ public class SimpleID3Handler {
 			default: return "not recognised";
 		}
 	}
-	/*
-	
-	
-	public VarDescriptor createNewParameter (Token type, Token name) {
-		if (type != null && name != null)
-			return new VarDescriptor (type.getText(), name.getText());
 
-		return null;
-	}
-	
-	public void addParameterDefition (List<VarDescriptor> list, VarDescriptor pd) {
-		list.add(pd);
-	}
-
-	public void declareNewMethod (Token t, Token n, List<VarDescriptor> lp) {
-		System.out.println ("controllo dichiarazione metodo");
-		if (t != null && n != null) {
-			String name = n.getText();
-			String type = t.getText();
-			System.out.println ("METODO " + type + " - " + name);
-			
-			if (methodTable.containsKey(name)) {
-				myErrorHandler(DECLARED_METHOD, n);
-				System.out.println ("il metodo " + name + " è gia stato dichiarato.");
-			}
-			else {
-				System.out.println ("sto dichiarando il metodo " + name);
-				methodTable.put(name, new MethodDescriptor (type, name, lp));
-			}
-		} 
-		else {
-			System.out.println ("*****EEERRRRROOORRRREEEEEE**********");			
-		}
-		
-	}
-
-	public void declareNewVariable (Token t, Token n, String v) {
-		if (t != null && n != null) {
-			String name = n.getText();
-			String type = t.getText();
-			
-			if (globalVarTable.containsKey(name))
-				System.out.println ("la variabile" + name + " in [" + 
-						n.getLine() + ", "+ (n.getCharPositionInLine()+1) + 
-						"] è gia stata dichiarata.");
-			else
-				globalVarTable.put(name, new VarDescriptor (type, name, v));
-		}
-	}
-*/
 }
 
 
