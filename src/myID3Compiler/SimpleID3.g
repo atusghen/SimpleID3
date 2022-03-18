@@ -55,11 +55,11 @@ struttura: ('TAG' corpo);
 //musica: .*;//se aggiungo il ? funziona ma da errore in console
  
 corpo :
- ( tit=titolo art=artista alb=album a=anno com=commento gen=genere)
+ ( CANC tit=titolo CANC art=artista CANC alb=album CANC a=anno CANC com=commento CANC gen=genere)
  {h.stampaslot(tit); h.stampaslot(art); h.stampaslot(alb); h.stampaslot(a); h.stampaslot(com); h.stampaslot(gen);}|
 	;
 	
-TITLE_HEAD: '#tit:';
+TITLE_HEAD: 'tit:';
 titolo returns [List<Token> p]
 @init { p = new ArrayList<Token>();}
 	:  TITLE_HEAD
@@ -71,7 +71,7 @@ titolo returns [List<Token> p]
 	p.add(c21);p.add(c22);p.add(c23);p.add(c24);p.add(c25);p.add(c26);p.add(c27);p.add(c28);p.add(c29);p.add(c30);}
 	;
 	
-ART_HEAD: '#art:';
+ART_HEAD: 'art:';
 artista returns [List<Token> p]
 @init { p = new ArrayList<Token>();}
 	: ART_HEAD
@@ -83,7 +83,7 @@ artista returns [List<Token> p]
 	p.add(c21);p.add(c22);p.add(c23);p.add(c24);p.add(c25);p.add(c26);p.add(c27);p.add(c28);p.add(c29);p.add(c30);}
 	;
 
-ALBUM_HEAD:'#llb:'; //ho dovuto togliere la a iniziale altrimenti si aspetta la r di art (no sense assoluto perchè
+ALBUM_HEAD:'alb:'; //ho dovuto togliere la a iniziale altrimenti si aspetta la r di art (no sense assoluto perchè
 											// si aspetta ALMBU_HEAD secondo l'errore
 album returns [List<Token> p]
 @init { p = new ArrayList<Token>();}
@@ -96,7 +96,7 @@ album returns [List<Token> p]
 	p.add(c21);p.add(c22);p.add(c23);p.add(c24);p.add(c25);p.add(c26);p.add(c27);p.add(c28);p.add(c29);p.add(c30);}
 	;
 
-ANNO_HEAD:'#nnn:'; //problema con la a come sopra
+ANNO_HEAD:'ann:'; //problema con la a come sopra
 anno returns [List<Token> p]
 @init { p = new ArrayList<Token>();}
 	: ANNO_HEAD
@@ -104,7 +104,7 @@ anno returns [List<Token> p]
 	{p.add(c1); p.add(c2); p.add(c3); p.add(c4);}
 	;
 
-COMMENTO_HEAD:'#com:';
+COMMENTO_HEAD:'com:';
 commento returns [List<Token> p]
 @init { p = new ArrayList<Token>();}
 	: COMMENTO_HEAD
@@ -121,15 +121,17 @@ track returns [Token t]: 'track:'
  p=.*
  {t=p;};
  */
-GENERE_HEAD:'#gen:';
+GENERE_HEAD:'gen:';
 genere returns [Token t]: GENERE_HEAD p=.
  {t=p;};
 
+CANC:	 '#';
+//INT :	'0'..'9';
 
  CHAR  :	('a'..'z'|'A'..'Z'|'0'..'9'|'-'|'.'|'?')//|' ')
     ;
 
-// INT :	'0'..'9';
+
 
 
 WS  :   ( ' '

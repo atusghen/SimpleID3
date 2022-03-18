@@ -12,7 +12,7 @@ public class SimpleID3Handler {
 	public static final int TOKEN_ERROR = 0;	
 	public static final int ERR_ON_SYNTAX = 1;	
 	public static final int LAST_SYNTAX_ERROR = 10;	
-	public static final int DECLARED_METHOD = 20;
+	public static final int MISSING_CHAR = 7;
 	
 	public int conta = 0;
 	
@@ -55,7 +55,7 @@ public class SimpleID3Handler {
 
 		if (e instanceof MissingTokenException)
 		   st = st + m;		
-		else
+		else /*if(e.token.getType() == MISSING_CHAR)*/
 			st += " ('" + e.token.getText() + "')" + m;
 		errorList.add(st); 
 	}
@@ -76,8 +76,6 @@ public class SimpleID3Handler {
 
 		if (code == TOKEN_ERROR)
 			st += "Unrecognized token '" + tk.getText() + "'";
-		else if (code == DECLARED_METHOD)
-			st += "Method " + tk.getText() + " has been already declared.";
 							
 		errorList.add(st); 
 	}
