@@ -1,4 +1,4 @@
-// $ANTLR 3.5.1 C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g 2022-03-18 15:21:33
+// $ANTLR 3.5.1 C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g 2022-03-18 21:17:36
 
 	package myID3Compiler;
 
@@ -20,7 +20,7 @@ public class SimpleID3Lexer extends Lexer {
 	public static final int COMMENTO_HEAD=9;
 	public static final int GENERE_HEAD=10;
 	public static final int SCAN_ERROR=11;
-	public static final int TITLE_HEAD=12;
+	public static final int TITOLO_HEAD=12;
 	public static final int WS=13;
 
 	// delegates
@@ -36,15 +36,15 @@ public class SimpleID3Lexer extends Lexer {
 	public SimpleID3Lexer(CharStream input, RecognizerSharedState state) {
 		super(input,state);
 	}
-	@Override public String getGrammarFileName() { return "C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g"; }
+	@Override public String getGrammarFileName() { return "C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g"; }
 
 	// $ANTLR start "T__14"
 	public final void mT__14() throws RecognitionException {
 		try {
 			int _type = T__14;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:11:7: ( 'TAG' )
-			// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:11:9: 'TAG'
+			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:11:7: ( 'TAG' )
+			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:11:9: 'TAG'
 			{
 			match("TAG"); 
 
@@ -59,13 +59,13 @@ public class SimpleID3Lexer extends Lexer {
 	}
 	// $ANTLR end "T__14"
 
-	// $ANTLR start "TITLE_HEAD"
-	public final void mTITLE_HEAD() throws RecognitionException {
+	// $ANTLR start "TITOLO_HEAD"
+	public final void mTITOLO_HEAD() throws RecognitionException {
 		try {
-			int _type = TITLE_HEAD;
+			int _type = TITOLO_HEAD;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:62:11: ( 'tit:' )
-			// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:62:13: 'tit:'
+			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:59:12: ( 'tit:' )
+			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:59:14: 'tit:'
 			{
 			match("tit:"); 
 
@@ -78,15 +78,15 @@ public class SimpleID3Lexer extends Lexer {
 			// do for sure before leaving
 		}
 	}
-	// $ANTLR end "TITLE_HEAD"
+	// $ANTLR end "TITOLO_HEAD"
 
 	// $ANTLR start "ART_HEAD"
 	public final void mART_HEAD() throws RecognitionException {
 		try {
 			int _type = ART_HEAD;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:74:9: ( 'art:' )
-			// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:74:11: 'art:'
+			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:71:9: ( 'art:' )
+			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:71:11: 'art:'
 			{
 			match("art:"); 
 
@@ -106,8 +106,8 @@ public class SimpleID3Lexer extends Lexer {
 		try {
 			int _type = ALBUM_HEAD;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:86:11: ( 'alb:' )
-			// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:86:12: 'alb:'
+			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:83:11: ( 'alb:' )
+			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:83:12: 'alb:'
 			{
 			match("alb:"); 
 
@@ -127,8 +127,8 @@ public class SimpleID3Lexer extends Lexer {
 		try {
 			int _type = ANNO_HEAD;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:99:10: ( 'ann:' )
-			// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:99:11: 'ann:'
+			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:96:10: ( 'ann:' )
+			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:96:11: 'ann:'
 			{
 			match("ann:"); 
 
@@ -148,8 +148,8 @@ public class SimpleID3Lexer extends Lexer {
 		try {
 			int _type = COMMENTO_HEAD;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:107:14: ( 'com:' )
-			// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:107:15: 'com:'
+			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:104:14: ( 'com:' )
+			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:104:15: 'com:'
 			{
 			match("com:"); 
 
@@ -169,8 +169,8 @@ public class SimpleID3Lexer extends Lexer {
 		try {
 			int _type = GENERE_HEAD;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:124:12: ( 'gen:' )
-			// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:124:13: 'gen:'
+			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:116:12: ( 'gen:' )
+			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:116:13: 'gen:'
 			{
 			match("gen:"); 
 
@@ -190,8 +190,8 @@ public class SimpleID3Lexer extends Lexer {
 		try {
 			int _type = CANC;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:128:5: ( '#' )
-			// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:128:8: '#'
+			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:120:5: ( '#' )
+			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:120:8: '#'
 			{
 			match('#'); 
 			}
@@ -210,8 +210,8 @@ public class SimpleID3Lexer extends Lexer {
 		try {
 			int _type = CHAR;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:131:7: ( ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '-' | '.' | '?' ) )
-			// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:
+			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:122:7: ( ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '-' | '.' | '?' ) )
+			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:
 			{
 			if ( (input.LA(1) >= '-' && input.LA(1) <= '.')||(input.LA(1) >= '0' && input.LA(1) <= '9')||input.LA(1)=='?'||(input.LA(1) >= 'A' && input.LA(1) <= 'Z')||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
 				input.consume();
@@ -237,8 +237,8 @@ public class SimpleID3Lexer extends Lexer {
 		try {
 			int _type = WS;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:137:5: ( ( ' ' | '\\t' | '\\r' | '\\n' ) )
-			// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:
+			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:125:5: ( ( ' ' | '\\t' | '\\r' | '\\n' ) )
+			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:
 			{
 			if ( (input.LA(1) >= '\t' && input.LA(1) <= '\n')||input.LA(1)=='\r'||input.LA(1)==' ' ) {
 				input.consume();
@@ -264,8 +264,8 @@ public class SimpleID3Lexer extends Lexer {
 		try {
 			int _type = SCAN_ERROR;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:175:12: ( . )
-			// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:175:14: .
+			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:132:12: ( . )
+			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:132:14: .
 			{
 			matchAny(); 
 			}
@@ -281,7 +281,7 @@ public class SimpleID3Lexer extends Lexer {
 
 	@Override
 	public void mTokens() throws RecognitionException {
-		// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:1:8: ( T__14 | TITLE_HEAD | ART_HEAD | ALBUM_HEAD | ANNO_HEAD | COMMENTO_HEAD | GENERE_HEAD | CANC | CHAR | WS | SCAN_ERROR )
+		// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:1:8: ( T__14 | TITOLO_HEAD | ART_HEAD | ALBUM_HEAD | ANNO_HEAD | COMMENTO_HEAD | GENERE_HEAD | CANC | CHAR | WS | SCAN_ERROR )
 		int alt1=11;
 		int LA1_0 = input.LA(1);
 		if ( (LA1_0=='T') ) {
@@ -370,77 +370,77 @@ public class SimpleID3Lexer extends Lexer {
 
 		switch (alt1) {
 			case 1 :
-				// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:1:10: T__14
+				// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:1:10: T__14
 				{
 				mT__14(); 
 
 				}
 				break;
 			case 2 :
-				// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:1:16: TITLE_HEAD
+				// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:1:16: TITOLO_HEAD
 				{
-				mTITLE_HEAD(); 
+				mTITOLO_HEAD(); 
 
 				}
 				break;
 			case 3 :
-				// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:1:27: ART_HEAD
+				// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:1:28: ART_HEAD
 				{
 				mART_HEAD(); 
 
 				}
 				break;
 			case 4 :
-				// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:1:36: ALBUM_HEAD
+				// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:1:37: ALBUM_HEAD
 				{
 				mALBUM_HEAD(); 
 
 				}
 				break;
 			case 5 :
-				// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:1:47: ANNO_HEAD
+				// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:1:48: ANNO_HEAD
 				{
 				mANNO_HEAD(); 
 
 				}
 				break;
 			case 6 :
-				// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:1:57: COMMENTO_HEAD
+				// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:1:58: COMMENTO_HEAD
 				{
 				mCOMMENTO_HEAD(); 
 
 				}
 				break;
 			case 7 :
-				// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:1:71: GENERE_HEAD
+				// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:1:72: GENERE_HEAD
 				{
 				mGENERE_HEAD(); 
 
 				}
 				break;
 			case 8 :
-				// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:1:83: CANC
+				// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:1:84: CANC
 				{
 				mCANC(); 
 
 				}
 				break;
 			case 9 :
-				// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:1:88: CHAR
+				// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:1:89: CHAR
 				{
 				mCHAR(); 
 
 				}
 				break;
 			case 10 :
-				// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:1:93: WS
+				// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:1:94: WS
 				{
 				mWS(); 
 
 				}
 				break;
 			case 11 :
-				// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:1:96: SCAN_ERROR
+				// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:1:97: SCAN_ERROR
 				{
 				mSCAN_ERROR(); 
 
