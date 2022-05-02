@@ -115,7 +115,7 @@ public class SimpleID3Handler {
 	public String riconosciGenere (int i)
 	{
 		switch (i) {
-		case 32: return "Blues";
+		case 0: return "Blues";
 		case 1: return "Classic Rock";
 		case 2: return "Country";
 		case 3: return "Dance";

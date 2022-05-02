@@ -1,28 +1,78 @@
 package myPackage;
 
 import java.io.FileNotFoundException;
+import javax.swing.JFileChooser;
+import javax.swing.*;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import org.antlr.runtime.RecognitionException;
 
 import myID3Compiler.SimpleID3Parser;
 
-public class ParserLauncher {
+public class ParserLauncher extends JPanel {
+
+public static char[] getTagFromFile(String name) throws FileNotFoundException, IOException
+{
+	FileReader fileMp3 = new FileReader (name);
+	int pos=0;
+	while(true)
+	{
+		if(fileMp3.read()==-1)
+		{ break;}
+		pos++;
+	}
+	fileMp3.close();
+	fileMp3= new FileReader (name);
+	for(int i=0;i<pos-128;i++)
+		fileMp3.read();
+	char[] buffer=new char[160];
+	fileMp3.read(buffer, 0, 160);
+	
+	/*
+	for(int i=0;i<128;i++)
+		System.out.print(buffer[i]);
+	System.out.println(pos);
+	*/
+	fileMp3.close();
+	return buffer;
+	}
+
+public String fileChooser() throws NullPointerException
+{
+	  JFileChooser fileChooser = new JFileChooser();
+	  fileChooser.setCurrentDirectory(new File(System.getProperty("user.home") 
+			  + System.getProperty("file.separator")+ "git"+ System.getProperty("file.separator")+ "SimpleID3"+ System.getProperty("file.separator")+ "resources"));
+	  fileChooser.showOpenDialog(ParserLauncher.this);
+	  return fileChooser.getSelectedFile().getPath();
+	}
+
 	public static void main (String[] args) throws FileNotFoundException, IOException, RecognitionException {		
-	//	int a = 1342;
-	  	String fileName = ".\\resources\\input.file";
+		
+		ParserLauncher a=new ParserLauncher();
+		
+		String tagFile=new String(getTagFromFile(a.fileChooser()));
+		//String tagFile=new String(getTagFromFile(".\\resources\\test2.mp3"));
+		System.out.println(tagFile);
+
+		String fileName = ".\\resources\\input.file";
+		
+		    BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));
+		    writer.write(tagFile);
+		    writer.close();
+		
+		
+		
 	  	
 		System.out.println ("Parsing con ANTLR");
 		
 		FileReader fileIn = new FileReader (fileName);
 
 		SimpleID3Parser parser = new SimpleID3Parser(fileIn);
-//		SimpleJavaParser parser = new SimpleJavaParser(
-//				"public class ParserLauncher {"
-//				+ "	public void main () "
-//				+ "  { f}"
-//				+ "}");
+
+		
 		parser.struttura();
 		
 		//**
