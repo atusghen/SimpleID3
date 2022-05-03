@@ -52,7 +52,8 @@ options {
 struttura: 'TAG' (corpo||corpo2);
  
 corpo :
- ( CANC tit=titolo CANC art=artista CANC alb=album CANC a=anno CANC com=commento CANC gen=genere)
+ //( CANC tit=titolo CANC art=artista CANC alb=album CANC a=anno CANC com=commento CANC gen=genere)
+  (  tit=titolo  art=artista  alb=album  a=anno  com=commento  gen=genere)
  {h.stampaslot(tit); h.stampaslot(art); h.stampaslot(alb); h.stampaslot(a); h.stampaslot(com); h.stampaslot(gen);}
 	;
 
@@ -73,7 +74,7 @@ slot returns [List<Token> p]
 	p.add(c21);p.add(c22);p.add(c23);p.add(c24);p.add(c25);p.add(c26);p.add(c27);p.add(c28);p.add(c29);p.add(c30);}
 	;
 
-TITOLO_HEAD: 'tit:';
+TITOLO_HEAD: '#tit:';
 titolo returns [List<Token> p]
 @init { p = new ArrayList<Token>();}
 	:  TITOLO_HEAD
@@ -85,7 +86,7 @@ titolo returns [List<Token> p]
 	p.add(c21);p.add(c22);p.add(c23);p.add(c24);p.add(c25);p.add(c26);p.add(c27);p.add(c28);p.add(c29);p.add(c30);}
 	;
 	
-ART_HEAD: 'art:';
+ART_HEAD: '#art:';
 artista returns [List<Token> p]
 @init { p = new ArrayList<Token>();}
 	: ART_HEAD
@@ -97,7 +98,7 @@ artista returns [List<Token> p]
 	p.add(c21);p.add(c22);p.add(c23);p.add(c24);p.add(c25);p.add(c26);p.add(c27);p.add(c28);p.add(c29);p.add(c30);}
 	;
 
-ALBUM_HEAD:'alb:'; //ho dovuto togliere la a iniziale altrimenti si aspetta la r di art (no sense assoluto perchè
+ALBUM_HEAD:'#alb:'; //ho dovuto togliere la a iniziale altrimenti si aspetta la r di art (no sense assoluto perchè
 											// si aspetta ALMBU_HEAD secondo l'errore
 album returns [List<Token> p]
 @init { p = new ArrayList<Token>();}
@@ -110,22 +111,22 @@ album returns [List<Token> p]
 	p.add(c21);p.add(c22);p.add(c23);p.add(c24);p.add(c25);p.add(c26);p.add(c27);p.add(c28);p.add(c29);p.add(c30);}
 	;
 
-ANNO_HEAD:'ann:'; //problema con la a come sopra
+ANNO_HEAD:'#ann:'; //problema con la a come sopra
 anno returns [List<Token> p]
 @init { p = new ArrayList<Token>();}
 	: ANNO_HEAD
-	c1=INT c2=INT c3=INT c4=INT
+	c1=CHAR c2=CHAR c3=CHAR c4=CHAR
 	{p.add(c1); p.add(c2); p.add(c3); p.add(c4);}
 	;
 	
 anno2 returns [List<Token> p]
 @init { p = new ArrayList<Token>();}
 	:
-	c1=INT c2=INT c3=INT c4=INT
+	c1=CHAR c2=CHAR c3=CHAR c4=CHAR
 	{p.add(c1); p.add(c2); p.add(c3); p.add(c4);}
 	;
 
-COMMENTO_HEAD:'com:';
+COMMENTO_HEAD:'#com:';
 commento returns [List<Token> p]
 @init { p = new ArrayList<Token>();}
 	: COMMENTO_HEAD
@@ -137,7 +138,7 @@ commento returns [List<Token> p]
 	p.add(c21);p.add(c22);p.add(c23);p.add(c24);p.add(c25);p.add(c26);p.add(c27);p.add(c28);p.add(c29);p.add(c30);}
 	;
 	
-GENERE_HEAD:'gen:';
+GENERE_HEAD:'#gen:';
 genere returns [Token t]: GENERE_HEAD p=.
  {t=p;};
 
@@ -145,13 +146,11 @@ genere2 returns [Token t]:p=.
  {t=p;};
 
 CANC:	 '#';
-INT:'0'..'9';
 
+WS  :  (' '|'\r'|'\t'|'\n');
+CHAR  :	//('a'..'z'|'A'..'Z'|'0'..'9'|'-'|'?'|
+					('\u0000'|'\u0020'..'\u007E')||WS;
 
-
-CHAR  :	('a'..'z'|'A'..'Z'|'0'..'9'|'-'|'?') ||(  ' '|	'\t'| '\r'| '\n');
-
-//WS  :  
 
 SCAN_ERROR	: . ;
 
