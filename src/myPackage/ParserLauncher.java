@@ -26,10 +26,12 @@ public static char[] getTagFromFile(String name) throws FileNotFoundException, I
 	}
 	fileMp3.close();
 	fileMp3= new FileReader (name);
+	
 	for(int i=0;i<pos-128;i++)
 		fileMp3.read();
 	char[] buffer=new char[160];
 	fileMp3.read(buffer, 0, 160);
+	
 	
 	/*
 	for(int i=0;i<128;i++)
@@ -49,40 +51,35 @@ public String fileChooser() throws NullPointerException
 	  return fileChooser.getSelectedFile().getPath();
 	}
 
-	public static void main (String[] args) throws FileNotFoundException, IOException, RecognitionException {		
-		
-		ParserLauncher a=new ParserLauncher();
-		
+
+public static void main (String[] args) throws FileNotFoundException, IOException, RecognitionException 
+	{		
+	ParserLauncher a=new ParserLauncher();
+	String fileName = ".\\resources\\input.file"; //ultima scelta
+
+	try{
 		String tagFile=new String(getTagFromFile(a.fileChooser()));
 		//String tagFile=new String(getTagFromFile(".\\resources\\test2.mp3"));
-		System.out.println(tagFile);
+			
+		BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));
+		writer.write(tagFile);
+		writer.close();	
+		}catch(NullPointerException e) {System.out.println("Non selezionato, leggo ultima scelta...");}
+	
+	System.out.println ("Parsing con ANTLR");
+		
+	FileReader fileIn = new FileReader (fileName);
+	SimpleID3Parser parser = new SimpleID3Parser(fileIn);
 
-		String fileName = ".\\resources\\input.file";
+	parser.struttura();
 		
-		    BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));
-		    writer.write(tagFile);
-		    writer.close();
-		
-		
-		
-	  	
-		System.out.println ("Parsing con ANTLR");
-		
-		FileReader fileIn = new FileReader (fileName);
-
-		SimpleID3Parser parser = new SimpleID3Parser(fileIn);
-
-		
-		parser.struttura();
-		
-		//**
-		if (parser.getErrorList().size() == 0)
-			System.out.println ("Parsing completato con successo");
-		else {
-			int i=0;
-			System.out.println ("Errori rilevati");
-			for (String msg : parser.getErrorList())
-				System.out.println (++i + " - " + msg);
+	if (parser.getErrorList().size() == 0)
+		System.out.println ("Parsing completato con successo");
+	else {
+		int i=0;
+		System.out.println ("Errori rilevati");
+		for (String msg : parser.getErrorList())
+			System.out.println (++i + " - " + msg);
 		}
 		
 	}

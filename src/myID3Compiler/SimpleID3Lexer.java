@@ -1,4 +1,4 @@
-// $ANTLR 3.5.1 C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g 2022-05-03 11:54:59
+// $ANTLR 3.5.1 C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g 2022-05-03 14:42:30
 
 	package myID3Compiler;
 
@@ -210,10 +210,10 @@ public class SimpleID3Lexer extends Lexer {
 		try {
 			int _type = WS;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:150:5: ( ( ' ' | '\\r' | '\\t' | '\\n' ) )
+			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:150:5: ( ( '\\r' | '\\t' | '\\n' ) )
 			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:
 			{
-			if ( (input.LA(1) >= '\t' && input.LA(1) <= '\n')||input.LA(1)=='\r'||input.LA(1)==' ' ) {
+			if ( (input.LA(1) >= '\t' && input.LA(1) <= '\n')||input.LA(1)=='\r' ) {
 				input.consume();
 			}
 			else {
@@ -455,7 +455,7 @@ public class SimpleID3Lexer extends Lexer {
 							input.consume();
 						}
 						NoViableAltException nvae =
-							new NoViableAltException("", 2, 10, input);
+							new NoViableAltException("", 2, 9, input);
 						throw nvae;
 					} finally {
 						input.rewind(nvaeMark);
@@ -477,13 +477,10 @@ public class SimpleID3Lexer extends Lexer {
 				alt2=8;
 			}
 		}
-		else if ( (LA2_0==' ') ) {
-			alt2=9;
-		}
 		else if ( ((LA2_0 >= '\t' && LA2_0 <= '\n')||LA2_0=='\r') ) {
 			alt2=9;
 		}
-		else if ( (LA2_0=='\u0000'||(LA2_0 >= '!' && LA2_0 <= '\"')||(LA2_0 >= '$' && LA2_0 <= 'S')||(LA2_0 >= 'U' && LA2_0 <= '~')) ) {
+		else if ( (LA2_0=='\u0000'||(LA2_0 >= ' ' && LA2_0 <= '\"')||(LA2_0 >= '$' && LA2_0 <= 'S')||(LA2_0 >= 'U' && LA2_0 <= '~')) ) {
 			alt2=10;
 		}
 		else if ( ((LA2_0 >= '\u0001' && LA2_0 <= '\b')||(LA2_0 >= '\u000B' && LA2_0 <= '\f')||(LA2_0 >= '\u000E' && LA2_0 <= '\u001F')||(LA2_0 >= '\u007F' && LA2_0 <= '\uFFFF')) ) {
