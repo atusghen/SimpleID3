@@ -23,7 +23,7 @@ public class ParserLauncher extends JPanel {
 	
 	//private JTextField m_userInputCF = new JTextField(16);
     static JButton button = new JButton("Sfoglia");
-    static JCheckBox checkbox160 = new JCheckBox("160 bytes");
+    static JCheckBox checkbox158 = new JCheckBox("158 bytes");
     static JCheckBox checkbox128 = new JCheckBox("128 bytes");
     static ButtonGroup topGroup = new ButtonGroup();
 	static JLabel titolo = new JLabel("Titolo");
@@ -40,7 +40,7 @@ public class ParserLauncher extends JPanel {
 	static JLabel ge = new JLabel();
     static JPanel infopanel = new JPanel();
     
-    static JFrame jF = new JFrame("Inserisci dati");
+    static JFrame jF = new JFrame("SimpleID3");
     
     
     ParserLauncher(){
@@ -49,10 +49,10 @@ public class ParserLauncher extends JPanel {
         //infopanel.setLayout(new BorderLayout());
         infopanel.setPreferredSize(new Dimension(300, 50));
         topGroup.add(checkbox128);
-        topGroup.add(checkbox160);
+        topGroup.add(checkbox158);
         infopanel.add(button);
         infopanel.add(checkbox128);
-        infopanel.add(checkbox160);
+        infopanel.add(checkbox158);
         /*infopanel.add(titolo).setVisible(false);
         infopanel.add(ti).setVisible(false);
         infopanel.add(artista).setVisible(false);
@@ -72,70 +72,62 @@ public class ParserLauncher extends JPanel {
         jF.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
-public static char[] getTagFromFile(String name) throws FileNotFoundException, IOException
-{
-	FileReader fileMp3 = new FileReader (name);
-	int pos=0;
-	while(true)
-	{
-		if(fileMp3.read()==-1)
-		{ break;}
-		pos++;
-	}
-	fileMp3.close();
-	fileMp3= new FileReader (name);
-	
-	for(int i=0;i<pos-128;i++)
-		fileMp3.read();
-	char[] buffer=new char[160];
-	fileMp3.read(buffer, 0, 160);
-	
-	
-	/*
-	for(int i=0;i<128;i++)
-		System.out.print(buffer[i]);
-	System.out.println(pos);
-	*/
-	fileMp3.close();
-	return buffer;
-	}
 
-public static char[] getTagFromFile2(String name, int os) throws FileNotFoundException, IOException
+public static char[] getTagFromFile2(String name, int offset) throws FileNotFoundException, IOException
 {
 	FileReader fileMp3 = new FileReader (name);
-	int pos=0;
+	int length=0;
 	while(true)
 	{
 		if(fileMp3.read()==-1) {break;}
-		pos++;
+		length++;
 	}
+	
 	fileMp3.close();
 	fileMp3= new FileReader (name);
 	
-	int offset=os;
-
-	
-	for(int i=offset;i<pos;i++)
-		fileMp3.read();
 	char[] buffer=new char[offset];
+	for(int i=0;i<length-offset;i++)
+		fileMp3.read();
+	
 	fileMp3.read(buffer, 0, offset);
-	
-	
-	/*
-	for(int i=0;i<128;i++)
-		System.out.print(buffer[i]);
-	System.out.println(pos);
-	*/
 	fileMp3.close();
+	
+	
 	return buffer;
 	}
 
+
+public static char[] getTagFromFile(String name, int offset) throws FileNotFoundException, IOException
+{
+	FileReader fileMp3 = new FileReader (name);
+	int length=0;
+	while(true)
+	{
+		if(fileMp3.read()=='T') {
+			if(fileMp3.read()=='A') {
+				if(fileMp3.read()=='G') {break;}}}
+		length++;
+	}
+	//System.out.println(length);
+	fileMp3.close();
+	fileMp3= new FileReader (name);
+	char[] buffer=new char[offset];
+	if(length!=0) {
+	for(int i=0;i<length;i++)
+		fileMp3.read();
+	
+	fileMp3.read(buffer, 0, offset);
+	fileMp3.close();
+	}else {System.out.println("Marcatore TAG non trovato");}
+	
+	return buffer;
+	}
 
 public String fileChooser() throws NullPointerException
 {
 	  JFileChooser fileChooser = new JFileChooser();
-	  fileChooser.setCurrentDirectory(new File(System.getProperty("user.home") 
-			  + System.getProperty("file.separator")+ "git"+ System.getProperty("file.separator")+ "SimpleID3"+ System.getProperty("file.separator")+ "resources"));
+	  fileChooser.setCurrentDirectory(new File("resources"));
 	  fileChooser.showOpenDialog(ParserLauncher.this);
 	  return fileChooser.getSelectedFile().getPath();
 }
@@ -147,10 +139,10 @@ public void avvio(ParserLauncher a) throws FileNotFoundException, IOException, R
 	if(checkbox128.isSelected())
 		offset = 128;
 	else
-		offset = 160;
+		offset = 158;
 		
 	    	try{
-	    		String tagFile=new String(getTagFromFile2(a.fileChooser(), offset));
+	    		String tagFile=new String(getTagFromFile(a.fileChooser(), offset));
 	    		//String tagFile=new String(getTagFromFile(".\\resources\\test2.mp3"));
 	    			
 	    		BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));
@@ -245,7 +237,7 @@ public static void setData(int c, String data) {
 	infopanel.setLayout(new GridLayout(6, 2));
 	infopanel.remove(button);
 	infopanel.remove(checkbox128);
-	infopanel.remove(checkbox160);
+	infopanel.remove(checkbox158);
 	titolo.setVisible(true);
     ti.setVisible(true);
     artista.setVisible(true);
