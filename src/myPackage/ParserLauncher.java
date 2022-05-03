@@ -42,6 +42,40 @@ public static char[] getTagFromFile(String name) throws FileNotFoundException, I
 	return buffer;
 	}
 
+public static char[] getTagFromFile2(String name) throws FileNotFoundException, IOException
+{
+	FileReader fileMp3 = new FileReader (name);
+	int pos=0;
+	while(true)
+	{
+		if(fileMp3.read()=='T') {
+		 if(fileMp3.read()=='A') {
+			 if(fileMp3.read()=='G') {
+				 break;}}}
+		pos++;
+	}
+	fileMp3.close();
+	fileMp3= new FileReader (name);
+	
+	int offset=0;
+	if(pos+4=='#') {offset=160;}else {offset=128;}
+	
+	for(int i=0;i<pos;i++)
+		fileMp3.read();
+	char[] buffer=new char[160];
+	fileMp3.read(buffer, 0, 160);
+	
+	
+	/*
+	for(int i=0;i<128;i++)
+		System.out.print(buffer[i]);
+	System.out.println(pos);
+	*/
+	fileMp3.close();
+	return buffer;
+	}
+
+
 public String fileChooser() throws NullPointerException
 {
 	  JFileChooser fileChooser = new JFileChooser();
@@ -58,13 +92,15 @@ public static void main (String[] args) throws FileNotFoundException, IOExceptio
 	String fileName = ".\\resources\\input.file"; //ultima scelta
 
 	try{
-		String tagFile=new String(getTagFromFile(a.fileChooser()));
+		String tagFile=new String(getTagFromFile2(a.fileChooser()));
 		//String tagFile=new String(getTagFromFile(".\\resources\\test2.mp3"));
 			
 		BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));
 		writer.write(tagFile);
 		writer.close();	
+		System.out.println(tagFile);
 		}catch(NullPointerException e) {System.out.println("Non selezionato, leggo ultima scelta...");}
+	
 	
 	System.out.println ("Parsing con ANTLR");
 		
