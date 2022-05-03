@@ -7,6 +7,8 @@ import org.antlr.runtime.RecognitionException;
 import org.antlr.runtime.Token;
 import org.antlr.runtime.TokenStream;
 
+import myPackage.ParserLauncher;
+
 public class SimpleID3Handler {
 	public static final int UNDEFINED = -1;	
 	public static final int TOKEN_ERROR = 0;	
@@ -75,32 +77,42 @@ public class SimpleID3Handler {
 	
 	public void stampaslot (List<Token> T)
 	{
+		String s = new String();
 		if(conta == 0) {
 			System.out.print("Titolo: ");
 			for(int i=0;i<T.size();i++)
-				System.out.print(T.get(i).getText());
+				s = s + T.get(i).getText();
 			conta++;
+			System.out.print(s);
+			ParserLauncher.setData(conta, s);
 		} else if(conta == 1) {
 			System.out.print("Artista: ");
 			for(int i=0;i<T.size();i++)
-				System.out.print(T.get(i).getText());
+				s = s + T.get(i).getText();
 			conta++;
+			System.out.print(s);
+			ParserLauncher.setData(conta, s);
 		} else if(conta == 2) {
 			System.out.print("Album: ");
 			for(int i=0;i<T.size();i++)
-				System.out.print(T.get(i).getText());
+				s = s + T.get(i).getText();
 			conta++;
+			System.out.print(s);
+			ParserLauncher.setData(conta, s);
 		} else if(conta == 3) {
 			System.out.print("Anno: ");
 			for(int i=0;i<T.size();i++)
-				System.out.print(T.get(i).getText());
+				s = s + T.get(i).getText();
 			conta++;
-			
+			System.out.print(s);
+			ParserLauncher.setData(conta, s);
 		} else {
 			System.out.print("Commento: ");
 			for(int i=0;i<T.size();i++)
-				System.out.print(T.get(i).getText());
+				s = s + T.get(i).getText();
 			conta++;
+			System.out.print(s);
+			ParserLauncher.setData(conta, s);
 		}
 		System.out.println();
 	}
@@ -110,6 +122,7 @@ public class SimpleID3Handler {
 		char a=T.getText().charAt(0);
 		int i=(int)a;
 		System.out.println("Genere: "+riconosciGenere(i));
+		ParserLauncher.setData(6, riconosciGenere(i));
 	}
 	
 	public String riconosciGenere (int i)
