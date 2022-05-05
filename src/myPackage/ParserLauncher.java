@@ -1,19 +1,24 @@
 package myPackage;
 
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.nio.charset.StandardCharsets;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.FileWriter;
 import org.antlr.runtime.RecognitionException;
 
 import myID3Compiler.SimpleID3Parser;
@@ -24,19 +29,19 @@ public class ParserLauncher extends JPanel {
 	//private JTextField m_userInputCF = new JTextField(16);
     static JButton button = new JButton("Sfoglia");
     static JCheckBox checkbox158 = new JCheckBox("158 bytes");
-    static JCheckBox checkbox128 = new JCheckBox("128 bytes");
+    static JCheckBox checkbox128 = new JCheckBox("128 bytes", true);
     static ButtonGroup topGroup = new ButtonGroup();
-	static JLabel titolo = new JLabel("Titolo");
+	static JLabel titolo = new JLabel("TITOLO:");
 	static JLabel ti = new JLabel();
-	static JLabel artista = new JLabel("Artista");
+	static JLabel artista = new JLabel("ARTISTA:");
 	static JLabel ar = new JLabel();
-	static JLabel album = new JLabel("Album");
+	static JLabel album = new JLabel("ALBUM:");
 	static JLabel al = new JLabel();
-	static JLabel anno = new JLabel("Anno");
+	static JLabel anno = new JLabel("ANNO:");
 	static JLabel an = new JLabel();
-	static JLabel commento = new JLabel("Commento");
+	static JLabel commento = new JLabel("COMMENTO:");
 	static JLabel co = new JLabel();
-	static JLabel genere = new JLabel("Genere");
+	static JLabel genere = new JLabel("GENERE:");
 	static JLabel ge = new JLabel();
     static JPanel infopanel = new JPanel();
     
@@ -100,7 +105,9 @@ public static char[] getTagFromFile2(String name, int offset) throws FileNotFoun
 
 public static char[] getTagFromFile(String name, int offset) throws FileNotFoundException, IOException
 {
-	FileReader fileMp3 = new FileReader (name);
+	BufferedReader fileMp3 = new BufferedReader(
+			  new InputStreamReader(new FileInputStream(name), "UTF-8"));
+	//FileReader fileMp3 = new FileReader (name);
 	int length=0;
 	while(true)
 	{
@@ -111,7 +118,9 @@ public static char[] getTagFromFile(String name, int offset) throws FileNotFound
 	}
 	//System.out.println(length);
 	fileMp3.close();
-	fileMp3= new FileReader (name);
+	//fileMp3= new FileReader (name);
+	fileMp3 = new BufferedReader(
+			  new InputStreamReader(new FileInputStream(name), "UTF-8"));
 	char[] buffer=new char[offset];
 	if(length!=0) {
 	for(int i=0;i<length;i++)
@@ -129,6 +138,7 @@ public String fileChooser() throws NullPointerException
 	  JFileChooser fileChooser = new JFileChooser();
 	  fileChooser.setCurrentDirectory(new File("resources"));
 	  fileChooser.showOpenDialog(ParserLauncher.this);
+	  jF.setTitle("SimpleID3-" + fileChooser.getSelectedFile().getName());
 	  return fileChooser.getSelectedFile().getPath();
 }
 
@@ -144,8 +154,9 @@ public void avvio(ParserLauncher a) throws FileNotFoundException, IOException, R
 	    	try{
 	    		String tagFile=new String(getTagFromFile(a.fileChooser(), offset));
 	    		//String tagFile=new String(getTagFromFile(".\\resources\\test2.mp3"));
-	    			
-	    		BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));
+	    		BufferedWriter writer = new BufferedWriter
+	    			    (new OutputStreamWriter(new FileOutputStream(fileName), StandardCharsets.UTF_8));
+	    		//BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));
 	    		writer.write(tagFile);
 	    		writer.close();	
 	    		System.out.println(tagFile);
@@ -156,8 +167,11 @@ public void avvio(ParserLauncher a) throws FileNotFoundException, IOException, R
 	
 	
 	System.out.println ("Parsing con ANTLR");
+	
+	BufferedReader fileIn = new BufferedReader(
+			  new InputStreamReader(new FileInputStream(fileName), StandardCharsets.UTF_8));
 		
-	FileReader fileIn = new FileReader (fileName);
+	//FileReader fileIn = new FileReader (fileName);
 	SimpleID3Parser parser = new SimpleID3Parser(fileIn);
 
 	parser.struttura();

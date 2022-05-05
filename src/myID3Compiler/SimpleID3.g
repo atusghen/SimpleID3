@@ -14,12 +14,14 @@ options {
 	import java.io.IOException;
 	import java.io.StringReader;
 	import java.io.FileReader;
+	import java.io.BufferedReader;
 }
 
 @members {
 		SimpleID3Handler h;
 
-	  public SimpleID3Parser(FileReader fileIn) throws IOException {		
+	  //public SimpleID3Parser(FileReader fileIn) throws IOException {
+	  public SimpleID3Parser(BufferedReader fileIn) throws IOException {			
 			this(new CommonTokenStream(
 							new SimpleID3Lexer(
 									new ANTLRReaderStream(fileIn))));
@@ -150,6 +152,8 @@ CANC:	 '#';
 WS  :  ('\r'|'\t'|'\n');
 CHAR  :	//('a'..'z'|'A'..'Z'|'0'..'9'|'-'|'?'|
 					('\u0000'|'\u0020'..'\u007E')||WS;
+					//('\u0000'|'\u0020'..'\u0081')||WS;
+					//('\u0000'|'\u0020'..'\u201C')||WS;
 
 
 SCAN_ERROR	: . ;

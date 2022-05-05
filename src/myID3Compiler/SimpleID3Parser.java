@@ -1,10 +1,11 @@
-// $ANTLR 3.5.1 C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g 2022-05-03 14:42:30
+// $ANTLR 3.5.1 C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g 2022-05-05 19:19:00
 
 	package myID3Compiler;
 	import myID3Compiler.SimpleID3Handler;
 	import java.io.IOException;
 	import java.io.StringReader;
 	import java.io.FileReader;
+	import java.io.BufferedReader;
 
 
 import org.antlr.runtime.*;
@@ -48,12 +49,13 @@ public class SimpleID3Parser extends Parser {
 	}
 
 	@Override public String[] getTokenNames() { return SimpleID3Parser.tokenNames; }
-	@Override public String getGrammarFileName() { return "C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g"; }
+	@Override public String getGrammarFileName() { return "C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g"; }
 
 
 			SimpleID3Handler h;
 
-		  public SimpleID3Parser(FileReader fileIn) throws IOException {		
+		  //public SimpleID3Parser(FileReader fileIn) throws IOException {
+		  public SimpleID3Parser(BufferedReader fileIn) throws IOException {			
 				this(new CommonTokenStream(
 								new SimpleID3Lexer(
 										new ANTLRReaderStream(fileIn))));
@@ -85,14 +87,14 @@ public class SimpleID3Parser extends Parser {
 
 
 	// $ANTLR start "struttura"
-	// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:52:1: struttura : 'TAG' ( corpo || corpo2 ) ;
+	// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:54:1: struttura : 'TAG' ( corpo || corpo2 ) ;
 	public final void struttura() throws RecognitionException {
 		try {
-			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:52:10: ( 'TAG' ( corpo || corpo2 ) )
-			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:52:12: 'TAG' ( corpo || corpo2 )
+			// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:54:10: ( 'TAG' ( corpo || corpo2 ) )
+			// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:54:12: 'TAG' ( corpo || corpo2 )
 			{
 			match(input,14,FOLLOW_14_in_struttura48); 
-			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:52:18: ( corpo || corpo2 )
+			// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:54:18: ( corpo || corpo2 )
 			int alt1=3;
 			switch ( input.LA(1) ) {
 			case TITOLO_HEAD:
@@ -117,7 +119,7 @@ public class SimpleID3Parser extends Parser {
 			}
 			switch (alt1) {
 				case 1 :
-					// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:52:19: corpo
+					// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:54:19: corpo
 					{
 					pushFollow(FOLLOW_corpo_in_struttura51);
 					corpo();
@@ -126,12 +128,12 @@ public class SimpleID3Parser extends Parser {
 					}
 					break;
 				case 2 :
-					// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:52:25: 
+					// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:54:25: 
 					{
 					}
 					break;
 				case 3 :
-					// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:52:26: corpo2
+					// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:54:26: corpo2
 					{
 					pushFollow(FOLLOW_corpo2_in_struttura54);
 					corpo2();
@@ -158,7 +160,7 @@ public class SimpleID3Parser extends Parser {
 
 
 	// $ANTLR start "corpo"
-	// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:54:1: corpo : (tit= titolo art= artista alb= album a= anno com= commento gen= genere ) ;
+	// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:56:1: corpo : (tit= titolo art= artista alb= album a= anno com= commento gen= genere ) ;
 	public final void corpo() throws RecognitionException {
 		List<Token> tit =null;
 		List<Token> art =null;
@@ -168,11 +170,11 @@ public class SimpleID3Parser extends Parser {
 		Token gen =null;
 
 		try {
-			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:54:7: ( (tit= titolo art= artista alb= album a= anno com= commento gen= genere ) )
-			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:56:3: (tit= titolo art= artista alb= album a= anno com= commento gen= genere )
+			// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:56:7: ( (tit= titolo art= artista alb= album a= anno com= commento gen= genere ) )
+			// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:58:3: (tit= titolo art= artista alb= album a= anno com= commento gen= genere )
 			{
-			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:56:3: (tit= titolo art= artista alb= album a= anno com= commento gen= genere )
-			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:56:6: tit= titolo art= artista alb= album a= anno com= commento gen= genere
+			// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:58:3: (tit= titolo art= artista alb= album a= anno com= commento gen= genere )
+			// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:58:6: tit= titolo art= artista alb= album a= anno com= commento gen= genere
 			{
 			pushFollow(FOLLOW_titolo_in_corpo73);
 			tit=titolo();
@@ -217,7 +219,7 @@ public class SimpleID3Parser extends Parser {
 
 
 	// $ANTLR start "corpo2"
-	// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:60:1: corpo2 : (tit= slot art= slot alb= slot a= anno2 com= slot gen= genere2 ) ;
+	// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:62:1: corpo2 : (tit= slot art= slot alb= slot a= anno2 com= slot gen= genere2 ) ;
 	public final void corpo2() throws RecognitionException {
 		List<Token> tit =null;
 		List<Token> art =null;
@@ -227,11 +229,11 @@ public class SimpleID3Parser extends Parser {
 		Token gen =null;
 
 		try {
-			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:60:8: ( (tit= slot art= slot alb= slot a= anno2 com= slot gen= genere2 ) )
-			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:61:3: (tit= slot art= slot alb= slot a= anno2 com= slot gen= genere2 )
+			// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:62:8: ( (tit= slot art= slot alb= slot a= anno2 com= slot gen= genere2 ) )
+			// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:63:3: (tit= slot art= slot alb= slot a= anno2 com= slot gen= genere2 )
 			{
-			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:61:3: (tit= slot art= slot alb= slot a= anno2 com= slot gen= genere2 )
-			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:61:5: tit= slot art= slot alb= slot a= anno2 com= slot gen= genere2
+			// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:63:3: (tit= slot art= slot alb= slot a= anno2 com= slot gen= genere2 )
+			// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:63:5: tit= slot art= slot alb= slot a= anno2 com= slot gen= genere2
 			{
 			pushFollow(FOLLOW_slot_in_corpo2118);
 			tit=slot();
@@ -276,7 +278,7 @@ public class SimpleID3Parser extends Parser {
 
 
 	// $ANTLR start "slot"
-	// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:66:1: slot returns [List<Token> p] : c1= CHAR c2= CHAR c3= CHAR c4= CHAR c5= CHAR c6= CHAR c7= CHAR c8= CHAR c9= CHAR c10= CHAR c11= CHAR c12= CHAR c13= CHAR c14= CHAR c15= CHAR c16= CHAR c17= CHAR c18= CHAR c19= CHAR c20= CHAR c21= CHAR c22= CHAR c23= CHAR c24= CHAR c25= CHAR c26= CHAR c27= CHAR c28= CHAR c29= CHAR c30= CHAR ;
+	// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:68:1: slot returns [List<Token> p] : c1= CHAR c2= CHAR c3= CHAR c4= CHAR c5= CHAR c6= CHAR c7= CHAR c8= CHAR c9= CHAR c10= CHAR c11= CHAR c12= CHAR c13= CHAR c14= CHAR c15= CHAR c16= CHAR c17= CHAR c18= CHAR c19= CHAR c20= CHAR c21= CHAR c22= CHAR c23= CHAR c24= CHAR c25= CHAR c26= CHAR c27= CHAR c28= CHAR c29= CHAR c30= CHAR ;
 	public final List<Token> slot() throws RecognitionException {
 		List<Token> p = null;
 
@@ -314,8 +316,8 @@ public class SimpleID3Parser extends Parser {
 
 		 p = new ArrayList<Token>();
 		try {
-			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:68:2: (c1= CHAR c2= CHAR c3= CHAR c4= CHAR c5= CHAR c6= CHAR c7= CHAR c8= CHAR c9= CHAR c10= CHAR c11= CHAR c12= CHAR c13= CHAR c14= CHAR c15= CHAR c16= CHAR c17= CHAR c18= CHAR c19= CHAR c20= CHAR c21= CHAR c22= CHAR c23= CHAR c24= CHAR c25= CHAR c26= CHAR c27= CHAR c28= CHAR c29= CHAR c30= CHAR )
-			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:69:2: c1= CHAR c2= CHAR c3= CHAR c4= CHAR c5= CHAR c6= CHAR c7= CHAR c8= CHAR c9= CHAR c10= CHAR c11= CHAR c12= CHAR c13= CHAR c14= CHAR c15= CHAR c16= CHAR c17= CHAR c18= CHAR c19= CHAR c20= CHAR c21= CHAR c22= CHAR c23= CHAR c24= CHAR c25= CHAR c26= CHAR c27= CHAR c28= CHAR c29= CHAR c30= CHAR
+			// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:70:2: (c1= CHAR c2= CHAR c3= CHAR c4= CHAR c5= CHAR c6= CHAR c7= CHAR c8= CHAR c9= CHAR c10= CHAR c11= CHAR c12= CHAR c13= CHAR c14= CHAR c15= CHAR c16= CHAR c17= CHAR c18= CHAR c19= CHAR c20= CHAR c21= CHAR c22= CHAR c23= CHAR c24= CHAR c25= CHAR c26= CHAR c27= CHAR c28= CHAR c29= CHAR c30= CHAR )
+			// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:71:2: c1= CHAR c2= CHAR c3= CHAR c4= CHAR c5= CHAR c6= CHAR c7= CHAR c8= CHAR c9= CHAR c10= CHAR c11= CHAR c12= CHAR c13= CHAR c14= CHAR c15= CHAR c16= CHAR c17= CHAR c18= CHAR c19= CHAR c20= CHAR c21= CHAR c22= CHAR c23= CHAR c24= CHAR c25= CHAR c26= CHAR c27= CHAR c28= CHAR c29= CHAR c30= CHAR
 			{
 			c1=(Token)match(input,CHAR,FOLLOW_CHAR_in_slot168); 
 			c2=(Token)match(input,CHAR,FOLLOW_CHAR_in_slot172); 
@@ -367,7 +369,7 @@ public class SimpleID3Parser extends Parser {
 
 
 	// $ANTLR start "titolo"
-	// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:78:1: titolo returns [List<Token> p] : TITOLO_HEAD c1= CHAR c2= CHAR c3= CHAR c4= CHAR c5= CHAR c6= CHAR c7= CHAR c8= CHAR c9= CHAR c10= CHAR c11= CHAR c12= CHAR c13= CHAR c14= CHAR c15= CHAR c16= CHAR c17= CHAR c18= CHAR c19= CHAR c20= CHAR c21= CHAR c22= CHAR c23= CHAR c24= CHAR c25= CHAR c26= CHAR c27= CHAR c28= CHAR c29= CHAR c30= CHAR ;
+	// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:80:1: titolo returns [List<Token> p] : TITOLO_HEAD c1= CHAR c2= CHAR c3= CHAR c4= CHAR c5= CHAR c6= CHAR c7= CHAR c8= CHAR c9= CHAR c10= CHAR c11= CHAR c12= CHAR c13= CHAR c14= CHAR c15= CHAR c16= CHAR c17= CHAR c18= CHAR c19= CHAR c20= CHAR c21= CHAR c22= CHAR c23= CHAR c24= CHAR c25= CHAR c26= CHAR c27= CHAR c28= CHAR c29= CHAR c30= CHAR ;
 	public final List<Token> titolo() throws RecognitionException {
 		List<Token> p = null;
 
@@ -405,8 +407,8 @@ public class SimpleID3Parser extends Parser {
 
 		 p = new ArrayList<Token>();
 		try {
-			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:80:2: ( TITOLO_HEAD c1= CHAR c2= CHAR c3= CHAR c4= CHAR c5= CHAR c6= CHAR c7= CHAR c8= CHAR c9= CHAR c10= CHAR c11= CHAR c12= CHAR c13= CHAR c14= CHAR c15= CHAR c16= CHAR c17= CHAR c18= CHAR c19= CHAR c20= CHAR c21= CHAR c22= CHAR c23= CHAR c24= CHAR c25= CHAR c26= CHAR c27= CHAR c28= CHAR c29= CHAR c30= CHAR )
-			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:80:5: TITOLO_HEAD c1= CHAR c2= CHAR c3= CHAR c4= CHAR c5= CHAR c6= CHAR c7= CHAR c8= CHAR c9= CHAR c10= CHAR c11= CHAR c12= CHAR c13= CHAR c14= CHAR c15= CHAR c16= CHAR c17= CHAR c18= CHAR c19= CHAR c20= CHAR c21= CHAR c22= CHAR c23= CHAR c24= CHAR c25= CHAR c26= CHAR c27= CHAR c28= CHAR c29= CHAR c30= CHAR
+			// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:82:2: ( TITOLO_HEAD c1= CHAR c2= CHAR c3= CHAR c4= CHAR c5= CHAR c6= CHAR c7= CHAR c8= CHAR c9= CHAR c10= CHAR c11= CHAR c12= CHAR c13= CHAR c14= CHAR c15= CHAR c16= CHAR c17= CHAR c18= CHAR c19= CHAR c20= CHAR c21= CHAR c22= CHAR c23= CHAR c24= CHAR c25= CHAR c26= CHAR c27= CHAR c28= CHAR c29= CHAR c30= CHAR )
+			// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:82:5: TITOLO_HEAD c1= CHAR c2= CHAR c3= CHAR c4= CHAR c5= CHAR c6= CHAR c7= CHAR c8= CHAR c9= CHAR c10= CHAR c11= CHAR c12= CHAR c13= CHAR c14= CHAR c15= CHAR c16= CHAR c17= CHAR c18= CHAR c19= CHAR c20= CHAR c21= CHAR c22= CHAR c23= CHAR c24= CHAR c25= CHAR c26= CHAR c27= CHAR c28= CHAR c29= CHAR c30= CHAR
 			{
 			match(input,TITOLO_HEAD,FOLLOW_TITOLO_HEAD_in_titolo317); 
 			c1=(Token)match(input,CHAR,FOLLOW_CHAR_in_titolo322); 
@@ -459,7 +461,7 @@ public class SimpleID3Parser extends Parser {
 
 
 	// $ANTLR start "artista"
-	// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:90:1: artista returns [List<Token> p] : ART_HEAD c1= CHAR c2= CHAR c3= CHAR c4= CHAR c5= CHAR c6= CHAR c7= CHAR c8= CHAR c9= CHAR c10= CHAR c11= CHAR c12= CHAR c13= CHAR c14= CHAR c15= CHAR c16= CHAR c17= CHAR c18= CHAR c19= CHAR c20= CHAR c21= CHAR c22= CHAR c23= CHAR c24= CHAR c25= CHAR c26= CHAR c27= CHAR c28= CHAR c29= CHAR c30= CHAR ;
+	// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:92:1: artista returns [List<Token> p] : ART_HEAD c1= CHAR c2= CHAR c3= CHAR c4= CHAR c5= CHAR c6= CHAR c7= CHAR c8= CHAR c9= CHAR c10= CHAR c11= CHAR c12= CHAR c13= CHAR c14= CHAR c15= CHAR c16= CHAR c17= CHAR c18= CHAR c19= CHAR c20= CHAR c21= CHAR c22= CHAR c23= CHAR c24= CHAR c25= CHAR c26= CHAR c27= CHAR c28= CHAR c29= CHAR c30= CHAR ;
 	public final List<Token> artista() throws RecognitionException {
 		List<Token> p = null;
 
@@ -497,8 +499,8 @@ public class SimpleID3Parser extends Parser {
 
 		 p = new ArrayList<Token>();
 		try {
-			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:92:2: ( ART_HEAD c1= CHAR c2= CHAR c3= CHAR c4= CHAR c5= CHAR c6= CHAR c7= CHAR c8= CHAR c9= CHAR c10= CHAR c11= CHAR c12= CHAR c13= CHAR c14= CHAR c15= CHAR c16= CHAR c17= CHAR c18= CHAR c19= CHAR c20= CHAR c21= CHAR c22= CHAR c23= CHAR c24= CHAR c25= CHAR c26= CHAR c27= CHAR c28= CHAR c29= CHAR c30= CHAR )
-			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:92:4: ART_HEAD c1= CHAR c2= CHAR c3= CHAR c4= CHAR c5= CHAR c6= CHAR c7= CHAR c8= CHAR c9= CHAR c10= CHAR c11= CHAR c12= CHAR c13= CHAR c14= CHAR c15= CHAR c16= CHAR c17= CHAR c18= CHAR c19= CHAR c20= CHAR c21= CHAR c22= CHAR c23= CHAR c24= CHAR c25= CHAR c26= CHAR c27= CHAR c28= CHAR c29= CHAR c30= CHAR
+			// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:94:2: ( ART_HEAD c1= CHAR c2= CHAR c3= CHAR c4= CHAR c5= CHAR c6= CHAR c7= CHAR c8= CHAR c9= CHAR c10= CHAR c11= CHAR c12= CHAR c13= CHAR c14= CHAR c15= CHAR c16= CHAR c17= CHAR c18= CHAR c19= CHAR c20= CHAR c21= CHAR c22= CHAR c23= CHAR c24= CHAR c25= CHAR c26= CHAR c27= CHAR c28= CHAR c29= CHAR c30= CHAR )
+			// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:94:4: ART_HEAD c1= CHAR c2= CHAR c3= CHAR c4= CHAR c5= CHAR c6= CHAR c7= CHAR c8= CHAR c9= CHAR c10= CHAR c11= CHAR c12= CHAR c13= CHAR c14= CHAR c15= CHAR c16= CHAR c17= CHAR c18= CHAR c19= CHAR c20= CHAR c21= CHAR c22= CHAR c23= CHAR c24= CHAR c25= CHAR c26= CHAR c27= CHAR c28= CHAR c29= CHAR c30= CHAR
 			{
 			match(input,ART_HEAD,FOLLOW_ART_HEAD_in_artista471); 
 			c1=(Token)match(input,CHAR,FOLLOW_CHAR_in_artista476); 
@@ -551,7 +553,7 @@ public class SimpleID3Parser extends Parser {
 
 
 	// $ANTLR start "album"
-	// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:103:1: album returns [List<Token> p] : ALBUM_HEAD c1= CHAR c2= CHAR c3= CHAR c4= CHAR c5= CHAR c6= CHAR c7= CHAR c8= CHAR c9= CHAR c10= CHAR c11= CHAR c12= CHAR c13= CHAR c14= CHAR c15= CHAR c16= CHAR c17= CHAR c18= CHAR c19= CHAR c20= CHAR c21= CHAR c22= CHAR c23= CHAR c24= CHAR c25= CHAR c26= CHAR c27= CHAR c28= CHAR c29= CHAR c30= CHAR ;
+	// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:105:1: album returns [List<Token> p] : ALBUM_HEAD c1= CHAR c2= CHAR c3= CHAR c4= CHAR c5= CHAR c6= CHAR c7= CHAR c8= CHAR c9= CHAR c10= CHAR c11= CHAR c12= CHAR c13= CHAR c14= CHAR c15= CHAR c16= CHAR c17= CHAR c18= CHAR c19= CHAR c20= CHAR c21= CHAR c22= CHAR c23= CHAR c24= CHAR c25= CHAR c26= CHAR c27= CHAR c28= CHAR c29= CHAR c30= CHAR ;
 	public final List<Token> album() throws RecognitionException {
 		List<Token> p = null;
 
@@ -589,8 +591,8 @@ public class SimpleID3Parser extends Parser {
 
 		 p = new ArrayList<Token>();
 		try {
-			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:105:2: ( ALBUM_HEAD c1= CHAR c2= CHAR c3= CHAR c4= CHAR c5= CHAR c6= CHAR c7= CHAR c8= CHAR c9= CHAR c10= CHAR c11= CHAR c12= CHAR c13= CHAR c14= CHAR c15= CHAR c16= CHAR c17= CHAR c18= CHAR c19= CHAR c20= CHAR c21= CHAR c22= CHAR c23= CHAR c24= CHAR c25= CHAR c26= CHAR c27= CHAR c28= CHAR c29= CHAR c30= CHAR )
-			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:105:4: ALBUM_HEAD c1= CHAR c2= CHAR c3= CHAR c4= CHAR c5= CHAR c6= CHAR c7= CHAR c8= CHAR c9= CHAR c10= CHAR c11= CHAR c12= CHAR c13= CHAR c14= CHAR c15= CHAR c16= CHAR c17= CHAR c18= CHAR c19= CHAR c20= CHAR c21= CHAR c22= CHAR c23= CHAR c24= CHAR c25= CHAR c26= CHAR c27= CHAR c28= CHAR c29= CHAR c30= CHAR
+			// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:107:2: ( ALBUM_HEAD c1= CHAR c2= CHAR c3= CHAR c4= CHAR c5= CHAR c6= CHAR c7= CHAR c8= CHAR c9= CHAR c10= CHAR c11= CHAR c12= CHAR c13= CHAR c14= CHAR c15= CHAR c16= CHAR c17= CHAR c18= CHAR c19= CHAR c20= CHAR c21= CHAR c22= CHAR c23= CHAR c24= CHAR c25= CHAR c26= CHAR c27= CHAR c28= CHAR c29= CHAR c30= CHAR )
+			// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:107:4: ALBUM_HEAD c1= CHAR c2= CHAR c3= CHAR c4= CHAR c5= CHAR c6= CHAR c7= CHAR c8= CHAR c9= CHAR c10= CHAR c11= CHAR c12= CHAR c13= CHAR c14= CHAR c15= CHAR c16= CHAR c17= CHAR c18= CHAR c19= CHAR c20= CHAR c21= CHAR c22= CHAR c23= CHAR c24= CHAR c25= CHAR c26= CHAR c27= CHAR c28= CHAR c29= CHAR c30= CHAR
 			{
 			match(input,ALBUM_HEAD,FOLLOW_ALBUM_HEAD_in_album636); 
 			c1=(Token)match(input,CHAR,FOLLOW_CHAR_in_album641); 
@@ -643,7 +645,7 @@ public class SimpleID3Parser extends Parser {
 
 
 	// $ANTLR start "anno"
-	// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:115:1: anno returns [List<Token> p] : ANNO_HEAD c1= CHAR c2= CHAR c3= CHAR c4= CHAR ;
+	// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:117:1: anno returns [List<Token> p] : ANNO_HEAD c1= CHAR c2= CHAR c3= CHAR c4= CHAR ;
 	public final List<Token> anno() throws RecognitionException {
 		List<Token> p = null;
 
@@ -655,8 +657,8 @@ public class SimpleID3Parser extends Parser {
 
 		 p = new ArrayList<Token>();
 		try {
-			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:117:2: ( ANNO_HEAD c1= CHAR c2= CHAR c3= CHAR c4= CHAR )
-			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:117:4: ANNO_HEAD c1= CHAR c2= CHAR c3= CHAR c4= CHAR
+			// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:119:2: ( ANNO_HEAD c1= CHAR c2= CHAR c3= CHAR c4= CHAR )
+			// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:119:4: ANNO_HEAD c1= CHAR c2= CHAR c3= CHAR c4= CHAR
 			{
 			match(input,ANNO_HEAD,FOLLOW_ANNO_HEAD_in_anno789); 
 			c1=(Token)match(input,CHAR,FOLLOW_CHAR_in_anno794); 
@@ -681,7 +683,7 @@ public class SimpleID3Parser extends Parser {
 
 
 	// $ANTLR start "anno2"
-	// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:122:1: anno2 returns [List<Token> p] : c1= CHAR c2= CHAR c3= CHAR c4= CHAR ;
+	// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:124:1: anno2 returns [List<Token> p] : c1= CHAR c2= CHAR c3= CHAR c4= CHAR ;
 	public final List<Token> anno2() throws RecognitionException {
 		List<Token> p = null;
 
@@ -693,8 +695,8 @@ public class SimpleID3Parser extends Parser {
 
 		 p = new ArrayList<Token>();
 		try {
-			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:124:2: (c1= CHAR c2= CHAR c3= CHAR c4= CHAR )
-			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:125:2: c1= CHAR c2= CHAR c3= CHAR c4= CHAR
+			// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:126:2: (c1= CHAR c2= CHAR c3= CHAR c4= CHAR )
+			// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:127:2: c1= CHAR c2= CHAR c3= CHAR c4= CHAR
 			{
 			c1=(Token)match(input,CHAR,FOLLOW_CHAR_in_anno2833); 
 			c2=(Token)match(input,CHAR,FOLLOW_CHAR_in_anno2837); 
@@ -718,7 +720,7 @@ public class SimpleID3Parser extends Parser {
 
 
 	// $ANTLR start "commento"
-	// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:130:1: commento returns [List<Token> p] : COMMENTO_HEAD c1= CHAR c2= CHAR c3= CHAR c4= CHAR c5= CHAR c6= CHAR c7= CHAR c8= CHAR c9= CHAR c10= CHAR c11= CHAR c12= CHAR c13= CHAR c14= CHAR c15= CHAR c16= CHAR c17= CHAR c18= CHAR c19= CHAR c20= CHAR c21= CHAR c22= CHAR c23= CHAR c24= CHAR c25= CHAR c26= CHAR c27= CHAR c28= CHAR c29= CHAR c30= CHAR ;
+	// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:132:1: commento returns [List<Token> p] : COMMENTO_HEAD c1= CHAR c2= CHAR c3= CHAR c4= CHAR c5= CHAR c6= CHAR c7= CHAR c8= CHAR c9= CHAR c10= CHAR c11= CHAR c12= CHAR c13= CHAR c14= CHAR c15= CHAR c16= CHAR c17= CHAR c18= CHAR c19= CHAR c20= CHAR c21= CHAR c22= CHAR c23= CHAR c24= CHAR c25= CHAR c26= CHAR c27= CHAR c28= CHAR c29= CHAR c30= CHAR ;
 	public final List<Token> commento() throws RecognitionException {
 		List<Token> p = null;
 
@@ -756,8 +758,8 @@ public class SimpleID3Parser extends Parser {
 
 		 p = new ArrayList<Token>();
 		try {
-			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:132:2: ( COMMENTO_HEAD c1= CHAR c2= CHAR c3= CHAR c4= CHAR c5= CHAR c6= CHAR c7= CHAR c8= CHAR c9= CHAR c10= CHAR c11= CHAR c12= CHAR c13= CHAR c14= CHAR c15= CHAR c16= CHAR c17= CHAR c18= CHAR c19= CHAR c20= CHAR c21= CHAR c22= CHAR c23= CHAR c24= CHAR c25= CHAR c26= CHAR c27= CHAR c28= CHAR c29= CHAR c30= CHAR )
-			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:132:4: COMMENTO_HEAD c1= CHAR c2= CHAR c3= CHAR c4= CHAR c5= CHAR c6= CHAR c7= CHAR c8= CHAR c9= CHAR c10= CHAR c11= CHAR c12= CHAR c13= CHAR c14= CHAR c15= CHAR c16= CHAR c17= CHAR c18= CHAR c19= CHAR c20= CHAR c21= CHAR c22= CHAR c23= CHAR c24= CHAR c25= CHAR c26= CHAR c27= CHAR c28= CHAR c29= CHAR c30= CHAR
+			// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:134:2: ( COMMENTO_HEAD c1= CHAR c2= CHAR c3= CHAR c4= CHAR c5= CHAR c6= CHAR c7= CHAR c8= CHAR c9= CHAR c10= CHAR c11= CHAR c12= CHAR c13= CHAR c14= CHAR c15= CHAR c16= CHAR c17= CHAR c18= CHAR c19= CHAR c20= CHAR c21= CHAR c22= CHAR c23= CHAR c24= CHAR c25= CHAR c26= CHAR c27= CHAR c28= CHAR c29= CHAR c30= CHAR )
+			// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:134:4: COMMENTO_HEAD c1= CHAR c2= CHAR c3= CHAR c4= CHAR c5= CHAR c6= CHAR c7= CHAR c8= CHAR c9= CHAR c10= CHAR c11= CHAR c12= CHAR c13= CHAR c14= CHAR c15= CHAR c16= CHAR c17= CHAR c18= CHAR c19= CHAR c20= CHAR c21= CHAR c22= CHAR c23= CHAR c24= CHAR c25= CHAR c26= CHAR c27= CHAR c28= CHAR c29= CHAR c30= CHAR
 			{
 			match(input,COMMENTO_HEAD,FOLLOW_COMMENTO_HEAD_in_commento873); 
 			c1=(Token)match(input,CHAR,FOLLOW_CHAR_in_commento879); 
@@ -810,7 +812,7 @@ public class SimpleID3Parser extends Parser {
 
 
 	// $ANTLR start "genere"
-	// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:142:1: genere returns [Token t] : GENERE_HEAD p= . ;
+	// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:144:1: genere returns [Token t] : GENERE_HEAD p= . ;
 	public final Token genere() throws RecognitionException {
 		Token t = null;
 
@@ -818,8 +820,8 @@ public class SimpleID3Parser extends Parser {
 		Token p=null;
 
 		try {
-			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:142:25: ( GENERE_HEAD p= . )
-			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:142:27: GENERE_HEAD p= .
+			// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:144:25: ( GENERE_HEAD p= . )
+			// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:144:27: GENERE_HEAD p= .
 			{
 			match(input,GENERE_HEAD,FOLLOW_GENERE_HEAD_in_genere1020); 
 			p=input.LT(1);
@@ -842,7 +844,7 @@ public class SimpleID3Parser extends Parser {
 
 
 	// $ANTLR start "genere2"
-	// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:145:1: genere2 returns [Token t] : p= . ;
+	// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:147:1: genere2 returns [Token t] : p= . ;
 	public final Token genere2() throws RecognitionException {
 		Token t = null;
 
@@ -850,8 +852,8 @@ public class SimpleID3Parser extends Parser {
 		Token p=null;
 
 		try {
-			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:145:26: (p= . )
-			// C:\\Users\\greco\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:145:27: p= .
+			// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:147:26: (p= . )
+			// C:\\Users\\fabio\\git\\SimpleID3\\src\\myID3Compiler\\SimpleID3.g:147:27: p= .
 			{
 			p=input.LT(1);
 			matchAny(input); 
