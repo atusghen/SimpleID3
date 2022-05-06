@@ -50,6 +50,8 @@ options {
   }
 
 }
+superstruttura:	musica struttura;
+musica	:	.*;
 
 struttura: 'TAG' (corpo||corpo2);
  

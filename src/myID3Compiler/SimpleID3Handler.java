@@ -7,7 +7,8 @@ import org.antlr.runtime.RecognitionException;
 import org.antlr.runtime.Token;
 import org.antlr.runtime.TokenStream;
 
-import myPackage.ParserLauncher;
+import myPackage.Interfaccia;
+;
 
 public class SimpleID3Handler {
 	public static final int UNDEFINED = -1;	
@@ -84,35 +85,35 @@ public class SimpleID3Handler {
 				s = s + T.get(i).getText();
 			conta++;
 			System.out.print(s);
-			ParserLauncher.setData(conta, s);
+			Interfaccia.setData(conta, s);
 		} else if(conta == 1) {
 			System.out.print("Artista: ");
 			for(int i=0;i<T.size();i++)
 				s = s + T.get(i).getText();
 			conta++;
 			System.out.print(s);
-			ParserLauncher.setData(conta, s);
+			Interfaccia.setData(conta, s);
 		} else if(conta == 2) {
 			System.out.print("Album: ");
 			for(int i=0;i<T.size();i++)
 				s = s + T.get(i).getText();
 			conta++;
 			System.out.print(s);
-			ParserLauncher.setData(conta, s);
+			Interfaccia.setData(conta, s);
 		} else if(conta == 3) {
 			System.out.print("Anno: ");
 			for(int i=0;i<T.size();i++)
 				s = s + T.get(i).getText();
 			conta++;
 			System.out.print(s);
-			ParserLauncher.setData(conta, s);
+			Interfaccia.setData(conta, s);
 		} else {
 			System.out.print("Commento: ");
 			for(int i=0;i<T.size();i++)
 				s = s + T.get(i).getText();
 			conta++;
 			System.out.print(s);
-			ParserLauncher.setData(conta, s);
+			Interfaccia.setData(conta, s);
 		}
 		System.out.println();
 	}
@@ -122,11 +123,17 @@ public class SimpleID3Handler {
 		char a=T.getText().charAt(0);
 		int i=(int)a;
 		System.out.println("Genere: "+riconosciGenere(i));
-		ParserLauncher.setData(6, riconosciGenere(i));
+		Interfaccia.setData(6, riconosciGenere(i));
 	}
+	
 	
 	public String riconosciGenere (int i)
 	{
+	//converto prima il char to hex string, poi ne leggo il valore
+	//formalmente è una procedura per leggere il valore grezzo del byte, togliendo il formato "char" assegnato dalla lettura
+	//tramite token
+		int num = Integer.parseInt(String.format("%04x", i), 16);
+	//	System.out.println(String.format("%04x", i));
 		switch (i) {
 			case 0: return "Blues";
 			case 1: return "Classic Rock";
@@ -256,6 +263,8 @@ public class SimpleID3Handler {
 			case 125: return "Dance Hall";
 			case 126: return "Goa";
 			case 127: return "Drum & Bass";
+			
+			//test 143 si passa al charset ANSI con numeri sempre tutti diversi
 			case 128: return "Club-House";
 			case 129: return "Hardcore";
 			case 130: return "Terror";
@@ -274,8 +283,8 @@ public class SimpleID3Handler {
 			case 143: return "Salsa";
 			case 144: return "Trash Metal";
 			case 145: return "Anime";
-			case 146: return "JPop";
-			case 147: return "Synthpop";
+	/*146*/	case 192: return "JPop";
+	/*147*/	case 8222: return "Synthpop";
 			
 			default: return "Sconosciuto";
 		}
