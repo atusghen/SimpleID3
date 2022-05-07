@@ -8,15 +8,12 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-import java.awt.GridLayout;
-import java.awt.Image;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 
-import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -70,7 +67,7 @@ public class Interfaccia extends JPanel {
     	infopanel1.setLayout(new BorderLayout());
     	infopanel1.add(winTitle, BorderLayout.NORTH);
     	infopanel1.setBackground(Color.WHITE);
-    	
+    	//infopanel1.setOpaque(false);
     	
     	infopanel.setLayout(new GridBagLayout());
     	GridBagConstraints gbc = new GridBagConstraints();
