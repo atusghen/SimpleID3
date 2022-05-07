@@ -32,7 +32,8 @@ public class Interfaccia extends JPanel {
 	
     static JButton button = new JButton("Sfoglia");
     static JCheckBox checkbox158 = new JCheckBox("158 bytes");
-    public static JCheckBox checkbox128 = new JCheckBox("128 bytes", true);
+    static JCheckBox checkbox128 = new JCheckBox("128 bytes", true);
+    static JCheckBox mode = new JCheckBox("Modalità automatica", true);
     static ButtonGroup topGroup = new ButtonGroup();
     //static JLabel sp1 = new JLabel();
     //static JLabel sp2 = new JLabel();
@@ -79,19 +80,27 @@ public class Interfaccia extends JPanel {
         checkbox158.setForeground(Color.BLACK);
         checkbox158.setFocusPainted(false);
         checkbox158.setBorderPainted(false);
+        mode.setForeground(Color.BLACK);
+        mode.setFocusPainted(false);
+        mode.setBorderPainted(false);
+        
         checkbox128.setIcon(new ImageIcon(getClass().getResource("checkbox.png")));
         checkbox128.setSelectedIcon(new ImageIcon(getClass().getResource("check.png")));
         checkbox158.setIcon(new ImageIcon(getClass().getResource("checkbox.png")));
         checkbox158.setSelectedIcon(new ImageIcon(getClass().getResource("check.png")));
+        mode.setIcon(new ImageIcon(getClass().getResource("checkbox.png")));
+        mode.setSelectedIcon(new ImageIcon(getClass().getResource("check.png")));
         
         topGroup.add(checkbox128);
         topGroup.add(checkbox158);
+        topGroup.add(mode);
         
         //infopanel.add(sp1);
         //infopanel.add(sp2);
         infopanel.add(button);
         infopanel.add(checkbox128);
         infopanel.add(checkbox158);
+        infopanel.add(mode);
         
         jF.getContentPane().add(infopanel);
         jF.pack();
@@ -130,6 +139,7 @@ public class Interfaccia extends JPanel {
     	infopanel.remove(button);
     	infopanel.remove(checkbox128);
     	infopanel.remove(checkbox158);
+    	infopanel.remove(mode);
     	titolo.setVisible(true);
         ti.setVisible(true);
         artista.setVisible(true);
@@ -176,6 +186,10 @@ public class Interfaccia extends JPanel {
     public boolean checkMode()
     {
     	return checkbox128.isSelected() ? true:false;
+    }
+    public boolean checkMode2()
+    {
+    	return mode.isSelected() ? true:false;
     }
 }
 

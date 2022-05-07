@@ -122,20 +122,17 @@ public class SimpleID3Handler {
 	{
 		char a=T.getText().charAt(0);
 		int i=(int)a;
-		System.out.println("Genere: "+riconosciGenere(i)+i);
+		System.out.println("Genere: "+riconosciGenere(i));
 		Interfaccia.setData(6, riconosciGenere(i));
 	}
 	
 	
 	public String riconosciGenere (int i)
 	{
-	//converto prima il char to hex string, poi ne leggo il valore
-	//formalmente è una procedura per leggere il valore grezzo del byte, togliendo il formato "char" assegnato dalla lettura
-	//tramite token
-		//int num = Integer.parseInt(String.format("%04x", i), 16);
-		//System.out.println(num);
+	//System.out.println(num);
 		switch (i) {
 			case 0: return "Blues";
+			case 60: return "Blues";
 			case 1: return "Classic Rock";
 			case 2: return "Country";
 			case 3: return "Dance";
@@ -195,7 +192,7 @@ public class SimpleID3Handler {
 			case 57: return "Comedy";
 			case 58: return "Cult";
 			case 59: return "Gangsta";
-			case 60: return "Top 40";
+		//	case 60: return "Top 40";
 			case 61: return "Christian Rap";
 			case 62: return "Pop/Funk";
 			case 63: return "Jungle";

@@ -15,8 +15,7 @@ import myID3Compiler.SimpleID3Parser;
 
 public class ParserLauncher{
     ParserLauncher(){}
-    
-
+   
 public static char[] getTagFromFile(String name, int offset) throws FileNotFoundException, IOException
 {
 	//calcolo posizione TAG se esiste
@@ -26,11 +25,13 @@ public static char[] getTagFromFile(String name, int offset) throws FileNotFound
 	{
 		if(fileMp3.read()=='T') {
 			if(fileMp3.read()=='A') {
-				if(fileMp3.read()=='G') {break;}}}
+				if(fileMp3.read()=='G') {break;}else {length=length+2;}
+				}else{length++;}
+			}
 		length++;
 	}
 	fileMp3.close();
-	System.out.println("inizio lettura");
+	//System.out.println(length+"<-inizio lettura");
 //lettura da posizione TAG trovata in array di char
 //se la posizione non è trovata la lettura parte dalla fine del reader, creando di fatto un array vuoto
 	fileMp3 = new InputStreamReader(new FileInputStream(name), "Cp1252");
@@ -51,10 +52,9 @@ public static char[] getTagFromFile(String name, int offset) throws FileNotFound
 public static InputStreamReader setReaderWithStartSearch(Interfaccia a) throws FileNotFoundException, IOException
 {
 	//versione con step intermedio di scrittura su file di input, non più necessaria
-	//if(checkbox128.isSelected()) {offset = 128;}else{offset = 158;}
+
 	String fileName = ".\\resources\\input.file"; //ultima scelta
 	int offset = (a.checkMode()) ? 128 :158;
-
 		try{
     		String tagFile=new String(getTagFromFile(a.fileChooser(), offset));
     		OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(fileName), StandardCharsets.UTF_8);
@@ -70,39 +70,31 @@ public static InputStreamReader setReaderWithStartSearch(Interfaccia a) throws F
 
 public static InputStreamReader setReaderNoSearch(Interfaccia a) throws FileNotFoundException, IOException
 {
-	//versione con step intermedio di scrittura su file di input, non più necessaria
-	//if(checkbox128.isSelected()) {offset = 128;}else{offset = 158;}   
-		InputStreamReader fileIn = new InputStreamReader(new FileInputStream(a.fileChooser()), "Cp1252");
-		   return fileIn;
+//versione con step intermedio di scrittura su file di input, non più necessaria
+	InputStreamReader fileIn = new InputStreamReader(new FileInputStream(a.fileChooser()), "Cp1252");
+	return fileIn;
 }
 
 public static String setString(Interfaccia a) throws FileNotFoundException, IOException
 {
-	//ParserLauncher a=new ParserLauncher();
-	//if(checkbox128.isSelected()) {offset = 128;}else{offset = 158;}
-	
+
 	int offset = (a.checkMode()) ? 128 :158;
 	String tagString=new String();
 		try {
 			 tagString=new String(getTagFromFile(a.fileChooser(), offset));
 	//questo out a console è solo di debug, ricordiamo che è da togliere
-			 System.out.println("Stringa->"+tagString+"<-fine");
+	//		 System.out.println("Stringa->"+tagString+"<-fine");
 			   }catch(NullPointerException e2) {System.out.println("Non selezionato");}
 			  
 			   return tagString;}
 
 public static void avvio(Interfaccia a) throws FileNotFoundException, IOException, RecognitionException {
 	
-	//SimpleID3Parser parser = new SimpleID3Parser(setReader(a));
-	/*
-	String tag=setString(a);
-	if(tag==null){System.out.println("la stringa è vuota");}else {System.out.println("la stringa->"+tag);}
-	*/
-	//SimpleID3Parser parser= new SimpleID3Parser(setString(a));
+	SimpleID3Parser parser;
+	if(a.checkMode2()) {parser= new SimpleID3Parser(new BufferedReader(setReaderNoSearch(a)));}
+	else {parser= new SimpleID3Parser(setString(a));}
 	
-	SimpleID3Parser parser = new SimpleID3Parser(new BufferedReader(setReaderNoSearch(a)));
 	System.out.println ("Parsing con ANTLR");
-
 	parser.superstruttura();
 		
 	if (parser.getErrorList().size() == 0)
@@ -120,21 +112,6 @@ public static void avvio(Interfaccia a) throws FileNotFoundException, IOExceptio
 public static void main (String[] args) throws FileNotFoundException, IOException, RecognitionException {
 	
 	Interfaccia a=new Interfaccia();
-	
-/*
-	ParserLauncher a=new ParserLauncher();
-	button.addActionListener(new ActionListener() { 
-	    public void actionPerformed(ActionEvent e) { 
-	        try {
-	        	avvio(a);
-			} catch (IOException | RecognitionException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
-	    } 
-	});
-	*/	
 	}
-
 
 }
