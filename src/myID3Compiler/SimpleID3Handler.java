@@ -122,7 +122,7 @@ public class SimpleID3Handler {
 	{
 		char a=T.getText().charAt(0);
 		int i=(int)a;
-		System.out.println("Genere: "+riconosciGenere(i));
+		System.out.println("Genere: "+riconosciGenere(i)+i);
 		Interfaccia.setData(6, riconosciGenere(i));
 	}
 	
@@ -132,8 +132,8 @@ public class SimpleID3Handler {
 	//converto prima il char to hex string, poi ne leggo il valore
 	//formalmente è una procedura per leggere il valore grezzo del byte, togliendo il formato "char" assegnato dalla lettura
 	//tramite token
-		int num = Integer.parseInt(String.format("%04x", i), 16);
-	//	System.out.println(String.format("%04x", i));
+		//int num = Integer.parseInt(String.format("%04x", i), 16);
+		//System.out.println(num);
 		switch (i) {
 			case 0: return "Blues";
 			case 1: return "Classic Rock";
@@ -265,26 +265,26 @@ public class SimpleID3Handler {
 			case 127: return "Drum & Bass";
 			
 			//test 143 si passa al charset ANSI con numeri sempre tutti diversi
-			case 128: return "Club-House";
-			case 129: return "Hardcore";
-			case 130: return "Terror";
-			case 131: return "Indie";
-			case 132: return "Britpop";
-			case 133: return "Negerpunk";
-			case 134: return "Polsk Punk";
-			case 135: return "Beat";
-			case 136: return "Christian";
-			case 137: return "Heavy Metal";
-			case 138: return "Black Metal";
-			case 139: return "Crossover";
-			case 140: return "Contemporary";
-			case 141: return "Christian Rock";
-			case 142: return "Merengue";
-			case 143: return "Salsa";
-			case 144: return "Trash Metal";
-			case 145: return "Anime";
-	/*146*/	case 192: return "JPop";
-	/*147*/	case 8222: return "Synthpop";
+			case 8364: return "Club-House";
+			case 65533: return "Hardcore";
+			case 8218: return "Terror";
+			case 402: return "Indie";
+			case 8222: return "Britpop";
+			case 8230: return "Negerpunk";
+			case 8224: return "Polsk Punk";
+			case 8225: return "Beat";
+			case 710: return "Christian";
+			case 8240: return "Heavy Metal";
+			case 352: return "Black Metal";
+			case 8249: return "Crossover";
+			case 338: return "Contemporary";
+			//case 141: return "Christian Rock"; //uguale a Hardcore
+			case 381: return "Merengue";
+			//case 143: return "Salsa";
+			//case 144: return "Trash Metal";
+			case 8216: return "Anime";
+			case 8217: return "JPop";
+			case 8220: return "Synthpop";
 			
 			default: return "Sconosciuto";
 		}

@@ -1,5 +1,7 @@
 package myPackage;
 
+import java.awt.Color;
+import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -7,14 +9,19 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 
+import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.border.Border;
+import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
 
 import org.antlr.runtime.RecognitionException;
 
@@ -23,11 +30,12 @@ import myPackage.Interfaccia;
 @SuppressWarnings("serial")
 public class Interfaccia extends JPanel {
 	
-	//private JTextField m_userInputCF = new JTextField(16);
     static JButton button = new JButton("Sfoglia");
     static JCheckBox checkbox158 = new JCheckBox("158 bytes");
     public static JCheckBox checkbox128 = new JCheckBox("128 bytes", true);
     static ButtonGroup topGroup = new ButtonGroup();
+    //static JLabel sp1 = new JLabel();
+    //static JLabel sp2 = new JLabel();
 	static JLabel titolo = new JLabel("TITOLO:");
 	static JLabel ti = new JLabel();
 	static JLabel artista = new JLabel("ARTISTA:");
@@ -46,31 +54,50 @@ public class Interfaccia extends JPanel {
     
     
     public Interfaccia(){
-    	infopanel.setLayout(new GridLayout(1, 1));
+    	//BoxLayout bl = new BoxLayout(infopanel, BoxLayout.Y_AXIS);
+    	GridLayout gridLayout  = new GridLayout(1, 2);
+    	gridLayout.setHgap(20);
+    	//gridLayout.setVgap(75);
+    	infopanel.setLayout(gridLayout);
     	infopanel.setBorder(new EmptyBorder(10, 10, 10, 10));
-        //infopanel.setLayout(new BorderLayout());
-        infopanel.setPreferredSize(new Dimension(300, 50));
+        infopanel.setPreferredSize(new Dimension(350, 50));
+        //infopanel.setSize(new Dimension(350, 400));        
+        
+        button.setForeground(Color.WHITE);
+        button.setFocusPainted(false);
+        button.setBackground(new Color(33, 150, 243));
+        button.setBorderPainted(false);
+        button.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        Border line = new LineBorder(Color.BLACK);
+        Border margin = new EmptyBorder(5, 15, 5, 15);
+        Border compound = new CompoundBorder(line, margin);
+        button.setBorder(compound);
+        
+        checkbox128.setForeground(Color.BLACK);
+        checkbox128.setFocusPainted(false);
+        checkbox128.setBorderPainted(false);
+        checkbox158.setForeground(Color.BLACK);
+        checkbox158.setFocusPainted(false);
+        checkbox158.setBorderPainted(false);
+        checkbox128.setIcon(new ImageIcon(getClass().getResource("checkbox.png")));
+        checkbox128.setSelectedIcon(new ImageIcon(getClass().getResource("check.png")));
+        checkbox158.setIcon(new ImageIcon(getClass().getResource("checkbox.png")));
+        checkbox158.setSelectedIcon(new ImageIcon(getClass().getResource("check.png")));
+        
         topGroup.add(checkbox128);
         topGroup.add(checkbox158);
+        
+        //infopanel.add(sp1);
+        //infopanel.add(sp2);
         infopanel.add(button);
         infopanel.add(checkbox128);
         infopanel.add(checkbox158);
-        /*infopanel.add(titolo).setVisible(false);
-        infopanel.add(ti).setVisible(false);
-        infopanel.add(artista).setVisible(false);
-        infopanel.add(ar).setVisible(false);
-        infopanel.add(album).setVisible(false);
-        infopanel.add(al).setVisible(false);
-        infopanel.add(anno).setVisible(false);
-        infopanel.add(an).setVisible(false);
-        infopanel.add(commento).setVisible(false);
-        infopanel.add(co).setVisible(false);
-        infopanel.add(genere).setVisible(false);
-        infopanel.add(ge).setVisible(false);*/
         
         jF.getContentPane().add(infopanel);
         jF.pack();
+        //jF.setSize(500, 150);
         jF.setVisible(true);
+        
         button.addActionListener(new ActionListener() { 
     	    public void actionPerformed(ActionEvent e) { 
     	       startParsing(e);
@@ -143,7 +170,6 @@ public class Interfaccia extends JPanel {
         try {
         	ParserLauncher.avvio(this);
 		} catch (IOException | RecognitionException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
     }
