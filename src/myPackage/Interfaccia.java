@@ -13,7 +13,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 
+import javax.imageio.ImageIO;
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -59,7 +61,7 @@ public class Interfaccia extends JPanel {
     static JFrame jF = new JFrame("SimpleID3");
     
     
-    public Interfaccia(){
+    public Interfaccia() throws IOException{
     	//BoxLayout bl = new BoxLayout(infopanel, BoxLayout.Y_AXIS);
     	winTitle.setHorizontalAlignment(JLabel.CENTER);
     	winTitle.setVerticalAlignment(JLabel.CENTER);
@@ -115,12 +117,36 @@ public class Interfaccia extends JPanel {
         mode.setFont(new Font("SansSerif", Font.PLAIN, 14));
         mode.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         
-        checkbox128.setIcon(new ImageIcon(getClass().getResource("img/checkbox.png")));
-        checkbox128.setSelectedIcon(new ImageIcon(getClass().getResource("img/check.png")));
-        checkbox158.setIcon(new ImageIcon(getClass().getResource("img/checkbox.png")));
-        checkbox158.setSelectedIcon(new ImageIcon(getClass().getResource("img/check.png")));
-        mode.setIcon(new ImageIcon(getClass().getResource("Img/checkbox.png")));
-        mode.setSelectedIcon(new ImageIcon(getClass().getResource("img/check.png")));
+        InputStream stream = getClass().getResourceAsStream("img/checkbox.png");
+        ImageIcon icon= new ImageIcon(ImageIO.read(stream));
+        checkbox128.setIcon(icon);
+        
+        stream = getClass().getResourceAsStream("img/check.png");
+        icon= new ImageIcon(ImageIO.read(stream));
+        checkbox128.setSelectedIcon(icon);
+        
+        stream = getClass().getResourceAsStream("img/check.png");
+        icon= new ImageIcon(ImageIO.read(stream));
+        checkbox158.setSelectedIcon(icon);
+        
+        stream = getClass().getResourceAsStream("img/checkbox.png");
+        icon= new ImageIcon(ImageIO.read(stream));
+        checkbox158.setIcon(icon);
+        
+        stream = getClass().getResourceAsStream("img/checkbox.png");
+        icon= new ImageIcon(ImageIO.read(stream));
+        mode.setIcon(icon);
+        
+        stream = getClass().getResourceAsStream("img/check.png");
+        icon= new ImageIcon(ImageIO.read(stream));
+        mode.setSelectedIcon(icon);
+        
+        /*checkbox128.setIcon(new ImageIcon(getClass().getResource("../img/checkbox.png")));
+        checkbox128.setSelectedIcon(new ImageIcon(getClass().getResource("../img/check.png")));
+        checkbox158.setIcon(new ImageIcon(getClass().getResource("../img/checkbox.png")));
+        checkbox158.setSelectedIcon(new ImageIcon(getClass().getResource("../img/check.png")));
+        mode.setIcon(new ImageIcon(getClass().getResource("../img/checkbox.png")));
+        mode.setSelectedIcon(new ImageIcon(getClass().getResource("../img/check.png")));*/
         
         topGroup.add(checkbox128);
         topGroup.add(checkbox158);
@@ -140,7 +166,10 @@ public class Interfaccia extends JPanel {
         //jF.getContentPane().add(infopanel);
         //jF.setBackground(Color.WHITE);
         //ImageIcon ii = new ImageIcon(getClass().getResource("check.png"));
-        jF.setIconImage(new ImageIcon(getClass().getResource("img/music.png")).getImage());
+        stream = getClass().getResourceAsStream("img/music.png");
+        icon= new ImageIcon(ImageIO.read(stream));
+        jF.setIconImage(icon.getImage());
+        //jF.setIconImage(new ImageIcon(getClass().getResource("img/music.png")).getImage());
         jF.pack();
         jF.setLocationRelativeTo(null);
         jF.setResizable(false);
