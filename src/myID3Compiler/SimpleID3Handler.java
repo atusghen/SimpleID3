@@ -132,7 +132,7 @@ public class SimpleID3Handler {
 	//System.out.println(num);
 		switch (i) {
 			case 0: return "Blues";
-			case 60: return "Blues";
+			//case 60: return "Blues";
 			case 1: return "Classic Rock";
 			case 2: return "Country";
 			case 3: return "Dance";
@@ -192,7 +192,7 @@ public class SimpleID3Handler {
 			case 57: return "Comedy";
 			case 58: return "Cult";
 			case 59: return "Gangsta";
-		//	case 60: return "Top 40";
+			case 60: return "Top 40";
 			case 61: return "Christian Rap";
 			case 62: return "Pop/Funk";
 			case 63: return "Jungle";
