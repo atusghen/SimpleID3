@@ -109,9 +109,6 @@ public static void avvio(Interfaccia a) throws FileNotFoundException, IOExceptio
 }
 
 
-public static void main (String[] args) throws FileNotFoundException, IOException, RecognitionException {
-	
-	Interfaccia a=new Interfaccia();
-	}
+
 
 }

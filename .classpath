@@ -5,5 +5,8 @@
 	<classpathentry kind="lib" path="E:/UniBG/materiale 5 anno/1 semestre/Linguaggi formali e compilatori/tutorato/antlr-3.4-complete.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="var" path="OPENJML_RUNTIME_LIBRARY"/>
+	<classpathentry kind="src" path="test"/>
+	<classpathentry kind="lib" path="C:/Users/greco/Desktop/tools_x_tvsw_2022/cover_JML/eclipse/plugins/org.evosuite.plugins.eclipse.deps_1.0.7.201806011952/lib/evosuite.jar"/>
+	<classpathentry kind="src" path="evosuite-tests"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

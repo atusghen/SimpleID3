@@ -1,0 +1,2215 @@
+<?xml version="1.0" encoding="UTF-8"?><TestSessionContainer xmlns="http://www.codecover.org/xml/testsession-container" Date="1653386070516" TestSessionContainerId="888b9cdb-6452-4564-ad37-20da2d5a7beb" version="1.0">
+<SrcFileList>
+<SrcFile Content="package myPackage;&#13;&#10;&#13;&#10;import java.awt.BorderLayout;&#13;&#10;import java.awt.Color;&#13;&#10;import java.awt.Component;&#13;&#10;import java.awt.Cursor;&#13;&#10;import java.awt.Dimension;&#13;&#10;import java.awt.Font;&#13;&#10;import java.awt.GridBagConstraints;&#13;&#10;import java.awt.GridBagLayout;&#13;&#10;import java.awt.Insets;&#13;&#10;import java.awt.event.ActionEvent;&#13;&#10;import java.awt.event.ActionListener;&#13;&#10;import java.io.File;&#13;&#10;import java.io.IOException;&#13;&#10;import java.io.InputStream;&#13;&#10;&#13;&#10;import javax.imageio.ImageIO;&#13;&#10;import javax.swing.ButtonGroup;&#13;&#10;import javax.swing.ImageIcon;&#13;&#10;import javax.swing.JButton;&#13;&#10;import javax.swing.JCheckBox;&#13;&#10;import javax.swing.JFileChooser;&#13;&#10;import javax.swing.JFrame;&#13;&#10;import javax.swing.JLabel;&#13;&#10;import javax.swing.JPanel;&#13;&#10;import javax.swing.border.Border;&#13;&#10;import javax.swing.border.CompoundBorder;&#13;&#10;import javax.swing.border.EmptyBorder;&#13;&#10;import javax.swing.border.LineBorder;&#13;&#10;&#13;&#10;import org.antlr.runtime.RecognitionException;&#13;&#10;&#13;&#10;import myPackage.Interfaccia;&#13;&#10;&#13;&#10;@SuppressWarnings(&quot;serial&quot;)&#13;&#10;public class Interfaccia extends JPanel {&#13;&#10;&#9;&#13;&#10;    static JButton button = new JButton(&quot;Sfoglia&quot;);&#13;&#10;    static JCheckBox checkbox158 = new JCheckBox(&quot;158 bytes&quot;);&#13;&#10;    static JCheckBox checkbox128 = new JCheckBox(&quot;128 bytes&quot;, true);&#13;&#10;    static JCheckBox mode = new JCheckBox(&quot;Modalità automatica&quot;, true);&#13;&#10;    static ButtonGroup topGroup = new ButtonGroup();&#13;&#10;    static JLabel winTitle = new JLabel(&quot;Simple ID3 Parser&quot;);&#13;&#10;    static JLabel spazio = new JLabel(&quot; &quot;);&#13;&#10;&#9;static JLabel titolo = new JLabel(&quot;TITOLO:&quot;);&#13;&#10;&#9;static JLabel ti = new JLabel();&#13;&#10;&#9;static JLabel artista = new JLabel(&quot;ARTISTA:&quot;);&#13;&#10;&#9;static JLabel ar = new JLabel();&#13;&#10;&#9;static JLabel album = new JLabel(&quot;ALBUM:&quot;);&#13;&#10;&#9;static JLabel al = new JLabel();&#13;&#10;&#9;static JLabel anno = new JLabel(&quot;ANNO:&quot;);&#13;&#10;&#9;static JLabel an = new JLabel();&#13;&#10;&#9;static JLabel commento = new JLabel(&quot;COMMENTO:&quot;);&#13;&#10;&#9;static JLabel co = new JLabel();&#13;&#10;&#9;static JLabel genere = new JLabel(&quot;GENERE:&quot;);&#13;&#10;&#9;static JLabel ge = new JLabel();&#13;&#10;    static JPanel infopanel = new JPanel();&#13;&#10;    static JPanel infopanel1 = new JPanel();&#13;&#10;    &#13;&#10;    static JFrame jF = new JFrame(&quot;SimpleID3&quot;);&#13;&#10;    &#13;&#10;    &#13;&#10;    public Interfaccia() throws IOException{&#13;&#10;    &#9;//BoxLayout bl = new BoxLayout(infopanel, BoxLayout.Y_AXIS);&#13;&#10;    &#9;winTitle.setHorizontalAlignment(JLabel.CENTER);&#13;&#10;    &#9;winTitle.setVerticalAlignment(JLabel.CENTER);&#13;&#10;    &#9;winTitle.setFont(new Font(&quot;SansSerif&quot;, Font.BOLD, 20));&#13;&#10;    &#9;infopanel1.setLayout(new BorderLayout());&#13;&#10;    &#9;infopanel1.add(winTitle, BorderLayout.NORTH);&#13;&#10;    &#9;infopanel1.setBackground(Color.WHITE);&#13;&#10;    &#9;//infopanel1.setOpaque(false);&#13;&#10;    &#9;&#13;&#10;    &#9;infopanel.setLayout(new GridBagLayout());&#13;&#10;    &#9;GridBagConstraints gbc = new GridBagConstraints();&#13;&#10;        gbc.gridwidth = GridBagConstraints.REMAINDER;&#13;&#10;&#13;&#10;        infopanel.add(button, gbc);&#13;&#10;        infopanel.add(spazio, gbc);&#13;&#10;        //infopanel.add(new JLabel(&quot;3+5=&quot;), gbc);&#13;&#10;    &#9;//GridLayout gridLayout  = new GridLayout(1, 2);&#13;&#10;    &#9;//gridLayout.setHgap(20);&#13;&#10;    &#9;//infopanel.getLayout().setVgap(25);&#13;&#10;&#13;&#10;    &#9;infopanel.setBorder(new EmptyBorder(10, 10, 10, 10));&#13;&#10;        infopanel.setPreferredSize(new Dimension(500, 200));&#13;&#10;        infopanel.setOpaque(false);&#13;&#10;        //infopanel.setSize(new Dimension(350, 400));        &#13;&#10;        &#13;&#10;        button.setForeground(Color.WHITE);&#13;&#10;        button.setFocusPainted(false);&#13;&#10;        button.setBackground(new Color(33, 150, 243));&#13;&#10;        button.setBorderPainted(false);&#13;&#10;        button.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));&#13;&#10;        Border line = new LineBorder(Color.BLACK);&#13;&#10;        Border margin = new EmptyBorder(5, 15, 5, 15);&#13;&#10;        Border compound = new CompoundBorder(line, margin);&#13;&#10;        button.setBorder(compound);&#13;&#10;        button.setFont(new Font(&quot;SansSerif&quot;, Font.PLAIN, 20));&#13;&#10;        &#13;&#10;        checkbox128.setBackground(Color.WHITE);&#13;&#10;        checkbox128.setForeground(Color.BLACK);&#13;&#10;        checkbox128.setFocusPainted(false);&#13;&#10;        checkbox128.setBorderPainted(false);&#13;&#10;        checkbox128.setFont(new Font(&quot;SansSerif&quot;, Font.PLAIN, 14));&#13;&#10;        checkbox128.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));&#13;&#10;        checkbox158.setBackground(Color.WHITE);&#13;&#10;        checkbox158.setForeground(Color.BLACK);&#13;&#10;        checkbox158.setFocusPainted(false);&#13;&#10;        checkbox158.setBorderPainted(false);&#13;&#10;        checkbox158.setFont(new Font(&quot;SansSerif&quot;, Font.PLAIN, 14));&#13;&#10;        checkbox158.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));&#13;&#10;        mode.setBackground(Color.WHITE);&#13;&#10;        mode.setForeground(Color.BLACK);&#13;&#10;        mode.setFocusPainted(false);&#13;&#10;        mode.setBorderPainted(false);&#13;&#10;        mode.setFont(new Font(&quot;SansSerif&quot;, Font.PLAIN, 14));&#13;&#10;        mode.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));&#13;&#10;        &#13;&#10;        InputStream stream = getClass().getResourceAsStream(&quot;img/checkbox.png&quot;);&#13;&#10;        ImageIcon icon= new ImageIcon(ImageIO.read(stream));&#13;&#10;        checkbox128.setIcon(icon);&#13;&#10;        &#13;&#10;        stream = getClass().getResourceAsStream(&quot;img/check.png&quot;);&#13;&#10;        icon= new ImageIcon(ImageIO.read(stream));&#13;&#10;        checkbox128.setSelectedIcon(icon);&#13;&#10;        &#13;&#10;        stream = getClass().getResourceAsStream(&quot;img/check.png&quot;);&#13;&#10;        icon= new ImageIcon(ImageIO.read(stream));&#13;&#10;        checkbox158.setSelectedIcon(icon);&#13;&#10;        &#13;&#10;        stream = getClass().getResourceAsStream(&quot;img/checkbox.png&quot;);&#13;&#10;        icon= new ImageIcon(ImageIO.read(stream));&#13;&#10;        checkbox158.setIcon(icon);&#13;&#10;        &#13;&#10;        stream = getClass().getResourceAsStream(&quot;img/checkbox.png&quot;);&#13;&#10;        icon= new ImageIcon(ImageIO.read(stream));&#13;&#10;        mode.setIcon(icon);&#13;&#10;        &#13;&#10;        stream = getClass().getResourceAsStream(&quot;img/check.png&quot;);&#13;&#10;        icon= new ImageIcon(ImageIO.read(stream));&#13;&#10;        mode.setSelectedIcon(icon);&#13;&#10;        &#13;&#10;        /*checkbox128.setIcon(new ImageIcon(getClass().getResource(&quot;../img/checkbox.png&quot;)));&#13;&#10;        checkbox128.setSelectedIcon(new ImageIcon(getClass().getResource(&quot;../img/check.png&quot;)));&#13;&#10;        checkbox158.setIcon(new ImageIcon(getClass().getResource(&quot;../img/checkbox.png&quot;)));&#13;&#10;        checkbox158.setSelectedIcon(new ImageIcon(getClass().getResource(&quot;../img/check.png&quot;)));&#13;&#10;        mode.setIcon(new ImageIcon(getClass().getResource(&quot;../img/checkbox.png&quot;)));&#13;&#10;        mode.setSelectedIcon(new ImageIcon(getClass().getResource(&quot;../img/check.png&quot;)));*/&#13;&#10;        &#13;&#10;        topGroup.add(checkbox128);&#13;&#10;        topGroup.add(checkbox158);&#13;&#10;        topGroup.add(mode);&#13;&#10;        &#13;&#10;        //infopanel.add(sp1);&#13;&#10;        //infopanel.add(sp2);&#13;&#10;        //infopanel.add(button);&#13;&#10;        infopanel.add(checkbox128);&#13;&#10;        infopanel.add(checkbox158);&#13;&#10;        infopanel.add(mode);&#13;&#10;        &#13;&#10;        infopanel1.add(infopanel);&#13;&#10;        &#13;&#10;        &#13;&#10;        jF.getContentPane().add(infopanel1);&#13;&#10;        //jF.getContentPane().add(infopanel);&#13;&#10;        //jF.setBackground(Color.WHITE);&#13;&#10;        //ImageIcon ii = new ImageIcon(getClass().getResource(&quot;check.png&quot;));&#13;&#10;        stream = getClass().getResourceAsStream(&quot;img/music.png&quot;);&#13;&#10;        icon= new ImageIcon(ImageIO.read(stream));&#13;&#10;        jF.setIconImage(icon.getImage());&#13;&#10;        //jF.setIconImage(new ImageIcon(getClass().getResource(&quot;img/music.png&quot;)).getImage());&#13;&#10;        jF.pack();&#13;&#10;        jF.setLocationRelativeTo(null);&#13;&#10;        jF.setResizable(false);&#13;&#10;        //jF.setSize(500, 150);&#13;&#10;        jF.setVisible(true);&#13;&#10;        &#13;&#10;        button.addActionListener(new ActionListener() { &#13;&#10;    &#9;    public void actionPerformed(ActionEvent e) { &#13;&#10;    &#9;       startParsing(e);&#13;&#10;        }&#13;&#10;       });&#13;&#10;  &#13;&#10;      &#13;&#10;        &#13;&#10;        jF.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);&#13;&#10;      &#13;&#10;        &#13;&#10;    }&#13;&#10;    &#13;&#10;    public static void setData(int c, String data) {&#13;&#10;    &#9;//infopanel.setPreferredSize(new Dimension(400, 200));&#13;&#10;    &#9;jF.pack();&#13;&#10;    &#9;&#13;&#10;    &#9;Component[] components = infopanel.getComponents();&#13;&#10;&#13;&#10;    &#9;for (Component singleComponent : components) {&#13;&#10;    &#9;   if (singleComponent instanceof JLabel) {&#13;&#10;    &#9;       JLabel label = (JLabel) singleComponent;&#13;&#10;    &#9;       label.setFont(new Font(&quot;SansSerif&quot;, Font.PLAIN, 14));&#13;&#10;    &#9;   }&#13;&#10;    &#9;}&#13;&#10;    &#9;&#13;&#10;    &#9;//infopanel.setBorder(new EmptyBorder(10, 50, 10, 10));&#13;&#10;    &#9;&#13;&#10;        //infopanel.add(titolo).setVisible(false);&#13;&#10;        //infopanel.add(ti).setVisible(false);&#13;&#10;        //infopanel.add(artista).setVisible(false);&#13;&#10;        //infopanel.add(ar).setVisible(false);&#13;&#10;        /*infopanel.add(album).setVisible(false);&#13;&#10;        infopanel.add(al).setVisible(false);&#13;&#10;        infopanel.add(anno).setVisible(false);&#13;&#10;        infopanel.add(an).setVisible(false);&#13;&#10;        infopanel.add(commento).setVisible(false);&#13;&#10;        infopanel.add(co).setVisible(false);&#13;&#10;        infopanel.add(genere).setVisible(false);&#13;&#10;        infopanel.add(ge).setVisible(false);*/&#13;&#10;    &#9;infopanel.setLayout(new GridBagLayout());&#13;&#10;    &#9;GridBagConstraints gbc = new GridBagConstraints();&#13;&#10;&#13;&#10;    &#9;// Row 0 - Filename&#13;&#10;    &#9;&#9;// Col 0&#13;&#10;    &#9;gbc.gridx = 0;&#13;&#10;    &#9;gbc.gridy = 0;&#13;&#10;    &#9;gbc.insets = new Insets(5, 0, 0, 10);&#13;&#10;    &#9;gbc.anchor = GridBagConstraints.LINE_START;&#13;&#10;    &#9;infopanel.add(titolo, gbc);&#13;&#10;&#13;&#10;    &#9;&#9;// Col 1&#13;&#10;    &#9;gbc.gridx = 1;&#13;&#10;    &#9;gbc.gridy = 0;&#13;&#10;    &#9;gbc.anchor = GridBagConstraints.LINE_START;&#13;&#10;    &#9;infopanel.add(ti, gbc);&#13;&#10;&#13;&#10;    &#9;&#9;// Col 2&#13;&#10;    &#9;gbc.gridx = 0;&#13;&#10;    &#9;gbc.gridy = 1;&#13;&#10;    &#9;gbc.anchor = GridBagConstraints.LINE_START;&#13;&#10;    &#9;infopanel.add(artista, gbc);&#13;&#10;    &#9;&#13;&#10;    &#9;gbc.gridx = 1;&#13;&#10;    &#9;gbc.gridy = 1;&#13;&#10;    &#9;gbc.anchor = GridBagConstraints.LINE_START;&#13;&#10;    &#9;infopanel.add(ar, gbc);&#13;&#10;    &#9;&#13;&#10;    &#9;gbc.gridx = 0;&#13;&#10;    &#9;gbc.gridy = 2;&#13;&#10;    &#9;gbc.anchor = GridBagConstraints.LINE_START;&#13;&#10;    &#9;infopanel.add(album, gbc);&#13;&#10;    &#9;&#13;&#10;    &#9;gbc.gridx = 1;&#13;&#10;    &#9;gbc.gridy = 2;&#13;&#10;    &#9;gbc.anchor = GridBagConstraints.LINE_START;&#13;&#10;    &#9;infopanel.add(al, gbc);&#13;&#10;    &#9;&#13;&#10;    &#9;gbc.gridx = 0;&#13;&#10;    &#9;gbc.gridy = 3;&#13;&#10;    &#9;gbc.anchor = GridBagConstraints.LINE_START;&#13;&#10;    &#9;infopanel.add(anno, gbc);&#13;&#10;    &#9;&#13;&#10;    &#9;gbc.gridx = 1;&#13;&#10;    &#9;gbc.gridy = 3;&#13;&#10;    &#9;gbc.anchor = GridBagConstraints.LINE_START;&#13;&#10;    &#9;infopanel.add(an, gbc);&#13;&#10;    &#9;&#13;&#10;    &#9;gbc.gridx = 0;&#13;&#10;    &#9;gbc.gridy = 4;&#13;&#10;    &#9;gbc.anchor = GridBagConstraints.LINE_START;&#13;&#10;    &#9;infopanel.add(commento, gbc);&#13;&#10;    &#9;&#13;&#10;    &#9;gbc.gridx = 1;&#13;&#10;    &#9;gbc.gridy = 4;&#13;&#10;    &#9;gbc.anchor = GridBagConstraints.LINE_START;&#13;&#10;    &#9;infopanel.add(co, gbc);&#13;&#10;    &#9;&#13;&#10;    &#9;gbc.gridx = 0;&#13;&#10;    &#9;gbc.gridy = 5;&#13;&#10;    &#9;gbc.anchor = GridBagConstraints.LINE_START;&#13;&#10;    &#9;infopanel.add(genere, gbc);&#13;&#10;    &#9;&#13;&#10;    &#9;gbc.gridx = 1;&#13;&#10;    &#9;gbc.gridy = 5;&#13;&#10;    &#9;gbc.anchor = GridBagConstraints.LINE_START;&#13;&#10;    &#9;infopanel.add(ge, gbc);&#13;&#10;    &#9;&#13;&#10;    &#9;jF.pack();&#13;&#10;    &#9;&#13;&#10;    &#9;infopanel.remove(button);&#13;&#10;    &#9;infopanel.remove(checkbox128);&#13;&#10;    &#9;infopanel.remove(checkbox158);&#13;&#10;    &#9;infopanel.remove(mode);&#13;&#10;    &#9;infopanel.remove(spazio);&#13;&#10;    &#9;titolo.setVisible(true);&#13;&#10;        ti.setVisible(true);&#13;&#10;        artista.setVisible(true);&#13;&#10;        ar.setVisible(true);&#13;&#10;        album.setVisible(true);&#13;&#10;        al.setVisible(true);&#13;&#10;        anno.setVisible(true);&#13;&#10;        an.setVisible(true);&#13;&#10;        commento.setVisible(true);&#13;&#10;        co.setVisible(true);&#13;&#10;        genere.setVisible(true);&#13;&#10;        ge.setVisible(true);&#13;&#10;        jF.pack();&#13;&#10;        if(c == 1)&#13;&#10;        &#9;ti.setText(data);&#13;&#10;        if(c == 2)&#13;&#10;        &#9;ar.setText(data);&#13;&#10;        if(c == 3)&#13;&#10;        &#9;al.setText(data);&#13;&#10;        if(c == 4)&#13;&#10;        &#9;an.setText(data);&#13;&#10;        if(c == 5)&#13;&#10;        &#9;co.setText(data);&#13;&#10;        if(c == 6)&#13;&#10;    &#9;ge.setText(data);&#13;&#10;    &#9;&#13;&#10;    }&#13;&#10;    &#13;&#10;    public String fileChooser() throws NullPointerException&#13;&#10;    {&#13;&#10;    &#9;  JFileChooser fileChooser = new JFileChooser();&#13;&#10;    &#9;  fileChooser.setCurrentDirectory(new File(&quot;resources&quot;));&#13;&#10;    &#9;  fileChooser.showOpenDialog(Interfaccia.this);&#13;&#10;    &#9;  jF.setTitle(&quot;SimpleID3-&quot; + fileChooser.getSelectedFile().getName());&#13;&#10;    &#9;  return fileChooser.getSelectedFile().getPath();&#13;&#10;    }&#13;&#10;    &#13;&#10;    private void startParsing(ActionEvent e) { &#13;&#10;        try {&#13;&#10;        &#9;ParserLauncher.avvio(this);&#13;&#10;&#9;&#9;} catch (IOException e1) {&#13;&#10;&#9;&#9;&#9;e1.printStackTrace();&#13;&#10;&#9;&#9;} catch (RecognitionException e1) {&#13;&#10;&#9;&#9;e1.printStackTrace();&#13;&#10;&#9;}&#13;&#10;    }&#13;&#10;    &#13;&#10;    public boolean checkMode()&#13;&#10;    {&#13;&#10;    &#9;return checkbox128.isSelected() ? true:false;&#13;&#10;    }&#13;&#10;    public boolean checkMode2()&#13;&#10;    {&#13;&#10;    &#9;return mode.isSelected() ? true:false;&#13;&#10;    }&#13;&#10;}&#13;&#10;&#13;&#10;" Filename="Interfaccia.java" Intrnl_Id="1"/>
+<SrcFile Content="package myPackage;&#13;&#10;&#13;&#10;import java.io.FileNotFoundException;&#13;&#10;import java.io.FileOutputStream;&#13;&#10;import org.antlr.runtime.RecognitionException;&#13;&#10;&#13;&#10;import java.io.BufferedReader;&#13;&#10;import java.io.FileInputStream;&#13;&#10;import java.io.IOException;&#13;&#10;import java.io.InputStreamReader;&#13;&#10;import java.nio.charset.StandardCharsets;&#13;&#10;import java.io.OutputStreamWriter;&#13;&#10;&#13;&#10;import myID3Compiler.SimpleID3Parser;&#13;&#10;&#13;&#10;public class ParserLauncher{&#13;&#10;    ParserLauncher(){}&#13;&#10;   &#13;&#10;public static char[] getTagFromFile(String name, int offset) throws FileNotFoundException, IOException&#13;&#10;{&#13;&#10;&#9;//calcolo posizione TAG se esiste&#13;&#10;&#9;InputStreamReader fileMp3 = new InputStreamReader(new FileInputStream(name), &quot;Cp1252&quot;);//ANSI&#13;&#10;&#9;int length=0;&#13;&#10;&#9;while(true)&#13;&#10;&#9;{&#13;&#10;&#9;&#9;if(fileMp3.read()=='T') {&#13;&#10;&#9;&#9;&#9;if(fileMp3.read()=='A') {&#13;&#10;&#9;&#9;&#9;&#9;if(fileMp3.read()=='G') {break;}else {length=length+2;}&#13;&#10;&#9;&#9;&#9;&#9;}else{length++;}&#13;&#10;&#9;&#9;&#9;}&#13;&#10;&#9;&#9;length++;&#13;&#10;&#9;}&#13;&#10;&#9;fileMp3.close();&#13;&#10;&#9;//System.out.println(length+&quot;&lt;-inizio lettura&quot;);&#13;&#10;//lettura da posizione TAG trovata in array di char&#13;&#10;//se la posizione non è trovata la lettura parte dalla fine del reader, creando di fatto un array vuoto&#13;&#10;&#9;fileMp3 = new InputStreamReader(new FileInputStream(name), &quot;Cp1252&quot;);&#13;&#10;&#9;&#13;&#10;&#9;char[] buffer=new char[offset];&#13;&#10;//scorrimento a posizione di TAG&#13;&#10;&#9;&#9;for(int i=0;i&lt;length;i++)&#13;&#10;&#9;&#9;&#9;fileMp3.read();&#13;&#10;&#9;//trasferimento in array&#13;&#10;&#9;&#9;int i=fileMp3.read(buffer, 0, offset);&#13;&#10;&#9;&#9;fileMp3.close();&#13;&#10;&#9;&#9;if(i==-1){System.out.println(&quot;Marcatore TAG non trovato&quot;); return new char[offset];}&#13;&#10;&#9;&#13;&#10;&#9;return buffer;&#13;&#10;&#9;}&#13;&#10;&#13;&#10;&#13;&#10;public static InputStreamReader setReaderWithStartSearch(Interfaccia a) throws FileNotFoundException, IOException&#13;&#10;{&#13;&#10;&#9;//versione con step intermedio di scrittura su file di input, non più necessaria&#13;&#10;&#13;&#10;&#9;String fileName = &quot;.\\resources\\input.file&quot;; //ultima scelta&#13;&#10;&#9;int offset = (a.checkMode()) ? 128 :158;&#13;&#10;&#9;&#9;try{&#13;&#10;    &#9;&#9;String tagFile=new String(getTagFromFile(a.fileChooser(), offset));&#13;&#10;    &#9;&#9;OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(fileName), StandardCharsets.UTF_8);&#13;&#10;    &#9;&#9;writer.write(tagFile);&#13;&#10;    &#9;&#9;writer.close();&#9;&#13;&#10;    &#9;&#9;System.out.println(tagFile);}&#13;&#10;&#9;&#9;catch(NullPointerException e2) &#13;&#10;&#9;&#9;&#9;{System.out.println(&quot;Non selezionato, leggo ultima scelta...&quot;);}&#13;&#10;&#9;&#9;   &#13;&#10;&#9;&#9;InputStreamReader fileIn = new InputStreamReader(new FileInputStream(fileName), StandardCharsets.UTF_8);&#13;&#10;&#9;&#9;   return fileIn;&#13;&#10;}&#13;&#10;&#13;&#10;public static InputStreamReader setReaderNoSearch(Interfaccia a) throws FileNotFoundException, IOException&#13;&#10;{&#13;&#10;//versione con step intermedio di scrittura su file di input, non più necessaria&#13;&#10;&#9;InputStreamReader fileIn = new InputStreamReader(new FileInputStream(a.fileChooser()), &quot;Cp1252&quot;);&#13;&#10;&#9;return fileIn;&#13;&#10;}&#13;&#10;&#13;&#10;public static String setString(Interfaccia a) throws FileNotFoundException, IOException&#13;&#10;{&#13;&#10;&#13;&#10;&#9;int offset = (a.checkMode()) ? 128 :158;&#13;&#10;&#9;String tagString=new String();&#13;&#10;&#9;&#9;try {&#13;&#10;&#9;&#9;&#9; tagString=new String(getTagFromFile(a.fileChooser(), offset));&#13;&#10;&#9;//questo out a console è solo di debug, ricordiamo che è da togliere&#13;&#10;&#9;//&#9;&#9; System.out.println(&quot;Stringa-&gt;&quot;+tagString+&quot;&lt;-fine&quot;);&#13;&#10;&#9;&#9;&#9;   }catch(NullPointerException e2) {System.out.println(&quot;Non selezionato&quot;);}&#13;&#10;&#9;&#9;&#9;  &#13;&#10;&#9;&#9;&#9;   return tagString;}&#13;&#10;&#13;&#10;public static void avvio(Interfaccia a) throws FileNotFoundException, IOException, RecognitionException {&#13;&#10;&#9;&#13;&#10;&#9;SimpleID3Parser parser;&#13;&#10;&#9;if(a.checkMode2()) {parser= new SimpleID3Parser(new BufferedReader(setReaderNoSearch(a)));}&#13;&#10;&#9;else {parser= new SimpleID3Parser(setString(a));}&#13;&#10;&#9;&#13;&#10;&#9;System.out.println (&quot;Parsing con ANTLR&quot;);&#13;&#10;&#9;parser.superstruttura();&#13;&#10;&#9;&#9;&#13;&#10;&#9;if (parser.getErrorList().size() == 0)&#13;&#10;&#9;&#9;System.out.println (&quot;Parsing completato con successo&quot;);&#13;&#10;&#9;else {&#13;&#10;&#9;&#9;int i=0;&#13;&#10;&#9;&#9;System.out.println (&quot;Errori rilevati&quot;);&#13;&#10;&#9;&#9;for (String msg : parser.getErrorList())&#13;&#10;&#9;&#9;&#9;System.out.println (++i + &quot; - &quot; + msg);&#13;&#10;&#9;&#9;}&#13;&#10;&#9;&#9;&#13;&#10;}&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;}&#13;&#10;" Filename="ParserLauncher.java" Intrnl_Id="2"/>
+</SrcFileList>
+<CritList>
+<CritListEntry Name="org.codecover.model.utils.criteria.ConditionCoverage" PluginName="org.codecover"/>
+<CritListEntry Name="org.codecover.model.utils.criteria.BranchCoverage" PluginName="org.codecover"/>
+<CritListEntry Name="org.codecover.model.utils.criteria.StatementCoverage" PluginName="org.codecover"/>
+</CritList>
+<BoolOpList/>
+<HierarchyLvlTypeList>
+<HierarchyLvlType EnglishName="package" IntrnlName="package" Intrnl_Id="3"/>
+<HierarchyLvlType EnglishName="anonymous class" IntrnlName="class" Intrnl_Id="4"/>
+<HierarchyLvlType EnglishName="method" IntrnlName="method" Intrnl_Id="5"/>
+<HierarchyLvlType EnglishName="class" IntrnlName="class" Intrnl_Id="6"/>
+<HierarchyLvlType EnglishName="default package" IntrnlName="default package" Intrnl_Id="7"/>
+</HierarchyLvlTypeList>
+<MASTRoot>
+<HierarchyLvl HierarchyLvlId="109" HierarchyLvlTypeId="7" Intrnl_Id="8" Name="default package">
+<Header/>
+<LocList/>
+<HierarchyLvl HierarchyLvlId="108" HierarchyLvlTypeId="3" Intrnl_Id="9" Name="myPackage">
+<Header/>
+<LocList/>
+<HierarchyLvl HierarchyLvlId="100" HierarchyLvlTypeId="6" Intrnl_Id="10" Name="Interfaccia">
+<Header>
+<Loc EndOffset="1015" SrcFileId="1" StartOffset="947"/>
+</Header>
+<LocList>
+<Loc EndOffset="12238" SrcFileId="1" StartOffset="947"/>
+</LocList>
+<StmntSeq Intrnl_Id="11">
+<LocList>
+<Loc EndOffset="1073" SrcFileId="1" StartOffset="1026"/>
+<Loc EndOffset="1137" SrcFileId="1" StartOffset="1079"/>
+<Loc EndOffset="1207" SrcFileId="1" StartOffset="1143"/>
+<Loc EndOffset="1280" SrcFileId="1" StartOffset="1213"/>
+<Loc EndOffset="1334" SrcFileId="1" StartOffset="1286"/>
+<Loc EndOffset="1397" SrcFileId="1" StartOffset="1340"/>
+<Loc EndOffset="1442" SrcFileId="1" StartOffset="1403"/>
+<Loc EndOffset="1490" SrcFileId="1" StartOffset="1445"/>
+<Loc EndOffset="1525" SrcFileId="1" StartOffset="1493"/>
+<Loc EndOffset="1575" SrcFileId="1" StartOffset="1528"/>
+<Loc EndOffset="1610" SrcFileId="1" StartOffset="1578"/>
+<Loc EndOffset="1656" SrcFileId="1" StartOffset="1613"/>
+<Loc EndOffset="1691" SrcFileId="1" StartOffset="1659"/>
+<Loc EndOffset="1735" SrcFileId="1" StartOffset="1694"/>
+<Loc EndOffset="1770" SrcFileId="1" StartOffset="1738"/>
+<Loc EndOffset="1822" SrcFileId="1" StartOffset="1773"/>
+<Loc EndOffset="1857" SrcFileId="1" StartOffset="1825"/>
+<Loc EndOffset="1905" SrcFileId="1" StartOffset="1860"/>
+<Loc EndOffset="1940" SrcFileId="1" StartOffset="1908"/>
+<Loc EndOffset="1985" SrcFileId="1" StartOffset="1946"/>
+<Loc EndOffset="2031" SrcFileId="1" StartOffset="1991"/>
+<Loc EndOffset="2086" SrcFileId="1" StartOffset="2043"/>
+</LocList>
+<BasicStmnt CovItemId="S1" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="12">
+<LocList>
+<Loc EndOffset="1073" SrcFileId="1" StartOffset="1026"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S2" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="13">
+<LocList>
+<Loc EndOffset="1137" SrcFileId="1" StartOffset="1079"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S3" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="14">
+<LocList>
+<Loc EndOffset="1207" SrcFileId="1" StartOffset="1143"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S4" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="15">
+<LocList>
+<Loc EndOffset="1280" SrcFileId="1" StartOffset="1213"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S5" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="16">
+<LocList>
+<Loc EndOffset="1334" SrcFileId="1" StartOffset="1286"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S6" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="17">
+<LocList>
+<Loc EndOffset="1397" SrcFileId="1" StartOffset="1340"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S7" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="18">
+<LocList>
+<Loc EndOffset="1442" SrcFileId="1" StartOffset="1403"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S8" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="19">
+<LocList>
+<Loc EndOffset="1490" SrcFileId="1" StartOffset="1445"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S9" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="20">
+<LocList>
+<Loc EndOffset="1525" SrcFileId="1" StartOffset="1493"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S10" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="21">
+<LocList>
+<Loc EndOffset="1575" SrcFileId="1" StartOffset="1528"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S11" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="22">
+<LocList>
+<Loc EndOffset="1610" SrcFileId="1" StartOffset="1578"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S12" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="23">
+<LocList>
+<Loc EndOffset="1656" SrcFileId="1" StartOffset="1613"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S13" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="24">
+<LocList>
+<Loc EndOffset="1691" SrcFileId="1" StartOffset="1659"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S14" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="25">
+<LocList>
+<Loc EndOffset="1735" SrcFileId="1" StartOffset="1694"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S15" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="26">
+<LocList>
+<Loc EndOffset="1770" SrcFileId="1" StartOffset="1738"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S16" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="27">
+<LocList>
+<Loc EndOffset="1822" SrcFileId="1" StartOffset="1773"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S17" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="28">
+<LocList>
+<Loc EndOffset="1857" SrcFileId="1" StartOffset="1825"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S18" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="29">
+<LocList>
+<Loc EndOffset="1905" SrcFileId="1" StartOffset="1860"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S19" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="30">
+<LocList>
+<Loc EndOffset="1940" SrcFileId="1" StartOffset="1908"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S20" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="31">
+<LocList>
+<Loc EndOffset="1985" SrcFileId="1" StartOffset="1946"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S21" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="32">
+<LocList>
+<Loc EndOffset="2031" SrcFileId="1" StartOffset="1991"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S22" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="33">
+<LocList>
+<Loc EndOffset="2086" SrcFileId="1" StartOffset="2043"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+<HierarchyLvl HierarchyLvlId="94" HierarchyLvlTypeId="5" Intrnl_Id="34" Name="Interfaccia">
+<Header>
+<Loc EndOffset="2143" SrcFileId="1" StartOffset="2104"/>
+</Header>
+<LocList>
+<Loc EndOffset="7623" SrcFileId="1" StartOffset="2104"/>
+</LocList>
+<StmntSeq Intrnl_Id="35">
+<LocList>
+<Loc EndOffset="2265" SrcFileId="1" StartOffset="2218"/>
+<Loc EndOffset="2317" SrcFileId="1" StartOffset="2272"/>
+<Loc EndOffset="2379" SrcFileId="1" StartOffset="2324"/>
+<Loc EndOffset="2427" SrcFileId="1" StartOffset="2386"/>
+<Loc EndOffset="2479" SrcFileId="1" StartOffset="2434"/>
+<Loc EndOffset="2524" SrcFileId="1" StartOffset="2486"/>
+<Loc EndOffset="2616" SrcFileId="1" StartOffset="2575"/>
+<Loc EndOffset="2673" SrcFileId="1" StartOffset="2623"/>
+<Loc EndOffset="2728" SrcFileId="1" StartOffset="2683"/>
+<Loc EndOffset="2767" SrcFileId="1" StartOffset="2740"/>
+<Loc EndOffset="2804" SrcFileId="1" StartOffset="2777"/>
+<Loc EndOffset="3047" SrcFileId="1" StartOffset="2994"/>
+<Loc EndOffset="3109" SrcFileId="1" StartOffset="3057"/>
+<Loc EndOffset="3146" SrcFileId="1" StartOffset="3119"/>
+<Loc EndOffset="3263" SrcFileId="1" StartOffset="3229"/>
+<Loc EndOffset="3303" SrcFileId="1" StartOffset="3273"/>
+<Loc EndOffset="3359" SrcFileId="1" StartOffset="3313"/>
+<Loc EndOffset="3400" SrcFileId="1" StartOffset="3369"/>
+<Loc EndOffset="3475" SrcFileId="1" StartOffset="3410"/>
+<Loc EndOffset="3527" SrcFileId="1" StartOffset="3485"/>
+<Loc EndOffset="3583" SrcFileId="1" StartOffset="3537"/>
+<Loc EndOffset="3644" SrcFileId="1" StartOffset="3593"/>
+<Loc EndOffset="3681" SrcFileId="1" StartOffset="3654"/>
+<Loc EndOffset="3745" SrcFileId="1" StartOffset="3691"/>
+<Loc EndOffset="3804" SrcFileId="1" StartOffset="3765"/>
+<Loc EndOffset="3853" SrcFileId="1" StartOffset="3814"/>
+<Loc EndOffset="3898" SrcFileId="1" StartOffset="3863"/>
+<Loc EndOffset="3944" SrcFileId="1" StartOffset="3908"/>
+<Loc EndOffset="4013" SrcFileId="1" StartOffset="3954"/>
+<Loc EndOffset="4093" SrcFileId="1" StartOffset="4023"/>
+<Loc EndOffset="4142" SrcFileId="1" StartOffset="4103"/>
+<Loc EndOffset="4191" SrcFileId="1" StartOffset="4152"/>
+<Loc EndOffset="4236" SrcFileId="1" StartOffset="4201"/>
+<Loc EndOffset="4282" SrcFileId="1" StartOffset="4246"/>
+<Loc EndOffset="4351" SrcFileId="1" StartOffset="4292"/>
+<Loc EndOffset="4431" SrcFileId="1" StartOffset="4361"/>
+<Loc EndOffset="4473" SrcFileId="1" StartOffset="4441"/>
+<Loc EndOffset="4515" SrcFileId="1" StartOffset="4483"/>
+<Loc EndOffset="4553" SrcFileId="1" StartOffset="4525"/>
+<Loc EndOffset="4592" SrcFileId="1" StartOffset="4563"/>
+<Loc EndOffset="4654" SrcFileId="1" StartOffset="4602"/>
+<Loc EndOffset="4727" SrcFileId="1" StartOffset="4664"/>
+<Loc EndOffset="4819" SrcFileId="1" StartOffset="4747"/>
+<Loc EndOffset="4881" SrcFileId="1" StartOffset="4829"/>
+<Loc EndOffset="4917" SrcFileId="1" StartOffset="4891"/>
+<Loc EndOffset="4994" SrcFileId="1" StartOffset="4937"/>
+<Loc EndOffset="5046" SrcFileId="1" StartOffset="5004"/>
+<Loc EndOffset="5090" SrcFileId="1" StartOffset="5056"/>
+<Loc EndOffset="5167" SrcFileId="1" StartOffset="5110"/>
+<Loc EndOffset="5219" SrcFileId="1" StartOffset="5177"/>
+<Loc EndOffset="5263" SrcFileId="1" StartOffset="5229"/>
+<Loc EndOffset="5343" SrcFileId="1" StartOffset="5283"/>
+<Loc EndOffset="5395" SrcFileId="1" StartOffset="5353"/>
+<Loc EndOffset="5431" SrcFileId="1" StartOffset="5405"/>
+<Loc EndOffset="5511" SrcFileId="1" StartOffset="5451"/>
+<Loc EndOffset="5563" SrcFileId="1" StartOffset="5521"/>
+<Loc EndOffset="5592" SrcFileId="1" StartOffset="5573"/>
+<Loc EndOffset="5669" SrcFileId="1" StartOffset="5612"/>
+<Loc EndOffset="5721" SrcFileId="1" StartOffset="5679"/>
+<Loc EndOffset="5758" SrcFileId="1" StartOffset="5731"/>
+<Loc EndOffset="6371" SrcFileId="1" StartOffset="6345"/>
+<Loc EndOffset="6407" SrcFileId="1" StartOffset="6381"/>
+<Loc EndOffset="6436" SrcFileId="1" StartOffset="6417"/>
+<Loc EndOffset="6579" SrcFileId="1" StartOffset="6552"/>
+<Loc EndOffset="6616" SrcFileId="1" StartOffset="6589"/>
+<Loc EndOffset="6646" SrcFileId="1" StartOffset="6626"/>
+<Loc EndOffset="6692" SrcFileId="1" StartOffset="6666"/>
+<Loc EndOffset="6758" SrcFileId="1" StartOffset="6722"/>
+<Loc EndOffset="6992" SrcFileId="1" StartOffset="6935"/>
+<Loc EndOffset="7044" SrcFileId="1" StartOffset="7002"/>
+<Loc EndOffset="7087" SrcFileId="1" StartOffset="7054"/>
+<Loc EndOffset="7202" SrcFileId="1" StartOffset="7192"/>
+<Loc EndOffset="7243" SrcFileId="1" StartOffset="7212"/>
+<Loc EndOffset="7276" SrcFileId="1" StartOffset="7253"/>
+<Loc EndOffset="7339" SrcFileId="1" StartOffset="7319"/>
+<Loc EndOffset="7384" SrcFileId="1" StartOffset="7359"/>
+<Loc EndOffset="7516" SrcFileId="1" StartOffset="7514"/>
+<Loc EndOffset="7598" SrcFileId="1" StartOffset="7548"/>
+</LocList>
+<BasicStmnt CovItemId="S23" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="36">
+<LocList>
+<Loc EndOffset="2265" SrcFileId="1" StartOffset="2218"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S24" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="37">
+<LocList>
+<Loc EndOffset="2317" SrcFileId="1" StartOffset="2272"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S25" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="38">
+<LocList>
+<Loc EndOffset="2379" SrcFileId="1" StartOffset="2324"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S26" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="39">
+<LocList>
+<Loc EndOffset="2427" SrcFileId="1" StartOffset="2386"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S27" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="40">
+<LocList>
+<Loc EndOffset="2479" SrcFileId="1" StartOffset="2434"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S28" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="41">
+<LocList>
+<Loc EndOffset="2524" SrcFileId="1" StartOffset="2486"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S29" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="42">
+<LocList>
+<Loc EndOffset="2616" SrcFileId="1" StartOffset="2575"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S30" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="43">
+<LocList>
+<Loc EndOffset="2673" SrcFileId="1" StartOffset="2623"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S31" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="44">
+<LocList>
+<Loc EndOffset="2728" SrcFileId="1" StartOffset="2683"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S32" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="45">
+<LocList>
+<Loc EndOffset="2767" SrcFileId="1" StartOffset="2740"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S33" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="46">
+<LocList>
+<Loc EndOffset="2804" SrcFileId="1" StartOffset="2777"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S34" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="47">
+<LocList>
+<Loc EndOffset="3047" SrcFileId="1" StartOffset="2994"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S35" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="48">
+<LocList>
+<Loc EndOffset="3109" SrcFileId="1" StartOffset="3057"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S36" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="49">
+<LocList>
+<Loc EndOffset="3146" SrcFileId="1" StartOffset="3119"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S37" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="50">
+<LocList>
+<Loc EndOffset="3263" SrcFileId="1" StartOffset="3229"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S38" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="51">
+<LocList>
+<Loc EndOffset="3303" SrcFileId="1" StartOffset="3273"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S39" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="52">
+<LocList>
+<Loc EndOffset="3359" SrcFileId="1" StartOffset="3313"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S40" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="53">
+<LocList>
+<Loc EndOffset="3400" SrcFileId="1" StartOffset="3369"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S41" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="54">
+<LocList>
+<Loc EndOffset="3475" SrcFileId="1" StartOffset="3410"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S42" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="55">
+<LocList>
+<Loc EndOffset="3527" SrcFileId="1" StartOffset="3485"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S43" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="56">
+<LocList>
+<Loc EndOffset="3583" SrcFileId="1" StartOffset="3537"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S44" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="57">
+<LocList>
+<Loc EndOffset="3644" SrcFileId="1" StartOffset="3593"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S45" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="58">
+<LocList>
+<Loc EndOffset="3681" SrcFileId="1" StartOffset="3654"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S46" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="59">
+<LocList>
+<Loc EndOffset="3745" SrcFileId="1" StartOffset="3691"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S47" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="60">
+<LocList>
+<Loc EndOffset="3804" SrcFileId="1" StartOffset="3765"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S48" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="61">
+<LocList>
+<Loc EndOffset="3853" SrcFileId="1" StartOffset="3814"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S49" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="62">
+<LocList>
+<Loc EndOffset="3898" SrcFileId="1" StartOffset="3863"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S50" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="63">
+<LocList>
+<Loc EndOffset="3944" SrcFileId="1" StartOffset="3908"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S51" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="64">
+<LocList>
+<Loc EndOffset="4013" SrcFileId="1" StartOffset="3954"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S52" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="65">
+<LocList>
+<Loc EndOffset="4093" SrcFileId="1" StartOffset="4023"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S53" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="66">
+<LocList>
+<Loc EndOffset="4142" SrcFileId="1" StartOffset="4103"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S54" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="67">
+<LocList>
+<Loc EndOffset="4191" SrcFileId="1" StartOffset="4152"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S55" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="68">
+<LocList>
+<Loc EndOffset="4236" SrcFileId="1" StartOffset="4201"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S56" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="69">
+<LocList>
+<Loc EndOffset="4282" SrcFileId="1" StartOffset="4246"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S57" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="70">
+<LocList>
+<Loc EndOffset="4351" SrcFileId="1" StartOffset="4292"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S58" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="71">
+<LocList>
+<Loc EndOffset="4431" SrcFileId="1" StartOffset="4361"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S59" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="72">
+<LocList>
+<Loc EndOffset="4473" SrcFileId="1" StartOffset="4441"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S60" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="73">
+<LocList>
+<Loc EndOffset="4515" SrcFileId="1" StartOffset="4483"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S61" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="74">
+<LocList>
+<Loc EndOffset="4553" SrcFileId="1" StartOffset="4525"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S62" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="75">
+<LocList>
+<Loc EndOffset="4592" SrcFileId="1" StartOffset="4563"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S63" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="76">
+<LocList>
+<Loc EndOffset="4654" SrcFileId="1" StartOffset="4602"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S64" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="77">
+<LocList>
+<Loc EndOffset="4727" SrcFileId="1" StartOffset="4664"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S65" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="78">
+<LocList>
+<Loc EndOffset="4819" SrcFileId="1" StartOffset="4747"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S66" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="79">
+<LocList>
+<Loc EndOffset="4881" SrcFileId="1" StartOffset="4829"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S67" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="80">
+<LocList>
+<Loc EndOffset="4917" SrcFileId="1" StartOffset="4891"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S68" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="81">
+<LocList>
+<Loc EndOffset="4994" SrcFileId="1" StartOffset="4937"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S69" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="82">
+<LocList>
+<Loc EndOffset="5046" SrcFileId="1" StartOffset="5004"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S70" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="83">
+<LocList>
+<Loc EndOffset="5090" SrcFileId="1" StartOffset="5056"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S71" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="84">
+<LocList>
+<Loc EndOffset="5167" SrcFileId="1" StartOffset="5110"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S72" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="85">
+<LocList>
+<Loc EndOffset="5219" SrcFileId="1" StartOffset="5177"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S73" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="86">
+<LocList>
+<Loc EndOffset="5263" SrcFileId="1" StartOffset="5229"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S74" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="87">
+<LocList>
+<Loc EndOffset="5343" SrcFileId="1" StartOffset="5283"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S75" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="88">
+<LocList>
+<Loc EndOffset="5395" SrcFileId="1" StartOffset="5353"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S76" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="89">
+<LocList>
+<Loc EndOffset="5431" SrcFileId="1" StartOffset="5405"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S77" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="90">
+<LocList>
+<Loc EndOffset="5511" SrcFileId="1" StartOffset="5451"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S78" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="91">
+<LocList>
+<Loc EndOffset="5563" SrcFileId="1" StartOffset="5521"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S79" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="92">
+<LocList>
+<Loc EndOffset="5592" SrcFileId="1" StartOffset="5573"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S80" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="93">
+<LocList>
+<Loc EndOffset="5669" SrcFileId="1" StartOffset="5612"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S81" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="94">
+<LocList>
+<Loc EndOffset="5721" SrcFileId="1" StartOffset="5679"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S82" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="95">
+<LocList>
+<Loc EndOffset="5758" SrcFileId="1" StartOffset="5731"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S83" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="96">
+<LocList>
+<Loc EndOffset="6371" SrcFileId="1" StartOffset="6345"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S84" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="97">
+<LocList>
+<Loc EndOffset="6407" SrcFileId="1" StartOffset="6381"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S85" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="98">
+<LocList>
+<Loc EndOffset="6436" SrcFileId="1" StartOffset="6417"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S86" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="99">
+<LocList>
+<Loc EndOffset="6579" SrcFileId="1" StartOffset="6552"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S87" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="100">
+<LocList>
+<Loc EndOffset="6616" SrcFileId="1" StartOffset="6589"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S88" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="101">
+<LocList>
+<Loc EndOffset="6646" SrcFileId="1" StartOffset="6626"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S89" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="102">
+<LocList>
+<Loc EndOffset="6692" SrcFileId="1" StartOffset="6666"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S90" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="103">
+<LocList>
+<Loc EndOffset="6758" SrcFileId="1" StartOffset="6722"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S91" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="104">
+<LocList>
+<Loc EndOffset="6992" SrcFileId="1" StartOffset="6935"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S92" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="105">
+<LocList>
+<Loc EndOffset="7044" SrcFileId="1" StartOffset="7002"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S93" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="106">
+<LocList>
+<Loc EndOffset="7087" SrcFileId="1" StartOffset="7054"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S94" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="107">
+<LocList>
+<Loc EndOffset="7202" SrcFileId="1" StartOffset="7192"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S95" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="108">
+<LocList>
+<Loc EndOffset="7243" SrcFileId="1" StartOffset="7212"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S96" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="109">
+<LocList>
+<Loc EndOffset="7276" SrcFileId="1" StartOffset="7253"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S97" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="110">
+<LocList>
+<Loc EndOffset="7339" SrcFileId="1" StartOffset="7319"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S98" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="111">
+<LocList>
+<Loc EndOffset="7384" SrcFileId="1" StartOffset="7359"/>
+<Loc EndOffset="7516" SrcFileId="1" StartOffset="7514"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S100" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="112">
+<LocList>
+<Loc EndOffset="7598" SrcFileId="1" StartOffset="7548"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+<HierarchyLvl HierarchyLvlId="93" HierarchyLvlTypeId="4" Intrnl_Id="113" Name="ActionListener">
+<Header>
+<Loc EndOffset="7404" SrcFileId="1" StartOffset="7388"/>
+</Header>
+<LocList>
+<Loc EndOffset="7514" SrcFileId="1" StartOffset="7384"/>
+</LocList>
+<HierarchyLvl HierarchyLvlId="92" HierarchyLvlTypeId="5" Intrnl_Id="114" Name="actionPerformed">
+<Header>
+<Loc EndOffset="7460" SrcFileId="1" StartOffset="7418"/>
+</Header>
+<LocList>
+<Loc EndOffset="7504" SrcFileId="1" StartOffset="7418"/>
+</LocList>
+<StmntSeq Intrnl_Id="115">
+<LocList>
+<Loc EndOffset="7493" SrcFileId="1" StartOffset="7477"/>
+</LocList>
+<BasicStmnt CovItemId="S99" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="116">
+<LocList>
+<Loc EndOffset="7493" SrcFileId="1" StartOffset="7477"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</HierarchyLvl>
+</HierarchyLvl>
+</HierarchyLvl>
+<HierarchyLvl HierarchyLvlId="95" HierarchyLvlTypeId="5" Intrnl_Id="117" Name="setData">
+<Header>
+<Loc EndOffset="7681" SrcFileId="1" StartOffset="7635"/>
+</Header>
+<LocList>
+<Loc EndOffset="11413" SrcFileId="1" StartOffset="7635"/>
+</LocList>
+<StmntSeq Intrnl_Id="118">
+<LocList>
+<Loc EndOffset="7761" SrcFileId="1" StartOffset="7751"/>
+<Loc EndOffset="7826" SrcFileId="1" StartOffset="7775"/>
+<Loc EndOffset="8071" SrcFileId="1" StartOffset="7835"/>
+<Loc EndOffset="8783" SrcFileId="1" StartOffset="8742"/>
+<Loc EndOffset="8840" SrcFileId="1" StartOffset="8790"/>
+<Loc EndOffset="8905" SrcFileId="1" StartOffset="8891"/>
+<Loc EndOffset="8926" SrcFileId="1" StartOffset="8912"/>
+<Loc EndOffset="8970" SrcFileId="1" StartOffset="8933"/>
+<Loc EndOffset="9020" SrcFileId="1" StartOffset="8977"/>
+<Loc EndOffset="9054" SrcFileId="1" StartOffset="9027"/>
+<Loc EndOffset="9093" SrcFileId="1" StartOffset="9079"/>
+<Loc EndOffset="9114" SrcFileId="1" StartOffset="9100"/>
+<Loc EndOffset="9164" SrcFileId="1" StartOffset="9121"/>
+<Loc EndOffset="9194" SrcFileId="1" StartOffset="9171"/>
+<Loc EndOffset="9233" SrcFileId="1" StartOffset="9219"/>
+<Loc EndOffset="9254" SrcFileId="1" StartOffset="9240"/>
+<Loc EndOffset="9304" SrcFileId="1" StartOffset="9261"/>
+<Loc EndOffset="9339" SrcFileId="1" StartOffset="9311"/>
+<Loc EndOffset="9367" SrcFileId="1" StartOffset="9353"/>
+<Loc EndOffset="9388" SrcFileId="1" StartOffset="9374"/>
+<Loc EndOffset="9438" SrcFileId="1" StartOffset="9395"/>
+<Loc EndOffset="9468" SrcFileId="1" StartOffset="9445"/>
+<Loc EndOffset="9496" SrcFileId="1" StartOffset="9482"/>
+<Loc EndOffset="9517" SrcFileId="1" StartOffset="9503"/>
+<Loc EndOffset="9567" SrcFileId="1" StartOffset="9524"/>
+<Loc EndOffset="9600" SrcFileId="1" StartOffset="9574"/>
+<Loc EndOffset="9628" SrcFileId="1" StartOffset="9614"/>
+<Loc EndOffset="9649" SrcFileId="1" StartOffset="9635"/>
+<Loc EndOffset="9699" SrcFileId="1" StartOffset="9656"/>
+<Loc EndOffset="9729" SrcFileId="1" StartOffset="9706"/>
+<Loc EndOffset="9757" SrcFileId="1" StartOffset="9743"/>
+<Loc EndOffset="9778" SrcFileId="1" StartOffset="9764"/>
+<Loc EndOffset="9828" SrcFileId="1" StartOffset="9785"/>
+<Loc EndOffset="9860" SrcFileId="1" StartOffset="9835"/>
+<Loc EndOffset="9888" SrcFileId="1" StartOffset="9874"/>
+<Loc EndOffset="9909" SrcFileId="1" StartOffset="9895"/>
+<Loc EndOffset="9959" SrcFileId="1" StartOffset="9916"/>
+<Loc EndOffset="9989" SrcFileId="1" StartOffset="9966"/>
+<Loc EndOffset="10017" SrcFileId="1" StartOffset="10003"/>
+<Loc EndOffset="10038" SrcFileId="1" StartOffset="10024"/>
+<Loc EndOffset="10088" SrcFileId="1" StartOffset="10045"/>
+<Loc EndOffset="10124" SrcFileId="1" StartOffset="10095"/>
+<Loc EndOffset="10152" SrcFileId="1" StartOffset="10138"/>
+<Loc EndOffset="10173" SrcFileId="1" StartOffset="10159"/>
+<Loc EndOffset="10223" SrcFileId="1" StartOffset="10180"/>
+<Loc EndOffset="10253" SrcFileId="1" StartOffset="10230"/>
+<Loc EndOffset="10281" SrcFileId="1" StartOffset="10267"/>
+<Loc EndOffset="10302" SrcFileId="1" StartOffset="10288"/>
+<Loc EndOffset="10352" SrcFileId="1" StartOffset="10309"/>
+<Loc EndOffset="10386" SrcFileId="1" StartOffset="10359"/>
+<Loc EndOffset="10414" SrcFileId="1" StartOffset="10400"/>
+<Loc EndOffset="10435" SrcFileId="1" StartOffset="10421"/>
+<Loc EndOffset="10485" SrcFileId="1" StartOffset="10442"/>
+<Loc EndOffset="10515" SrcFileId="1" StartOffset="10492"/>
+<Loc EndOffset="10539" SrcFileId="1" StartOffset="10529"/>
+<Loc EndOffset="10578" SrcFileId="1" StartOffset="10553"/>
+<Loc EndOffset="10615" SrcFileId="1" StartOffset="10585"/>
+<Loc EndOffset="10652" SrcFileId="1" StartOffset="10622"/>
+<Loc EndOffset="10682" SrcFileId="1" StartOffset="10659"/>
+<Loc EndOffset="10714" SrcFileId="1" StartOffset="10689"/>
+<Loc EndOffset="10745" SrcFileId="1" StartOffset="10721"/>
+<Loc EndOffset="10775" SrcFileId="1" StartOffset="10755"/>
+<Loc EndOffset="10810" SrcFileId="1" StartOffset="10785"/>
+<Loc EndOffset="10840" SrcFileId="1" StartOffset="10820"/>
+<Loc EndOffset="10873" SrcFileId="1" StartOffset="10850"/>
+<Loc EndOffset="10903" SrcFileId="1" StartOffset="10883"/>
+<Loc EndOffset="10935" SrcFileId="1" StartOffset="10913"/>
+<Loc EndOffset="10965" SrcFileId="1" StartOffset="10945"/>
+<Loc EndOffset="11001" SrcFileId="1" StartOffset="10975"/>
+<Loc EndOffset="11031" SrcFileId="1" StartOffset="11011"/>
+<Loc EndOffset="11065" SrcFileId="1" StartOffset="11041"/>
+<Loc EndOffset="11095" SrcFileId="1" StartOffset="11075"/>
+<Loc EndOffset="11115" SrcFileId="1" StartOffset="11105"/>
+<Loc EndOffset="11163" SrcFileId="1" StartOffset="11125"/>
+<Loc EndOffset="11211" SrcFileId="1" StartOffset="11173"/>
+<Loc EndOffset="11259" SrcFileId="1" StartOffset="11221"/>
+<Loc EndOffset="11307" SrcFileId="1" StartOffset="11269"/>
+<Loc EndOffset="11355" SrcFileId="1" StartOffset="11317"/>
+<Loc EndOffset="11399" SrcFileId="1" StartOffset="11365"/>
+</LocList>
+<BasicStmnt CovItemId="S101" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="119">
+<LocList>
+<Loc EndOffset="7761" SrcFileId="1" StartOffset="7751"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S102" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="120">
+<LocList>
+<Loc EndOffset="7826" SrcFileId="1" StartOffset="7775"/>
+</LocList>
+</BasicStmnt>
+<LoopStmnt CovItemId="S103" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="121" MltplExecId="L1-2" MltplExecPrefix="myPackage.Interfaccia.java" NvrExecId="L1-0" NvrExecPrefix="myPackage.Interfaccia.java" OnceExecutedId="L1-1" OnceExecutedPrefix="myPackage.Interfaccia.java" OptBodyExec="true">
+<StmntSeq Intrnl_Id="122">
+<LocList>
+<Loc EndOffset="8063" SrcFileId="1" StartOffset="7891"/>
+</LocList>
+<CondStmnt CovItemId="S104" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="123">
+<Branch CovItemId="B1" CovItemPrefix="myPackage.Interfaccia.java" Implct="false" Intrnl_Id="124">
+<Cond/>
+<LocList>
+<Loc EndOffset="8063" SrcFileId="1" StartOffset="7930"/>
+</LocList>
+<StmntSeq Intrnl_Id="125">
+<LocList>
+<Loc EndOffset="7985" SrcFileId="1" StartOffset="7945"/>
+<Loc EndOffset="8052" SrcFileId="1" StartOffset="7999"/>
+</LocList>
+<BasicStmnt CovItemId="S105" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="126">
+<LocList>
+<Loc EndOffset="7985" SrcFileId="1" StartOffset="7945"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S106" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="127">
+<LocList>
+<Loc EndOffset="8052" SrcFileId="1" StartOffset="7999"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</Branch>
+<Branch CovItemId="B2" CovItemPrefix="myPackage.Interfaccia.java" Implct="true" Intrnl_Id="128">
+<Cond/>
+<LocList/>
+<StmntSeq Intrnl_Id="129">
+<LocList/>
+</StmntSeq>
+</Branch>
+<Keyword EndOffset="7893" SrcFileId="1" StartOffset="7891"/>
+<LocList>
+<Loc EndOffset="8063" SrcFileId="1" StartOffset="7891"/>
+</LocList>
+<RootTerm CovItemId="C1" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="130">
+<BasicBoolTerm Intrnl_Id="131">
+<LocList>
+<Loc EndOffset="7928" SrcFileId="1" StartOffset="7895"/>
+</LocList>
+</BasicBoolTerm>
+</RootTerm>
+</CondStmnt>
+</StmntSeq>
+<Keyword EndOffset="7838" SrcFileId="1" StartOffset="7835"/>
+<LocList>
+<Loc EndOffset="8071" SrcFileId="1" StartOffset="7835"/>
+</LocList>
+</LoopStmnt>
+<BasicStmnt CovItemId="S107" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="132">
+<LocList>
+<Loc EndOffset="8783" SrcFileId="1" StartOffset="8742"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S108" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="133">
+<LocList>
+<Loc EndOffset="8840" SrcFileId="1" StartOffset="8790"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S109" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="134">
+<LocList>
+<Loc EndOffset="8905" SrcFileId="1" StartOffset="8891"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S110" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="135">
+<LocList>
+<Loc EndOffset="8926" SrcFileId="1" StartOffset="8912"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S111" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="136">
+<LocList>
+<Loc EndOffset="8970" SrcFileId="1" StartOffset="8933"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S112" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="137">
+<LocList>
+<Loc EndOffset="9020" SrcFileId="1" StartOffset="8977"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S113" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="138">
+<LocList>
+<Loc EndOffset="9054" SrcFileId="1" StartOffset="9027"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S114" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="139">
+<LocList>
+<Loc EndOffset="9093" SrcFileId="1" StartOffset="9079"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S115" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="140">
+<LocList>
+<Loc EndOffset="9114" SrcFileId="1" StartOffset="9100"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S116" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="141">
+<LocList>
+<Loc EndOffset="9164" SrcFileId="1" StartOffset="9121"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S117" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="142">
+<LocList>
+<Loc EndOffset="9194" SrcFileId="1" StartOffset="9171"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S118" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="143">
+<LocList>
+<Loc EndOffset="9233" SrcFileId="1" StartOffset="9219"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S119" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="144">
+<LocList>
+<Loc EndOffset="9254" SrcFileId="1" StartOffset="9240"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S120" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="145">
+<LocList>
+<Loc EndOffset="9304" SrcFileId="1" StartOffset="9261"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S121" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="146">
+<LocList>
+<Loc EndOffset="9339" SrcFileId="1" StartOffset="9311"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S122" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="147">
+<LocList>
+<Loc EndOffset="9367" SrcFileId="1" StartOffset="9353"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S123" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="148">
+<LocList>
+<Loc EndOffset="9388" SrcFileId="1" StartOffset="9374"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S124" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="149">
+<LocList>
+<Loc EndOffset="9438" SrcFileId="1" StartOffset="9395"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S125" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="150">
+<LocList>
+<Loc EndOffset="9468" SrcFileId="1" StartOffset="9445"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S126" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="151">
+<LocList>
+<Loc EndOffset="9496" SrcFileId="1" StartOffset="9482"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S127" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="152">
+<LocList>
+<Loc EndOffset="9517" SrcFileId="1" StartOffset="9503"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S128" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="153">
+<LocList>
+<Loc EndOffset="9567" SrcFileId="1" StartOffset="9524"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S129" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="154">
+<LocList>
+<Loc EndOffset="9600" SrcFileId="1" StartOffset="9574"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S130" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="155">
+<LocList>
+<Loc EndOffset="9628" SrcFileId="1" StartOffset="9614"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S131" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="156">
+<LocList>
+<Loc EndOffset="9649" SrcFileId="1" StartOffset="9635"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S132" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="157">
+<LocList>
+<Loc EndOffset="9699" SrcFileId="1" StartOffset="9656"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S133" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="158">
+<LocList>
+<Loc EndOffset="9729" SrcFileId="1" StartOffset="9706"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S134" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="159">
+<LocList>
+<Loc EndOffset="9757" SrcFileId="1" StartOffset="9743"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S135" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="160">
+<LocList>
+<Loc EndOffset="9778" SrcFileId="1" StartOffset="9764"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S136" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="161">
+<LocList>
+<Loc EndOffset="9828" SrcFileId="1" StartOffset="9785"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S137" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="162">
+<LocList>
+<Loc EndOffset="9860" SrcFileId="1" StartOffset="9835"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S138" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="163">
+<LocList>
+<Loc EndOffset="9888" SrcFileId="1" StartOffset="9874"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S139" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="164">
+<LocList>
+<Loc EndOffset="9909" SrcFileId="1" StartOffset="9895"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S140" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="165">
+<LocList>
+<Loc EndOffset="9959" SrcFileId="1" StartOffset="9916"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S141" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="166">
+<LocList>
+<Loc EndOffset="9989" SrcFileId="1" StartOffset="9966"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S142" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="167">
+<LocList>
+<Loc EndOffset="10017" SrcFileId="1" StartOffset="10003"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S143" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="168">
+<LocList>
+<Loc EndOffset="10038" SrcFileId="1" StartOffset="10024"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S144" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="169">
+<LocList>
+<Loc EndOffset="10088" SrcFileId="1" StartOffset="10045"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S145" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="170">
+<LocList>
+<Loc EndOffset="10124" SrcFileId="1" StartOffset="10095"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S146" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="171">
+<LocList>
+<Loc EndOffset="10152" SrcFileId="1" StartOffset="10138"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S147" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="172">
+<LocList>
+<Loc EndOffset="10173" SrcFileId="1" StartOffset="10159"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S148" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="173">
+<LocList>
+<Loc EndOffset="10223" SrcFileId="1" StartOffset="10180"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S149" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="174">
+<LocList>
+<Loc EndOffset="10253" SrcFileId="1" StartOffset="10230"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S150" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="175">
+<LocList>
+<Loc EndOffset="10281" SrcFileId="1" StartOffset="10267"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S151" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="176">
+<LocList>
+<Loc EndOffset="10302" SrcFileId="1" StartOffset="10288"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S152" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="177">
+<LocList>
+<Loc EndOffset="10352" SrcFileId="1" StartOffset="10309"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S153" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="178">
+<LocList>
+<Loc EndOffset="10386" SrcFileId="1" StartOffset="10359"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S154" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="179">
+<LocList>
+<Loc EndOffset="10414" SrcFileId="1" StartOffset="10400"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S155" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="180">
+<LocList>
+<Loc EndOffset="10435" SrcFileId="1" StartOffset="10421"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S156" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="181">
+<LocList>
+<Loc EndOffset="10485" SrcFileId="1" StartOffset="10442"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S157" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="182">
+<LocList>
+<Loc EndOffset="10515" SrcFileId="1" StartOffset="10492"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S158" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="183">
+<LocList>
+<Loc EndOffset="10539" SrcFileId="1" StartOffset="10529"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S159" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="184">
+<LocList>
+<Loc EndOffset="10578" SrcFileId="1" StartOffset="10553"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S160" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="185">
+<LocList>
+<Loc EndOffset="10615" SrcFileId="1" StartOffset="10585"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S161" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="186">
+<LocList>
+<Loc EndOffset="10652" SrcFileId="1" StartOffset="10622"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S162" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="187">
+<LocList>
+<Loc EndOffset="10682" SrcFileId="1" StartOffset="10659"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S163" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="188">
+<LocList>
+<Loc EndOffset="10714" SrcFileId="1" StartOffset="10689"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S164" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="189">
+<LocList>
+<Loc EndOffset="10745" SrcFileId="1" StartOffset="10721"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S165" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="190">
+<LocList>
+<Loc EndOffset="10775" SrcFileId="1" StartOffset="10755"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S166" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="191">
+<LocList>
+<Loc EndOffset="10810" SrcFileId="1" StartOffset="10785"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S167" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="192">
+<LocList>
+<Loc EndOffset="10840" SrcFileId="1" StartOffset="10820"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S168" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="193">
+<LocList>
+<Loc EndOffset="10873" SrcFileId="1" StartOffset="10850"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S169" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="194">
+<LocList>
+<Loc EndOffset="10903" SrcFileId="1" StartOffset="10883"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S170" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="195">
+<LocList>
+<Loc EndOffset="10935" SrcFileId="1" StartOffset="10913"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S171" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="196">
+<LocList>
+<Loc EndOffset="10965" SrcFileId="1" StartOffset="10945"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S172" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="197">
+<LocList>
+<Loc EndOffset="11001" SrcFileId="1" StartOffset="10975"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S173" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="198">
+<LocList>
+<Loc EndOffset="11031" SrcFileId="1" StartOffset="11011"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S174" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="199">
+<LocList>
+<Loc EndOffset="11065" SrcFileId="1" StartOffset="11041"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S175" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="200">
+<LocList>
+<Loc EndOffset="11095" SrcFileId="1" StartOffset="11075"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S176" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="201">
+<LocList>
+<Loc EndOffset="11115" SrcFileId="1" StartOffset="11105"/>
+</LocList>
+</BasicStmnt>
+<CondStmnt CovItemId="S177" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="202">
+<Branch CovItemId="B3" CovItemPrefix="myPackage.Interfaccia.java" Implct="false" Intrnl_Id="203">
+<Cond/>
+<LocList>
+<Loc EndOffset="11163" SrcFileId="1" StartOffset="11146"/>
+</LocList>
+<StmntSeq Intrnl_Id="204">
+<LocList>
+<Loc EndOffset="11163" SrcFileId="1" StartOffset="11146"/>
+</LocList>
+<BasicStmnt CovItemId="S178" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="205">
+<LocList>
+<Loc EndOffset="11163" SrcFileId="1" StartOffset="11146"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</Branch>
+<Branch CovItemId="B4" CovItemPrefix="myPackage.Interfaccia.java" Implct="true" Intrnl_Id="206">
+<Cond/>
+<LocList/>
+<StmntSeq Intrnl_Id="207">
+<LocList/>
+</StmntSeq>
+</Branch>
+<Keyword EndOffset="11127" SrcFileId="1" StartOffset="11125"/>
+<LocList>
+<Loc EndOffset="11163" SrcFileId="1" StartOffset="11125"/>
+</LocList>
+<RootTerm CovItemId="C2" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="208">
+<BasicBoolTerm Intrnl_Id="209">
+<LocList>
+<Loc EndOffset="11134" SrcFileId="1" StartOffset="11128"/>
+</LocList>
+</BasicBoolTerm>
+</RootTerm>
+</CondStmnt>
+<CondStmnt CovItemId="S179" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="210">
+<Branch CovItemId="B5" CovItemPrefix="myPackage.Interfaccia.java" Implct="false" Intrnl_Id="211">
+<Cond/>
+<LocList>
+<Loc EndOffset="11211" SrcFileId="1" StartOffset="11194"/>
+</LocList>
+<StmntSeq Intrnl_Id="212">
+<LocList>
+<Loc EndOffset="11211" SrcFileId="1" StartOffset="11194"/>
+</LocList>
+<BasicStmnt CovItemId="S180" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="213">
+<LocList>
+<Loc EndOffset="11211" SrcFileId="1" StartOffset="11194"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</Branch>
+<Branch CovItemId="B6" CovItemPrefix="myPackage.Interfaccia.java" Implct="true" Intrnl_Id="214">
+<Cond/>
+<LocList/>
+<StmntSeq Intrnl_Id="215">
+<LocList/>
+</StmntSeq>
+</Branch>
+<Keyword EndOffset="11175" SrcFileId="1" StartOffset="11173"/>
+<LocList>
+<Loc EndOffset="11211" SrcFileId="1" StartOffset="11173"/>
+</LocList>
+<RootTerm CovItemId="C3" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="216">
+<BasicBoolTerm Intrnl_Id="217">
+<LocList>
+<Loc EndOffset="11182" SrcFileId="1" StartOffset="11176"/>
+</LocList>
+</BasicBoolTerm>
+</RootTerm>
+</CondStmnt>
+<CondStmnt CovItemId="S181" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="218">
+<Branch CovItemId="B7" CovItemPrefix="myPackage.Interfaccia.java" Implct="false" Intrnl_Id="219">
+<Cond/>
+<LocList>
+<Loc EndOffset="11259" SrcFileId="1" StartOffset="11242"/>
+</LocList>
+<StmntSeq Intrnl_Id="220">
+<LocList>
+<Loc EndOffset="11259" SrcFileId="1" StartOffset="11242"/>
+</LocList>
+<BasicStmnt CovItemId="S182" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="221">
+<LocList>
+<Loc EndOffset="11259" SrcFileId="1" StartOffset="11242"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</Branch>
+<Branch CovItemId="B8" CovItemPrefix="myPackage.Interfaccia.java" Implct="true" Intrnl_Id="222">
+<Cond/>
+<LocList/>
+<StmntSeq Intrnl_Id="223">
+<LocList/>
+</StmntSeq>
+</Branch>
+<Keyword EndOffset="11223" SrcFileId="1" StartOffset="11221"/>
+<LocList>
+<Loc EndOffset="11259" SrcFileId="1" StartOffset="11221"/>
+</LocList>
+<RootTerm CovItemId="C4" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="224">
+<BasicBoolTerm Intrnl_Id="225">
+<LocList>
+<Loc EndOffset="11230" SrcFileId="1" StartOffset="11224"/>
+</LocList>
+</BasicBoolTerm>
+</RootTerm>
+</CondStmnt>
+<CondStmnt CovItemId="S183" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="226">
+<Branch CovItemId="B9" CovItemPrefix="myPackage.Interfaccia.java" Implct="false" Intrnl_Id="227">
+<Cond/>
+<LocList>
+<Loc EndOffset="11307" SrcFileId="1" StartOffset="11290"/>
+</LocList>
+<StmntSeq Intrnl_Id="228">
+<LocList>
+<Loc EndOffset="11307" SrcFileId="1" StartOffset="11290"/>
+</LocList>
+<BasicStmnt CovItemId="S184" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="229">
+<LocList>
+<Loc EndOffset="11307" SrcFileId="1" StartOffset="11290"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</Branch>
+<Branch CovItemId="B10" CovItemPrefix="myPackage.Interfaccia.java" Implct="true" Intrnl_Id="230">
+<Cond/>
+<LocList/>
+<StmntSeq Intrnl_Id="231">
+<LocList/>
+</StmntSeq>
+</Branch>
+<Keyword EndOffset="11271" SrcFileId="1" StartOffset="11269"/>
+<LocList>
+<Loc EndOffset="11307" SrcFileId="1" StartOffset="11269"/>
+</LocList>
+<RootTerm CovItemId="C5" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="232">
+<BasicBoolTerm Intrnl_Id="233">
+<LocList>
+<Loc EndOffset="11278" SrcFileId="1" StartOffset="11272"/>
+</LocList>
+</BasicBoolTerm>
+</RootTerm>
+</CondStmnt>
+<CondStmnt CovItemId="S185" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="234">
+<Branch CovItemId="B11" CovItemPrefix="myPackage.Interfaccia.java" Implct="false" Intrnl_Id="235">
+<Cond/>
+<LocList>
+<Loc EndOffset="11355" SrcFileId="1" StartOffset="11338"/>
+</LocList>
+<StmntSeq Intrnl_Id="236">
+<LocList>
+<Loc EndOffset="11355" SrcFileId="1" StartOffset="11338"/>
+</LocList>
+<BasicStmnt CovItemId="S186" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="237">
+<LocList>
+<Loc EndOffset="11355" SrcFileId="1" StartOffset="11338"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</Branch>
+<Branch CovItemId="B12" CovItemPrefix="myPackage.Interfaccia.java" Implct="true" Intrnl_Id="238">
+<Cond/>
+<LocList/>
+<StmntSeq Intrnl_Id="239">
+<LocList/>
+</StmntSeq>
+</Branch>
+<Keyword EndOffset="11319" SrcFileId="1" StartOffset="11317"/>
+<LocList>
+<Loc EndOffset="11355" SrcFileId="1" StartOffset="11317"/>
+</LocList>
+<RootTerm CovItemId="C6" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="240">
+<BasicBoolTerm Intrnl_Id="241">
+<LocList>
+<Loc EndOffset="11326" SrcFileId="1" StartOffset="11320"/>
+</LocList>
+</BasicBoolTerm>
+</RootTerm>
+</CondStmnt>
+<CondStmnt CovItemId="S187" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="242">
+<Branch CovItemId="B13" CovItemPrefix="myPackage.Interfaccia.java" Implct="false" Intrnl_Id="243">
+<Cond/>
+<LocList>
+<Loc EndOffset="11399" SrcFileId="1" StartOffset="11382"/>
+</LocList>
+<StmntSeq Intrnl_Id="244">
+<LocList>
+<Loc EndOffset="11399" SrcFileId="1" StartOffset="11382"/>
+</LocList>
+<BasicStmnt CovItemId="S188" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="245">
+<LocList>
+<Loc EndOffset="11399" SrcFileId="1" StartOffset="11382"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</Branch>
+<Branch CovItemId="B14" CovItemPrefix="myPackage.Interfaccia.java" Implct="true" Intrnl_Id="246">
+<Cond/>
+<LocList/>
+<StmntSeq Intrnl_Id="247">
+<LocList/>
+</StmntSeq>
+</Branch>
+<Keyword EndOffset="11367" SrcFileId="1" StartOffset="11365"/>
+<LocList>
+<Loc EndOffset="11399" SrcFileId="1" StartOffset="11365"/>
+</LocList>
+<RootTerm CovItemId="C7" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="248">
+<BasicBoolTerm Intrnl_Id="249">
+<LocList>
+<Loc EndOffset="11374" SrcFileId="1" StartOffset="11368"/>
+</LocList>
+</BasicBoolTerm>
+</RootTerm>
+</CondStmnt>
+</StmntSeq>
+</HierarchyLvl>
+<HierarchyLvl HierarchyLvlId="96" HierarchyLvlTypeId="5" Intrnl_Id="250" Name="fileChooser">
+<Header>
+<Loc EndOffset="11480" SrcFileId="1" StartOffset="11425"/>
+</Header>
+<LocList>
+<Loc EndOffset="11800" SrcFileId="1" StartOffset="11425"/>
+</LocList>
+<StmntSeq Intrnl_Id="251">
+<LocList>
+<Loc EndOffset="11542" SrcFileId="1" StartOffset="11496"/>
+<Loc EndOffset="11606" SrcFileId="1" StartOffset="11551"/>
+<Loc EndOffset="11660" SrcFileId="1" StartOffset="11615"/>
+<Loc EndOffset="11737" SrcFileId="1" StartOffset="11669"/>
+<Loc EndOffset="11793" SrcFileId="1" StartOffset="11746"/>
+</LocList>
+<BasicStmnt CovItemId="S189" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="252">
+<LocList>
+<Loc EndOffset="11542" SrcFileId="1" StartOffset="11496"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S190" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="253">
+<LocList>
+<Loc EndOffset="11606" SrcFileId="1" StartOffset="11551"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S191" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="254">
+<LocList>
+<Loc EndOffset="11660" SrcFileId="1" StartOffset="11615"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S192" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="255">
+<LocList>
+<Loc EndOffset="11737" SrcFileId="1" StartOffset="11669"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S193" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="256">
+<LocList>
+<Loc EndOffset="11793" SrcFileId="1" StartOffset="11746"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</HierarchyLvl>
+<HierarchyLvl HierarchyLvlId="97" HierarchyLvlTypeId="5" Intrnl_Id="257" Name="startParsing">
+<Header>
+<Loc EndOffset="11852" SrcFileId="1" StartOffset="11812"/>
+</Header>
+<LocList>
+<Loc EndOffset="12039" SrcFileId="1" StartOffset="11812"/>
+</LocList>
+<StmntSeq Intrnl_Id="258">
+<LocList>
+<Loc EndOffset="11908" SrcFileId="1" StartOffset="11881"/>
+<Loc EndOffset="12032" SrcFileId="1" StartOffset="11865"/>
+</LocList>
+<BasicStmnt CovItemId="S195" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="259">
+<LocList>
+<Loc EndOffset="11908" SrcFileId="1" StartOffset="11881"/>
+</LocList>
+</BasicStmnt>
+<CondStmnt CovItemId="S194" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="260">
+<Branch CovItemId="B15" CovItemPrefix="myPackage.Interfaccia.java" Implct="true" Intrnl_Id="261">
+<Cond/>
+<LocList/>
+<StmntSeq Intrnl_Id="262">
+<LocList/>
+</StmntSeq>
+</Branch>
+<Branch CovItemId="B16" CovItemPrefix="myPackage.Interfaccia.java" Implct="false" Intrnl_Id="263">
+<Cond>
+<Loc EndOffset="11936" SrcFileId="1" StartOffset="11914"/>
+</Cond>
+<LocList>
+<Loc EndOffset="11969" SrcFileId="1" StartOffset="11937"/>
+</LocList>
+<StmntSeq Intrnl_Id="264">
+<LocList>
+<Loc EndOffset="11964" SrcFileId="1" StartOffset="11943"/>
+</LocList>
+<BasicStmnt CovItemId="S196" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="265">
+<LocList>
+<Loc EndOffset="11964" SrcFileId="1" StartOffset="11943"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</Branch>
+<Branch CovItemId="B17" CovItemPrefix="myPackage.Interfaccia.java" Implct="false" Intrnl_Id="266">
+<Cond>
+<Loc EndOffset="12001" SrcFileId="1" StartOffset="11970"/>
+</Cond>
+<LocList>
+<Loc EndOffset="12032" SrcFileId="1" StartOffset="12002"/>
+</LocList>
+<StmntSeq Intrnl_Id="267">
+<LocList>
+<Loc EndOffset="12028" SrcFileId="1" StartOffset="12007"/>
+</LocList>
+<BasicStmnt CovItemId="S197" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="268">
+<LocList>
+<Loc EndOffset="12028" SrcFileId="1" StartOffset="12007"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</Branch>
+<Keyword EndOffset="11868" SrcFileId="1" StartOffset="11865"/>
+<LocList>
+<Loc EndOffset="12032" SrcFileId="1" StartOffset="11865"/>
+</LocList>
+</CondStmnt>
+</StmntSeq>
+</HierarchyLvl>
+<HierarchyLvl HierarchyLvlId="98" HierarchyLvlTypeId="5" Intrnl_Id="269" Name="checkMode">
+<Header>
+<Loc EndOffset="12077" SrcFileId="1" StartOffset="12051"/>
+</Header>
+<LocList>
+<Loc EndOffset="12143" SrcFileId="1" StartOffset="12051"/>
+</LocList>
+<StmntSeq Intrnl_Id="270">
+<LocList>
+<Loc EndOffset="12136" SrcFileId="1" StartOffset="12091"/>
+</LocList>
+<BasicStmnt CovItemId="S198" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="271">
+<LocList>
+<Loc EndOffset="12136" SrcFileId="1" StartOffset="12091"/>
+</LocList>
+<QMO CovItemId="Q0" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="272">
+<LocList>
+<Loc EndOffset="12122" SrcFileId="1" StartOffset="12098"/>
+</LocList>
+<QMO_E CovItemId="Q0-0" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="273">
+<LocList>
+<Loc EndOffset="12129" SrcFileId="1" StartOffset="12125"/>
+</LocList>
+</QMO_E>
+<QMO_E CovItemId="Q0-1" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="274">
+<LocList>
+<Loc EndOffset="12135" SrcFileId="1" StartOffset="12130"/>
+</LocList>
+</QMO_E>
+</QMO>
+</BasicStmnt>
+</StmntSeq>
+</HierarchyLvl>
+<HierarchyLvl HierarchyLvlId="99" HierarchyLvlTypeId="5" Intrnl_Id="275" Name="checkMode2">
+<Header>
+<Loc EndOffset="12176" SrcFileId="1" StartOffset="12149"/>
+</Header>
+<LocList>
+<Loc EndOffset="12235" SrcFileId="1" StartOffset="12149"/>
+</LocList>
+<StmntSeq Intrnl_Id="276">
+<LocList>
+<Loc EndOffset="12228" SrcFileId="1" StartOffset="12190"/>
+</LocList>
+<BasicStmnt CovItemId="S199" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="277">
+<LocList>
+<Loc EndOffset="12228" SrcFileId="1" StartOffset="12190"/>
+</LocList>
+<QMO CovItemId="Q1" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="278">
+<LocList>
+<Loc EndOffset="12214" SrcFileId="1" StartOffset="12197"/>
+</LocList>
+<QMO_E CovItemId="Q1-0" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="279">
+<LocList>
+<Loc EndOffset="12221" SrcFileId="1" StartOffset="12217"/>
+</LocList>
+</QMO_E>
+<QMO_E CovItemId="Q1-1" CovItemPrefix="myPackage.Interfaccia.java" Intrnl_Id="280">
+<LocList>
+<Loc EndOffset="12227" SrcFileId="1" StartOffset="12222"/>
+</LocList>
+</QMO_E>
+</QMO>
+</BasicStmnt>
+</StmntSeq>
+</HierarchyLvl>
+</HierarchyLvl>
+<HierarchyLvl HierarchyLvlId="107" HierarchyLvlTypeId="6" Intrnl_Id="281" Name="ParserLauncher">
+<Header>
+<Loc EndOffset="423" SrcFileId="2" StartOffset="396"/>
+</Header>
+<LocList>
+<Loc EndOffset="3802" SrcFileId="2" StartOffset="396"/>
+</LocList>
+<HierarchyLvl HierarchyLvlId="101" HierarchyLvlTypeId="5" Intrnl_Id="282" Name="ParserLauncher">
+<Header>
+<Loc EndOffset="446" SrcFileId="2" StartOffset="430"/>
+</Header>
+<LocList>
+<Loc EndOffset="448" SrcFileId="2" StartOffset="430"/>
+</LocList>
+</HierarchyLvl>
+<HierarchyLvl HierarchyLvlId="102" HierarchyLvlTypeId="5" Intrnl_Id="283" Name="getTagFromFile">
+<Header>
+<Loc EndOffset="557" SrcFileId="2" StartOffset="455"/>
+</Header>
+<LocList>
+<Loc EndOffset="1512" SrcFileId="2" StartOffset="455"/>
+</LocList>
+<StmntSeq Intrnl_Id="284">
+<LocList>
+<Loc EndOffset="686" SrcFileId="2" StartOffset="599"/>
+<Loc EndOffset="708" SrcFileId="2" StartOffset="695"/>
+<Loc EndOffset="891" SrcFileId="2" StartOffset="711"/>
+<Loc EndOffset="910" SrcFileId="2" StartOffset="894"/>
+<Loc EndOffset="1191" SrcFileId="2" StartOffset="1122"/>
+<Loc EndOffset="1228" SrcFileId="2" StartOffset="1197"/>
+<Loc EndOffset="1311" SrcFileId="2" StartOffset="1266"/>
+<Loc EndOffset="1380" SrcFileId="2" StartOffset="1342"/>
+<Loc EndOffset="1400" SrcFileId="2" StartOffset="1384"/>
+<Loc EndOffset="1488" SrcFileId="2" StartOffset="1404"/>
+<Loc EndOffset="1508" SrcFileId="2" StartOffset="1494"/>
+</LocList>
+<BasicStmnt CovItemId="S1" CovItemPrefix="myPackage.ParserLauncher.java" Intrnl_Id="285">
+<LocList>
+<Loc EndOffset="686" SrcFileId="2" StartOffset="599"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S2" CovItemPrefix="myPackage.ParserLauncher.java" Intrnl_Id="286">
+<LocList>
+<Loc EndOffset="708" SrcFileId="2" StartOffset="695"/>
+</LocList>
+</BasicStmnt>
+<LoopStmnt CovItemId="S3" CovItemPrefix="myPackage.ParserLauncher.java" Intrnl_Id="287" MltplExecId="L1-2" MltplExecPrefix="myPackage.ParserLauncher.java" NvrExecId="L1-0" NvrExecPrefix="myPackage.ParserLauncher.java" OnceExecutedId="L1-1" OnceExecutedPrefix="myPackage.ParserLauncher.java" OptBodyExec="true">
+<StmntSeq Intrnl_Id="288">
+<LocList>
+<Loc EndOffset="874" SrcFileId="2" StartOffset="730"/>
+<Loc EndOffset="887" SrcFileId="2" StartOffset="878"/>
+</LocList>
+<CondStmnt CovItemId="S4" CovItemPrefix="myPackage.ParserLauncher.java" Intrnl_Id="289">
+<Branch CovItemId="B1" CovItemPrefix="myPackage.ParserLauncher.java" Implct="false" Intrnl_Id="290">
+<Cond/>
+<LocList>
+<Loc EndOffset="874" SrcFileId="2" StartOffset="754"/>
+</LocList>
+<StmntSeq Intrnl_Id="291">
+<LocList>
+<Loc EndOffset="868" SrcFileId="2" StartOffset="760"/>
+</LocList>
+<CondStmnt CovItemId="S5" CovItemPrefix="myPackage.ParserLauncher.java" Intrnl_Id="292">
+<Branch CovItemId="B3" CovItemPrefix="myPackage.ParserLauncher.java" Implct="false" Intrnl_Id="293">
+<Cond/>
+<LocList>
+<Loc EndOffset="853" SrcFileId="2" StartOffset="784"/>
+</LocList>
+<StmntSeq Intrnl_Id="294">
+<LocList>
+<Loc EndOffset="846" SrcFileId="2" StartOffset="791"/>
+</LocList>
+<CondStmnt CovItemId="S6" CovItemPrefix="myPackage.ParserLauncher.java" Intrnl_Id="295">
+<Branch CovItemId="B5" CovItemPrefix="myPackage.ParserLauncher.java" Implct="false" Intrnl_Id="296">
+<Cond/>
+<LocList>
+<Loc EndOffset="823" SrcFileId="2" StartOffset="815"/>
+</LocList>
+<StmntSeq Intrnl_Id="297">
+<LocList>
+<Loc EndOffset="822" SrcFileId="2" StartOffset="816"/>
+</LocList>
+<BasicStmnt CovItemId="S7" CovItemPrefix="myPackage.ParserLauncher.java" Intrnl_Id="298">
+<LocList>
+<Loc EndOffset="822" SrcFileId="2" StartOffset="816"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</Branch>
+<Branch CovItemId="B6" CovItemPrefix="myPackage.ParserLauncher.java" Implct="false" Intrnl_Id="299">
+<Cond>
+<Loc EndOffset="827" SrcFileId="2" StartOffset="823"/>
+</Cond>
+<LocList>
+<Loc EndOffset="846" SrcFileId="2" StartOffset="828"/>
+</LocList>
+<StmntSeq Intrnl_Id="300">
+<LocList>
+<Loc EndOffset="845" SrcFileId="2" StartOffset="829"/>
+</LocList>
+<BasicStmnt CovItemId="S8" CovItemPrefix="myPackage.ParserLauncher.java" Intrnl_Id="301">
+<LocList>
+<Loc EndOffset="845" SrcFileId="2" StartOffset="829"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</Branch>
+<Keyword EndOffset="793" SrcFileId="2" StartOffset="791"/>
+<LocList>
+<Loc EndOffset="846" SrcFileId="2" StartOffset="791"/>
+</LocList>
+<RootTerm CovItemId="C4" CovItemPrefix="myPackage.ParserLauncher.java" Intrnl_Id="302">
+<BasicBoolTerm Intrnl_Id="303">
+<LocList>
+<Loc EndOffset="813" SrcFileId="2" StartOffset="794"/>
+</LocList>
+</BasicBoolTerm>
+</RootTerm>
+</CondStmnt>
+</StmntSeq>
+</Branch>
+<Branch CovItemId="B4" CovItemPrefix="myPackage.ParserLauncher.java" Implct="false" Intrnl_Id="304">
+<Cond>
+<Loc EndOffset="857" SrcFileId="2" StartOffset="853"/>
+</Cond>
+<LocList>
+<Loc EndOffset="868" SrcFileId="2" StartOffset="857"/>
+</LocList>
+<StmntSeq Intrnl_Id="305">
+<LocList>
+<Loc EndOffset="867" SrcFileId="2" StartOffset="858"/>
+</LocList>
+<BasicStmnt CovItemId="S9" CovItemPrefix="myPackage.ParserLauncher.java" Intrnl_Id="306">
+<LocList>
+<Loc EndOffset="867" SrcFileId="2" StartOffset="858"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</Branch>
+<Keyword EndOffset="762" SrcFileId="2" StartOffset="760"/>
+<LocList>
+<Loc EndOffset="868" SrcFileId="2" StartOffset="760"/>
+</LocList>
+<RootTerm CovItemId="C3" CovItemPrefix="myPackage.ParserLauncher.java" Intrnl_Id="307">
+<BasicBoolTerm Intrnl_Id="308">
+<LocList>
+<Loc EndOffset="782" SrcFileId="2" StartOffset="763"/>
+</LocList>
+</BasicBoolTerm>
+</RootTerm>
+</CondStmnt>
+</StmntSeq>
+</Branch>
+<Branch CovItemId="B2" CovItemPrefix="myPackage.ParserLauncher.java" Implct="true" Intrnl_Id="309">
+<Cond/>
+<LocList/>
+<StmntSeq Intrnl_Id="310">
+<LocList/>
+</StmntSeq>
+</Branch>
+<Keyword EndOffset="732" SrcFileId="2" StartOffset="730"/>
+<LocList>
+<Loc EndOffset="874" SrcFileId="2" StartOffset="730"/>
+</LocList>
+<RootTerm CovItemId="C2" CovItemPrefix="myPackage.ParserLauncher.java" Intrnl_Id="311">
+<BasicBoolTerm Intrnl_Id="312">
+<LocList>
+<Loc EndOffset="752" SrcFileId="2" StartOffset="733"/>
+</LocList>
+</BasicBoolTerm>
+</RootTerm>
+</CondStmnt>
+<BasicStmnt CovItemId="S10" CovItemPrefix="myPackage.ParserLauncher.java" Intrnl_Id="313">
+<LocList>
+<Loc EndOffset="887" SrcFileId="2" StartOffset="878"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+<Keyword EndOffset="716" SrcFileId="2" StartOffset="711"/>
+<LocList>
+<Loc EndOffset="891" SrcFileId="2" StartOffset="711"/>
+</LocList>
+</LoopStmnt>
+<BasicStmnt CovItemId="S11" CovItemPrefix="myPackage.ParserLauncher.java" Intrnl_Id="314">
+<LocList>
+<Loc EndOffset="910" SrcFileId="2" StartOffset="894"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S12" CovItemPrefix="myPackage.ParserLauncher.java" Intrnl_Id="315">
+<LocList>
+<Loc EndOffset="1191" SrcFileId="2" StartOffset="1122"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S13" CovItemPrefix="myPackage.ParserLauncher.java" Intrnl_Id="316">
+<LocList>
+<Loc EndOffset="1228" SrcFileId="2" StartOffset="1197"/>
+</LocList>
+</BasicStmnt>
+<LoopStmnt CovItemId="S14" CovItemPrefix="myPackage.ParserLauncher.java" Intrnl_Id="317" MltplExecId="L2-2" MltplExecPrefix="myPackage.ParserLauncher.java" NvrExecId="L2-0" NvrExecPrefix="myPackage.ParserLauncher.java" OnceExecutedId="L2-1" OnceExecutedPrefix="myPackage.ParserLauncher.java" OptBodyExec="true">
+<StmntSeq Intrnl_Id="318">
+<LocList>
+<Loc EndOffset="1311" SrcFileId="2" StartOffset="1296"/>
+</LocList>
+<BasicStmnt CovItemId="S15" CovItemPrefix="myPackage.ParserLauncher.java" Intrnl_Id="319">
+<LocList>
+<Loc EndOffset="1311" SrcFileId="2" StartOffset="1296"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+<Keyword EndOffset="1269" SrcFileId="2" StartOffset="1266"/>
+<LocList>
+<Loc EndOffset="1311" SrcFileId="2" StartOffset="1266"/>
+</LocList>
+<RootTerm CovItemId="C5" CovItemPrefix="myPackage.ParserLauncher.java" Intrnl_Id="320">
+<BasicBoolTerm Intrnl_Id="321">
+<LocList>
+<Loc EndOffset="1286" SrcFileId="2" StartOffset="1278"/>
+</LocList>
+</BasicBoolTerm>
+</RootTerm>
+</LoopStmnt>
+<BasicStmnt CovItemId="S16" CovItemPrefix="myPackage.ParserLauncher.java" Intrnl_Id="322">
+<LocList>
+<Loc EndOffset="1380" SrcFileId="2" StartOffset="1342"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S17" CovItemPrefix="myPackage.ParserLauncher.java" Intrnl_Id="323">
+<LocList>
+<Loc EndOffset="1400" SrcFileId="2" StartOffset="1384"/>
+</LocList>
+</BasicStmnt>
+<CondStmnt CovItemId="S18" CovItemPrefix="myPackage.ParserLauncher.java" Intrnl_Id="324">
+<Branch CovItemId="B7" CovItemPrefix="myPackage.ParserLauncher.java" Implct="false" Intrnl_Id="325">
+<Cond/>
+<LocList>
+<Loc EndOffset="1488" SrcFileId="2" StartOffset="1413"/>
+</LocList>
+<StmntSeq Intrnl_Id="326">
+<LocList>
+<Loc EndOffset="1462" SrcFileId="2" StartOffset="1414"/>
+<Loc EndOffset="1487" SrcFileId="2" StartOffset="1463"/>
+</LocList>
+<BasicStmnt CovItemId="S19" CovItemPrefix="myPackage.ParserLauncher.java" Intrnl_Id="327">
+<LocList>
+<Loc EndOffset="1462" SrcFileId="2" StartOffset="1414"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S20" CovItemPrefix="myPackage.ParserLauncher.java" Intrnl_Id="328">
+<LocList>
+<Loc EndOffset="1487" SrcFileId="2" StartOffset="1463"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</Branch>
+<Branch CovItemId="B8" CovItemPrefix="myPackage.ParserLauncher.java" Implct="true" Intrnl_Id="329">
+<Cond/>
+<LocList/>
+<StmntSeq Intrnl_Id="330">
+<LocList/>
+</StmntSeq>
+</Branch>
+<Keyword EndOffset="1406" SrcFileId="2" StartOffset="1404"/>
+<LocList>
+<Loc EndOffset="1488" SrcFileId="2" StartOffset="1404"/>
+</LocList>
+<RootTerm CovItemId="C6" CovItemPrefix="myPackage.ParserLauncher.java" Intrnl_Id="331">
+<BasicBoolTerm Intrnl_Id="332">
+<LocList>
+<Loc EndOffset="1412" SrcFileId="2" StartOffset="1407"/>
+</LocList>
+</BasicBoolTerm>
+</RootTerm>
+</CondStmnt>
+<BasicStmnt CovItemId="S21" CovItemPrefix="myPackage.ParserLauncher.java" Intrnl_Id="333">
+<LocList>
+<Loc EndOffset="1508" SrcFileId="2" StartOffset="1494"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</HierarchyLvl>
+<HierarchyLvl HierarchyLvlId="103" HierarchyLvlTypeId="5" Intrnl_Id="334" Name="setReaderWithStartSearch">
+<Header>
+<Loc EndOffset="1631" SrcFileId="2" StartOffset="1518"/>
+</Header>
+<LocList>
+<Loc EndOffset="2358" SrcFileId="2" StartOffset="1518"/>
+</LocList>
+<StmntSeq Intrnl_Id="335">
+<LocList>
+<Loc EndOffset="1767" SrcFileId="2" StartOffset="1722"/>
+<Loc EndOffset="1826" SrcFileId="2" StartOffset="1786"/>
+<Loc EndOffset="1909" SrcFileId="2" StartOffset="1842"/>
+<Loc EndOffset="2024" SrcFileId="2" StartOffset="1917"/>
+<Loc EndOffset="2054" SrcFileId="2" StartOffset="2032"/>
+<Loc EndOffset="2077" SrcFileId="2" StartOffset="2062"/>
+<Loc EndOffset="2114" SrcFileId="2" StartOffset="2086"/>
+<Loc EndOffset="2219" SrcFileId="2" StartOffset="1830"/>
+<Loc EndOffset="2334" SrcFileId="2" StartOffset="2230"/>
+<Loc EndOffset="2355" SrcFileId="2" StartOffset="2341"/>
+</LocList>
+<BasicStmnt CovItemId="S22" CovItemPrefix="myPackage.ParserLauncher.java" Intrnl_Id="336">
+<LocList>
+<Loc EndOffset="1767" SrcFileId="2" StartOffset="1722"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S23" CovItemPrefix="myPackage.ParserLauncher.java" Intrnl_Id="337">
+<LocList>
+<Loc EndOffset="1826" SrcFileId="2" StartOffset="1786"/>
+</LocList>
+<QMO CovItemId="Q0" CovItemPrefix="myPackage.ParserLauncher.java" Intrnl_Id="338">
+<LocList>
+<Loc EndOffset="1814" SrcFileId="2" StartOffset="1799"/>
+</LocList>
+<QMO_E CovItemId="Q0-0" CovItemPrefix="myPackage.ParserLauncher.java" Intrnl_Id="339">
+<LocList>
+<Loc EndOffset="1820" SrcFileId="2" StartOffset="1817"/>
+</LocList>
+</QMO_E>
+<QMO_E CovItemId="Q0-1" CovItemPrefix="myPackage.ParserLauncher.java" Intrnl_Id="340">
+<LocList>
+<Loc EndOffset="1825" SrcFileId="2" StartOffset="1822"/>
+</LocList>
+</QMO_E>
+</QMO>
+</BasicStmnt>
+<BasicStmnt CovItemId="S25" CovItemPrefix="myPackage.ParserLauncher.java" Intrnl_Id="341">
+<LocList>
+<Loc EndOffset="1909" SrcFileId="2" StartOffset="1842"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S26" CovItemPrefix="myPackage.ParserLauncher.java" Intrnl_Id="342">
+<LocList>
+<Loc EndOffset="2024" SrcFileId="2" StartOffset="1917"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S27" CovItemPrefix="myPackage.ParserLauncher.java" Intrnl_Id="343">
+<LocList>
+<Loc EndOffset="2054" SrcFileId="2" StartOffset="2032"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S28" CovItemPrefix="myPackage.ParserLauncher.java" Intrnl_Id="344">
+<LocList>
+<Loc EndOffset="2077" SrcFileId="2" StartOffset="2062"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S29" CovItemPrefix="myPackage.ParserLauncher.java" Intrnl_Id="345">
+<LocList>
+<Loc EndOffset="2114" SrcFileId="2" StartOffset="2086"/>
+</LocList>
+</BasicStmnt>
+<CondStmnt CovItemId="S24" CovItemPrefix="myPackage.ParserLauncher.java" Intrnl_Id="346">
+<Branch CovItemId="B9" CovItemPrefix="myPackage.ParserLauncher.java" Implct="true" Intrnl_Id="347">
+<Cond/>
+<LocList/>
+<StmntSeq Intrnl_Id="348">
+<LocList/>
+</StmntSeq>
+</Branch>
+<Branch CovItemId="B10" CovItemPrefix="myPackage.ParserLauncher.java" Implct="false" Intrnl_Id="349">
+<Cond>
+<Loc EndOffset="2149" SrcFileId="2" StartOffset="2119"/>
+</Cond>
+<LocList>
+<Loc EndOffset="2219" SrcFileId="2" StartOffset="2155"/>
+</LocList>
+<StmntSeq Intrnl_Id="350">
+<LocList>
+<Loc EndOffset="2218" SrcFileId="2" StartOffset="2156"/>
+</LocList>
+<BasicStmnt CovItemId="S30" CovItemPrefix="myPackage.ParserLauncher.java" Intrnl_Id="351">
+<LocList>
+<Loc EndOffset="2218" SrcFileId="2" StartOffset="2156"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</Branch>
+<Keyword EndOffset="1833" SrcFileId="2" StartOffset="1830"/>
+<LocList>
+<Loc EndOffset="2219" SrcFileId="2" StartOffset="1830"/>
+</LocList>
+</CondStmnt>
+<BasicStmnt CovItemId="S31" CovItemPrefix="myPackage.ParserLauncher.java" Intrnl_Id="352">
+<LocList>
+<Loc EndOffset="2334" SrcFileId="2" StartOffset="2230"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S32" CovItemPrefix="myPackage.ParserLauncher.java" Intrnl_Id="353">
+<LocList>
+<Loc EndOffset="2355" SrcFileId="2" StartOffset="2341"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</HierarchyLvl>
+<HierarchyLvl HierarchyLvlId="104" HierarchyLvlTypeId="5" Intrnl_Id="354" Name="setReaderNoSearch">
+<Header>
+<Loc EndOffset="2468" SrcFileId="2" StartOffset="2362"/>
+</Header>
+<LocList>
+<Loc EndOffset="2673" SrcFileId="2" StartOffset="2362"/>
+</LocList>
+<StmntSeq Intrnl_Id="355">
+<LocList>
+<Loc EndOffset="2653" SrcFileId="2" StartOffset="2556"/>
+<Loc EndOffset="2670" SrcFileId="2" StartOffset="2656"/>
+</LocList>
+<BasicStmnt CovItemId="S33" CovItemPrefix="myPackage.ParserLauncher.java" Intrnl_Id="356">
+<LocList>
+<Loc EndOffset="2653" SrcFileId="2" StartOffset="2556"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S34" CovItemPrefix="myPackage.ParserLauncher.java" Intrnl_Id="357">
+<LocList>
+<Loc EndOffset="2670" SrcFileId="2" StartOffset="2656"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</HierarchyLvl>
+<HierarchyLvl HierarchyLvlId="105" HierarchyLvlTypeId="5" Intrnl_Id="358" Name="setString">
+<Header>
+<Loc EndOffset="2764" SrcFileId="2" StartOffset="2677"/>
+</Header>
+<LocList>
+<Loc EndOffset="3165" SrcFileId="2" StartOffset="2677"/>
+</LocList>
+<StmntSeq Intrnl_Id="359">
+<LocList>
+<Loc EndOffset="2812" SrcFileId="2" StartOffset="2772"/>
+<Loc EndOffset="2845" SrcFileId="2" StartOffset="2815"/>
+<Loc EndOffset="2922" SrcFileId="2" StartOffset="2860"/>
+<Loc EndOffset="3132" SrcFileId="2" StartOffset="2849"/>
+<Loc EndOffset="3164" SrcFileId="2" StartOffset="3147"/>
+</LocList>
+<BasicStmnt CovItemId="S35" CovItemPrefix="myPackage.ParserLauncher.java" Intrnl_Id="360">
+<LocList>
+<Loc EndOffset="2812" SrcFileId="2" StartOffset="2772"/>
+</LocList>
+<QMO CovItemId="Q1" CovItemPrefix="myPackage.ParserLauncher.java" Intrnl_Id="361">
+<LocList>
+<Loc EndOffset="2800" SrcFileId="2" StartOffset="2785"/>
+</LocList>
+<QMO_E CovItemId="Q1-0" CovItemPrefix="myPackage.ParserLauncher.java" Intrnl_Id="362">
+<LocList>
+<Loc EndOffset="2806" SrcFileId="2" StartOffset="2803"/>
+</LocList>
+</QMO_E>
+<QMO_E CovItemId="Q1-1" CovItemPrefix="myPackage.ParserLauncher.java" Intrnl_Id="363">
+<LocList>
+<Loc EndOffset="2811" SrcFileId="2" StartOffset="2808"/>
+</LocList>
+</QMO_E>
+</QMO>
+</BasicStmnt>
+<BasicStmnt CovItemId="S36" CovItemPrefix="myPackage.ParserLauncher.java" Intrnl_Id="364">
+<LocList>
+<Loc EndOffset="2845" SrcFileId="2" StartOffset="2815"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S38" CovItemPrefix="myPackage.ParserLauncher.java" Intrnl_Id="365">
+<LocList>
+<Loc EndOffset="2922" SrcFileId="2" StartOffset="2860"/>
+</LocList>
+</BasicStmnt>
+<CondStmnt CovItemId="S37" CovItemPrefix="myPackage.ParserLauncher.java" Intrnl_Id="366">
+<Branch CovItemId="B11" CovItemPrefix="myPackage.ParserLauncher.java" Implct="true" Intrnl_Id="367">
+<Cond/>
+<LocList/>
+<StmntSeq Intrnl_Id="368">
+<LocList/>
+</StmntSeq>
+</Branch>
+<Branch CovItemId="B12" CovItemPrefix="myPackage.ParserLauncher.java" Implct="false" Intrnl_Id="369">
+<Cond>
+<Loc EndOffset="3091" SrcFileId="2" StartOffset="3061"/>
+</Cond>
+<LocList>
+<Loc EndOffset="3132" SrcFileId="2" StartOffset="3092"/>
+</LocList>
+<StmntSeq Intrnl_Id="370">
+<LocList>
+<Loc EndOffset="3131" SrcFileId="2" StartOffset="3093"/>
+</LocList>
+<BasicStmnt CovItemId="S39" CovItemPrefix="myPackage.ParserLauncher.java" Intrnl_Id="371">
+<LocList>
+<Loc EndOffset="3131" SrcFileId="2" StartOffset="3093"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</Branch>
+<Keyword EndOffset="2852" SrcFileId="2" StartOffset="2849"/>
+<LocList>
+<Loc EndOffset="3132" SrcFileId="2" StartOffset="2849"/>
+</LocList>
+</CondStmnt>
+<BasicStmnt CovItemId="S40" CovItemPrefix="myPackage.ParserLauncher.java" Intrnl_Id="372">
+<LocList>
+<Loc EndOffset="3164" SrcFileId="2" StartOffset="3147"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</HierarchyLvl>
+<HierarchyLvl HierarchyLvlId="106" HierarchyLvlTypeId="5" Intrnl_Id="373" Name="avvio">
+<Header>
+<Loc EndOffset="3272" SrcFileId="2" StartOffset="3169"/>
+</Header>
+<LocList>
+<Loc EndOffset="3791" SrcFileId="2" StartOffset="3169"/>
+</LocList>
+<StmntSeq Intrnl_Id="374">
+<LocList>
+<Loc EndOffset="3449" SrcFileId="2" StartOffset="3306"/>
+<Loc EndOffset="3496" SrcFileId="2" StartOffset="3455"/>
+<Loc EndOffset="3523" SrcFileId="2" StartOffset="3499"/>
+<Loc EndOffset="3784" SrcFileId="2" StartOffset="3530"/>
+</LocList>
+<CondStmnt CovItemId="S41" CovItemPrefix="myPackage.ParserLauncher.java" Intrnl_Id="375">
+<Branch CovItemId="B13" CovItemPrefix="myPackage.ParserLauncher.java" Implct="false" Intrnl_Id="376">
+<Cond/>
+<LocList>
+<Loc EndOffset="3397" SrcFileId="2" StartOffset="3325"/>
+</LocList>
+<StmntSeq Intrnl_Id="377">
+<LocList>
+<Loc EndOffset="3396" SrcFileId="2" StartOffset="3326"/>
+</LocList>
+<BasicStmnt CovItemId="S42" CovItemPrefix="myPackage.ParserLauncher.java" Intrnl_Id="378">
+<LocList>
+<Loc EndOffset="3396" SrcFileId="2" StartOffset="3326"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</Branch>
+<Branch CovItemId="B14" CovItemPrefix="myPackage.ParserLauncher.java" Implct="false" Intrnl_Id="379">
+<Cond>
+<Loc EndOffset="3404" SrcFileId="2" StartOffset="3400"/>
+</Cond>
+<LocList>
+<Loc EndOffset="3449" SrcFileId="2" StartOffset="3405"/>
+</LocList>
+<StmntSeq Intrnl_Id="380">
+<LocList>
+<Loc EndOffset="3448" SrcFileId="2" StartOffset="3406"/>
+</LocList>
+<BasicStmnt CovItemId="S43" CovItemPrefix="myPackage.ParserLauncher.java" Intrnl_Id="381">
+<LocList>
+<Loc EndOffset="3448" SrcFileId="2" StartOffset="3406"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</Branch>
+<Keyword EndOffset="3308" SrcFileId="2" StartOffset="3306"/>
+<LocList>
+<Loc EndOffset="3449" SrcFileId="2" StartOffset="3306"/>
+</LocList>
+<RootTerm CovItemId="C7" CovItemPrefix="myPackage.ParserLauncher.java" Intrnl_Id="382">
+<BasicBoolTerm Intrnl_Id="383">
+<LocList>
+<Loc EndOffset="3323" SrcFileId="2" StartOffset="3309"/>
+</LocList>
+</BasicBoolTerm>
+</RootTerm>
+</CondStmnt>
+<BasicStmnt CovItemId="S44" CovItemPrefix="myPackage.ParserLauncher.java" Intrnl_Id="384">
+<LocList>
+<Loc EndOffset="3496" SrcFileId="2" StartOffset="3455"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S45" CovItemPrefix="myPackage.ParserLauncher.java" Intrnl_Id="385">
+<LocList>
+<Loc EndOffset="3523" SrcFileId="2" StartOffset="3499"/>
+</LocList>
+</BasicStmnt>
+<CondStmnt CovItemId="S46" CovItemPrefix="myPackage.ParserLauncher.java" Intrnl_Id="386">
+<Branch CovItemId="B15" CovItemPrefix="myPackage.ParserLauncher.java" Implct="false" Intrnl_Id="387">
+<Cond/>
+<LocList>
+<Loc EndOffset="3627" SrcFileId="2" StartOffset="3572"/>
+</LocList>
+<StmntSeq Intrnl_Id="388">
+<LocList>
+<Loc EndOffset="3627" SrcFileId="2" StartOffset="3572"/>
+</LocList>
+<BasicStmnt CovItemId="S47" CovItemPrefix="myPackage.ParserLauncher.java" Intrnl_Id="389">
+<LocList>
+<Loc EndOffset="3627" SrcFileId="2" StartOffset="3572"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</Branch>
+<Branch CovItemId="B16" CovItemPrefix="myPackage.ParserLauncher.java" Implct="false" Intrnl_Id="390">
+<Cond>
+<Loc EndOffset="3634" SrcFileId="2" StartOffset="3630"/>
+</Cond>
+<LocList>
+<Loc EndOffset="3784" SrcFileId="2" StartOffset="3635"/>
+</LocList>
+<StmntSeq Intrnl_Id="391">
+<LocList>
+<Loc EndOffset="3648" SrcFileId="2" StartOffset="3640"/>
+<Loc EndOffset="3691" SrcFileId="2" StartOffset="3652"/>
+<Loc EndOffset="3779" SrcFileId="2" StartOffset="3695"/>
+</LocList>
+<BasicStmnt CovItemId="S48" CovItemPrefix="myPackage.ParserLauncher.java" Intrnl_Id="392">
+<LocList>
+<Loc EndOffset="3648" SrcFileId="2" StartOffset="3640"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S49" CovItemPrefix="myPackage.ParserLauncher.java" Intrnl_Id="393">
+<LocList>
+<Loc EndOffset="3691" SrcFileId="2" StartOffset="3652"/>
+</LocList>
+</BasicStmnt>
+<LoopStmnt CovItemId="S50" CovItemPrefix="myPackage.ParserLauncher.java" Intrnl_Id="394" MltplExecId="L3-2" MltplExecPrefix="myPackage.ParserLauncher.java" NvrExecId="L3-0" NvrExecPrefix="myPackage.ParserLauncher.java" OnceExecutedId="L3-1" OnceExecutedPrefix="myPackage.ParserLauncher.java" OptBodyExec="true">
+<StmntSeq Intrnl_Id="395">
+<LocList>
+<Loc EndOffset="3779" SrcFileId="2" StartOffset="3740"/>
+</LocList>
+<BasicStmnt CovItemId="S51" CovItemPrefix="myPackage.ParserLauncher.java" Intrnl_Id="396">
+<LocList>
+<Loc EndOffset="3779" SrcFileId="2" StartOffset="3740"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+<Keyword EndOffset="3698" SrcFileId="2" StartOffset="3695"/>
+<LocList>
+<Loc EndOffset="3779" SrcFileId="2" StartOffset="3695"/>
+</LocList>
+</LoopStmnt>
+</StmntSeq>
+</Branch>
+<Keyword EndOffset="3532" SrcFileId="2" StartOffset="3530"/>
+<LocList>
+<Loc EndOffset="3784" SrcFileId="2" StartOffset="3530"/>
+</LocList>
+<RootTerm CovItemId="C8" CovItemPrefix="myPackage.ParserLauncher.java" Intrnl_Id="397">
+<BasicBoolTerm Intrnl_Id="398">
+<LocList>
+<Loc EndOffset="3567" SrcFileId="2" StartOffset="3534"/>
+</LocList>
+</BasicBoolTerm>
+</RootTerm>
+</CondStmnt>
+</StmntSeq>
+</HierarchyLvl>
+</HierarchyLvl>
+</HierarchyLvl>
+</HierarchyLvl>
+</MASTRoot>
+</TestSessionContainer>

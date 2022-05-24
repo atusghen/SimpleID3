@@ -331,10 +331,13 @@ public class Interfaccia extends JPanel {
     private void startParsing(ActionEvent e) { 
         try {
         	ParserLauncher.avvio(this);
-		} catch (IOException | RecognitionException e1) {
+		} catch (IOException e1) {
 			e1.printStackTrace();
-		}
+		} catch (RecognitionException e1) {
+		e1.printStackTrace();
+	}
     }
+    
     public boolean checkMode()
     {
     	return checkbox128.isSelected() ? true:false;
